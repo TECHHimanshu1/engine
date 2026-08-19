@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Singhal Industrial Corporation",
+  "description": "Manufacturer of Cylinder Liners, Pistons & Engine Valves",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

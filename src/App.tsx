@@ -7,9 +7,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
+import { PistonsPage } from './pages/PistonsPage';
+import { CylinderLinersPage } from './pages/CylinderLinersPage';
+import { BushPinsPage } from './pages/BushPinsPage';
+import { AirCompressorKitsPage } from './pages/AirCompressorKitsPage';
+import { ValvesPage } from './pages/ValvesPage';
+import { PowerGensetsPage } from './pages/PowerGensetsPage';
 import { ProductDetail } from './pages/ProductDetail';
 import { Quote } from './pages/Quote';
-import { Manufacturing } from './pages/Manufacturing';
 import { Quality } from './pages/Quality';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { About } from './pages/About';
@@ -26,9 +31,14 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'products', element: <Products /> },
+      { path: 'products/pistons', element: <PistonsPage /> },
+      { path: 'products/cylinder-liners', element: <CylinderLinersPage /> },
+      { path: 'products/bush-pins', element: <BushPinsPage /> },
+      { path: 'products/air-compressor-kits', element: <AirCompressorKitsPage /> },
+      { path: 'products/valves', element: <ValvesPage /> },
+      { path: 'products/power-gensets', element: <PowerGensetsPage /> },
       { path: 'products/:slug', element: <ProductDetail /> },
       { path: 'quote', element: <Quote /> },
-      { path: 'manufacturing', element: <Manufacturing /> },
       { path: 'quality', element: <Quality /> },
       { path: 'about', element: <About /> },
       { path: 'infrastructure', element: <Infrastructure /> },
@@ -47,3 +57,5 @@ const router = createBrowserRouter([
 export default function App() {
   return <RouterProvider router={router} />;
 }
+
+

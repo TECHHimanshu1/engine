@@ -4,26 +4,27 @@ import { useState, useEffect } from 'react';
 import { companyConfig } from '../config';
 
 const productCategories = [
-  { name: 'Cylinder Liners', path: '/products/cylinder-liners' },
-  { name: 'Pistons', path: '/products/pistons' },
-  { name: 'Air Compressor Kits', path: '/products/air-compressor-kits' },
-  { name: 'Piston Rings', path: '/products/piston-rings' },
-  { name: 'Valves', path: '/products/valves' },
-  { name: 'Valve Guides', path: '/products/valve-guides' },
-  { name: 'Engine Bearings', path: '/products/engine-bearings' },
-  { name: 'Gaskets', path: '/products/gaskets' },
-  { name: 'Crankshafts', path: '/products/crankshafts' },
-  { name: 'Connecting Rods', path: '/products/connecting-rods' },
-  { name: 'Cylinder Heads', path: '/products/cylinder-heads' },
-  { name: 'Castings', path: '/products/castings' },
-  { name: 'Agricultural Diesel Engines', path: '/products/agricultural-diesel-engines' },
-  { name: 'Power Gensets', path: '/products/power-gensets' },
+  { name: 'CYLINDER LINERS', path: '/products/cylinder-liners' },
+  { name: 'PISTONS', path: '/products/pistons' },
+  { name: 'AIR COMPRESSOR KITS', path: '/products/air-compressor-kits' },
+  { name: 'PISTON RINGS', path: '/products/piston-rings' },
+  { name: 'VALVES', path: '/products/valves' },
+  { name: 'VALVE GUIDES', path: '/products/valve-guides' },
+  { name: 'ENGINE BEARINGS', path: '/products/engine-bearings' },
+  { name: 'GASKETS', path: '/products/gaskets' },
+  { name: 'CRANKSHAFTS', path: '/products/crankshafts' },
+  { name: 'CONNECTING RODS', path: '/products/connecting-rods' },
+  { name: 'CYLINDER HEADS', path: '/products/cylinder-heads' },
+  { name: 'CASTINGS', path: '/products/castings' },
+  { name: 'AGRICULTURAL DIESEL ENGINES', path: '/products/agricultural-diesel-engines' },
+  { name: 'POWER GENSETS', path: '/products/power-gensets' },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [activeLang, setActiveLang] = useState('EN');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,29 +35,49 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'HOME', path: '/' },
-    { name: 'ABOUT US', path: '/about' },
-    { name: 'PRODUCTS', path: '/products', hasDropdown: true },
-    { name: 'INFRASTRUCTURE', path: '/infrastructure' },
-    { name: 'NEWS AND EVENTS', path: '/news' },
-    { name: 'CONTACT US', path: '/quote' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Products', path: '/products', hasDropdown: true },
+    { name: 'Infrastructure', path: '/infrastructure' },
+    { name: 'Blog', path: '/news' },
+    { name: 'Contact', path: '/quote' },
   ];
 
   return (
     <>
       {/* Top Red Bar */}
-      <div className="bg-[#D34747] text-white py-1.5 hidden md:block z-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center md:justify-start items-center space-x-6">
+      <div className="bg-[#D34747] text-white py-2 z-50 relative border-b border-red-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start space-x-6 text-xs">
           <div className="flex items-center space-x-1.5">
-            {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
-              <a key={i} href="#" className="bg-white text-[#D34747] p-1 rounded-sm hover:bg-zinc-100 transition-colors">
-                <Icon className="w-3.5 h-3.5" />
+            {[
+              { icon: Facebook, href: companyConfig.social.facebook },
+              { icon: Twitter, href: companyConfig.social.twitter },
+              { icon: Instagram, href: companyConfig.social.instagram },
+              { icon: Linkedin, href: companyConfig.social.linkedin },
+              { icon: Youtube, href: companyConfig.social.youtube }
+            ].map((item, i) => (
+              <a 
+                key={i} 
+                href={item.href} 
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white text-[#D34747] p-1 rounded-sm hover:bg-zinc-100 transition-colors"
+              >
+                <item.icon className="w-3 h-3 fill-current stroke-none" />
               </a>
             ))}
           </div>
-          <div className="flex items-center space-x-4 text-xs font-bold tracking-wider">
+
+          <div className="flex items-center space-x-3 text-[11px] font-bold tracking-wider">
             {['AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
-              <button key={lang} className="hover:text-zinc-200 transition-colors">{lang}</button>
+              <button 
+                key={lang} 
+                onClick={() => setActiveLang(lang)}
+                className={`hover:text-zinc-200 transition-colors ${
+                  activeLang === lang ? 'underline font-extrabold' : ''
+                }`}
+              >
+                {lang}
+              </button>
             ))}
           </div>
         </div>
@@ -65,21 +86,27 @@ export function Navbar() {
       {/* Main Header */}
       <header 
         className={`w-full z-40 transition-all duration-300 bg-white ${
-          scrolled ? 'fixed top-0 shadow-md py-4' : 'relative py-6 border-b border-zinc-100'
+          scrolled ? 'fixed top-0 shadow-sm py-3' : 'relative py-4 border-b border-zinc-100'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex flex-col items-start">
+            {/* Logo */}
+            <Link to="/" className="flex flex-col items-start group">
+              <span className="text-[10px] font-bold text-zinc-500 tracking-wider uppercase leading-none">Since {companyConfig.established}</span>
               <div className="flex items-end">
-                <span className="text-[#D34747] font-black text-4xl tracking-tighter uppercase leading-none">{companyConfig.shortName}</span>
-                <span className="text-zinc-600 font-bold text-[10px] ml-1 mb-1">&reg;</span>
+                <span className="text-[#D34747] font-black text-4xl md:text-5xl tracking-tighter uppercase leading-none group-hover:text-red-700 transition-colors">
+                  {companyConfig.shortName}
+                </span>
+                <span className="text-zinc-600 font-bold text-[10px] ml-0.5 mb-1">&reg;</span>
               </div>
-              <span className="text-zinc-800 font-bold text-xs tracking-widest mt-1 uppercase">Engine Parts</span>
+              <span className="text-zinc-800 font-bold text-[10px] tracking-widest uppercase mt-0.5">
+                ENGINE PARTS
+              </span>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <div 
                   key={link.name} 
@@ -89,21 +116,21 @@ export function Navbar() {
                 >
                   <Link 
                     to={link.path}
-                    className="text-sm font-bold text-zinc-700 hover:text-[#D34747] transition-colors flex items-center py-2"
+                    className="text-sm font-semibold text-zinc-700 hover:text-[#D34747] transition-colors flex items-center py-2"
                   >
                     {link.name}
-                    {link.hasDropdown && <ChevronDown className="w-4 h-4 ml-1" />}
+                    {link.hasDropdown && <ChevronDown className="w-3.5 h-3.5 ml-1 text-zinc-500 transition-transform group-hover:rotate-180" />}
                   </Link>
 
                   {/* Dropdown Menu */}
                   {link.hasDropdown && dropdownOpen && (
-                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl border border-zinc-100 rounded-b-md overflow-hidden z-50">
+                    <div className="absolute top-full left-0 w-72 bg-white shadow-2xl border border-zinc-100 rounded-b-xl overflow-hidden z-50 max-h-[75vh] overflow-y-auto">
                       <div className="py-2">
                         {productCategories.map((category) => (
                           <Link
                             key={category.name}
                             to={category.path}
-                            className="block px-4 py-2 text-sm text-zinc-700 hover:bg-[#D34747] hover:text-white transition-colors"
+                            className="block px-5 py-2.5 text-xs font-bold text-zinc-700 hover:bg-[#D34747] hover:text-white transition-colors uppercase tracking-wide border-b border-zinc-50 last:border-0"
                           >
                             {category.name}
                           </Link>
@@ -117,7 +144,7 @@ export function Navbar() {
 
             {/* Mobile menu button */}
             <button 
-              className="md:hidden text-zinc-900 hover:text-[#D34747]"
+              className="lg:hidden text-zinc-900 hover:text-[#D34747] p-1"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -127,24 +154,24 @@ export function Navbar() {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-zinc-100 max-h-[80vh] overflow-y-auto">
-            <div className="px-4 pt-2 pb-6 space-y-1">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-zinc-100 max-h-[80vh] overflow-y-auto z-50">
+            <div className="px-4 pt-3 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
                     to={link.path}
-                    className="flex justify-between items-center px-3 py-3 text-base font-bold text-zinc-700 hover:text-[#D34747] hover:bg-zinc-50 rounded-md"
+                    className="flex justify-between items-center px-3 py-3 text-sm font-bold text-zinc-800 hover:text-[#D34747] hover:bg-zinc-50 rounded-md"
                     onClick={() => !link.hasDropdown && setIsOpen(false)}
                   >
                     {link.name}
                   </Link>
                   {link.hasDropdown && (
-                    <div className="pl-6 space-y-1 pb-2">
+                    <div className="pl-6 space-y-1 pb-2 border-l-2 border-red-100 ml-3">
                       {productCategories.map((category) => (
                         <Link
                           key={category.name}
                           to={category.path}
-                          className="block px-3 py-2 text-sm text-zinc-600 hover:text-[#D34747]"
+                          className="block px-3 py-2 text-xs font-semibold text-zinc-600 hover:text-[#D34747] uppercase"
                           onClick={() => setIsOpen(false)}
                         >
                           - {category.name}
@@ -161,3 +188,6 @@ export function Navbar() {
     </>
   );
 }
+
+
+

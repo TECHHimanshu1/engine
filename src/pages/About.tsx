@@ -1,81 +1,114 @@
+import { Award, CheckCircle2, ArrowRight, ShieldCheck, Building2, Target } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
 
 export function About() {
   return (
-    <div className="w-full pt-32 pb-24 bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block bg-[#D34747] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-            About Us
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">Company</h1>
-          <p className="text-lg text-zinc-600 leading-relaxed">
-            {companyConfig.name}, established in 1966, is a trusted name in the global automotive and agricultural aftermarket, with more than six decades of experience in manufacturing, sourcing, and exporting high-quality engine spare parts.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
-          <div className="prose prose-lg text-zinc-600">
-            <p>
-              Over the years, we have built lasting relationships with customers across international markets through our commitment to quality, reliability, technical expertise, and dependable customer service.
+    <div className="w-full bg-white">
+      {/* Hero Banner */}
+      <section className="bg-zinc-900 text-white py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 uppercase tracking-wider">
+              <Award className="w-4 h-4 mr-1" /> Established 1966 | Agra, India
+            </span>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+              About Singhal Industrial Corporation
+            </h1>
+            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-4">
+              KOMODO Engine Parts – Built for Performance. Trusted for Quality.
             </p>
-            <p>
-              Our aftermarket brand, <strong>{companyConfig.brandName}</strong>, represents our commitment to delivering reliable, high-performance engine components for a wide range of automotive, commercial vehicle, and agricultural applications.
-            </p>
-            <p>
-              We manufacture and supply a comprehensive range of engine components, including Cylinder Liners, Pistons, Piston Rings, Engine Valves, Valve Guides, Gaskets, and other critical engine spare parts. Our manufacturing and machining capabilities, supported by a carefully selected network of suppliers, allow us to offer a broad range of products and applications to customers worldwide.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-zinc-100 rounded-xl overflow-hidden h-64">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Factory interior" className="w-full h-full object-cover mix-blend-multiply opacity-80" />
-            </div>
-            <div className="bg-zinc-100 rounded-xl overflow-hidden h-64 mt-8">
-              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Engine components" className="w-full h-full object-cover mix-blend-multiply opacity-80" />
-            </div>
           </div>
         </div>
+      </section>
 
-        <div className="bg-[#f4f6f8] rounded-2xl p-8 md:p-16 mb-24">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-zinc-900 mb-8 text-center">Commitment to Quality</h2>
-            <div className="prose prose-lg text-zinc-600 mx-auto">
+      {/* Main Content */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <div className="lg:col-span-8 space-y-6 text-zinc-700 leading-relaxed text-sm md:text-base">
+              <div className="p-6 rounded-2xl bg-red-50 border border-red-100 mb-8">
+                <h2 className="text-2xl font-extrabold text-zinc-900 mb-2">Company Overview</h2>
+                <p className="text-zinc-800 font-semibold">
+                  Singhal Industrial Corporation, established in 1966, is a trusted name in the global automotive and agricultural aftermarket, with more than six decades of experience in manufacturing, sourcing, and exporting high-quality engine spare parts.
+                </p>
+              </div>
+
               <p>
-                At {companyConfig.name}, quality is built into every stage of our operations. Products manufactured in-house as well as those sourced from approved suppliers undergo rigorous quality checks, dimensional inspection, and value-adding processes before reaching our customers. This enables us to maintain consistent standards across our product range and markets.
+                Over the years, we have built lasting relationships with customers across international markets through our commitment to quality, reliability, technical expertise, and dependable customer service.
               </p>
-              <blockquote className="border-l-4 border-[#D34747] pl-6 my-8 text-xl font-medium text-zinc-900 italic">
-                We strongly believe that quality is never an accident—it is the result of disciplined processes, continuous improvement, technical expertise, and an uncompromising commitment to excellence.
-              </blockquote>
+
+              <p>
+                Our aftermarket brand, <strong>KOMODO Engine Parts</strong>, represents our commitment to delivering reliable, high-performance engine components for a wide range of automotive, commercial vehicle, and agricultural applications.
+              </p>
+
+              <p>
+                We manufacture and supply a comprehensive range of engine components, including <strong>Cylinder Liners, Pistons, Piston Rings, Engine Valves, Valve Guides, Gaskets</strong>, and other critical engine spare parts. Our manufacturing and machining capabilities, supported by a carefully selected network of suppliers, allow us to offer a broad range of products and applications to customers worldwide.
+              </p>
+
+              <div className="my-8 p-6 bg-zinc-50 rounded-2xl border border-zinc-200">
+                <h3 className="text-xl font-bold text-zinc-900 mb-3">Uncompromising Quality Philosophy</h3>
+                <p className="mb-4">
+                  At Singhal Industrial Corporation, quality is built into every stage of our operations. Products manufactured in-house as well as those sourced from approved suppliers undergo rigorous quality checks, dimensional inspection, and value-adding processes before reaching our customers. This enables us to maintain consistent standards across our product range and markets.
+                </p>
+                <p className="font-bold text-[#D32F2F]">
+                  We strongly believe that quality is never an accident—it is the result of disciplined processes, continuous improvement, technical expertise, and an uncompromising commitment to excellence.
+                </p>
+              </div>
+
               <p>
                 Our experienced team, skilled manufacturing workforce, machining capabilities, and dedicated warehousing facilities in Agra, India, provide us with the infrastructure and expertise required to serve customers across international markets.
               </p>
-            </div>
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-zinc-950 rounded-2xl overflow-hidden text-white">
-          <div className="p-12 md:p-16">
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-zinc-400 mb-8 text-lg leading-relaxed">
-              With over 60 years of industry experience, {companyConfig.name} continues to strengthen its global presence through {companyConfig.brandName}, combining traditional expertise with modern manufacturing practices and a forward-looking approach to the aftermarket.
-            </p>
-            <p className="text-zinc-400 mb-8 text-lg leading-relaxed">
-              Our mission is simple: to deliver dependable engine parts, create lasting customer relationships, and be a trusted global partner for automotive and agricultural spare parts.
-            </p>
-            <div className="pt-8 border-t border-white/10">
-              <p className="font-bold text-xl uppercase tracking-wider mb-2">{companyConfig.name}</p>
-              <p className="text-zinc-500 mb-6">Established 1966 | Agra, India</p>
-              <div className="inline-block bg-[#D34747] text-white px-4 py-2 rounded-sm font-bold text-sm">
-                {companyConfig.brandName} - Built for Performance. Trusted for Quality.
+              <p>
+                With over 60 years of industry experience, Singhal Industrial Corporation continues to strengthen its global presence through <strong>KOMODO Engine Parts</strong>, combining traditional expertise with modern manufacturing practices and a forward-looking approach to the aftermarket.
+              </p>
+
+              <div className="p-6 rounded-2xl bg-zinc-900 text-white mt-8">
+                <div className="flex items-center space-x-3 mb-2 text-[#D32F2F] font-bold text-xs uppercase tracking-wider">
+                  <Target className="w-5 h-5" /> Our Mission
+                </div>
+                <p className="text-lg font-bold">
+                  Our mission is simple: to deliver dependable engine parts, create lasting customer relationships, and be a trusted global partner for automotive and agricultural spare parts.
+                </p>
               </div>
             </div>
-          </div>
-          <div className="h-full min-h-[400px] relative">
-            <img src="https://images.unsplash.com/photo-1563725515259-78170c91ba1e?auto=format&fit=crop&q=80&w=1200" alt="Mission and Vision" className="absolute inset-0 w-full h-full object-cover opacity-50" />
-            <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 to-transparent" />
+
+            {/* Sidebar */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="bg-zinc-50 p-8 rounded-3xl border border-zinc-200 shadow-sm text-center">
+                <div className="w-16 h-16 rounded-2xl bg-red-50 text-[#D32F2F] flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="w-8 h-8" />
+                </div>
+                <h3 className="font-black text-xl text-zinc-900 mb-1 uppercase">Singhal Industrial Corporation</h3>
+                <div className="text-xs font-bold text-[#D32F2F] uppercase tracking-wider mb-4">Established 1966 | Agra, India</div>
+                <div className="p-4 rounded-xl bg-white border border-zinc-200 text-xs font-bold text-zinc-800">
+                  KOMODO Engine Parts<br/>
+                  <span className="text-zinc-500 font-normal">Built for Performance. Trusted for Quality.</span>
+                </div>
+              </div>
+
+              <div className="bg-zinc-900 text-white p-8 rounded-3xl shadow-xl">
+                <h4 className="font-bold text-lg mb-4 text-[#D32F2F] uppercase tracking-wider">Key Product Lines</h4>
+                <ul className="space-y-3 text-xs">
+                  {["Cylinder Liners & Sleeves", "Pistons & Pin Assemblies", "Piston Rings", "Engine Valves & Guides", "Air Brake Compressor Kits", "Engine Gaskets & Bearings", "Crankshafts & Connecting Rods", "Cylinder Heads & Castings"].map((item, idx) => (
+                    <li key={idx} className="flex items-center text-zinc-300">
+                      <CheckCircle2 className="w-4 h-4 text-red-500 mr-2.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/quote" className="mt-8 block w-full py-3 text-center bg-[#D32F2F] text-white font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-red-700 transition-colors">
+                  Contact Sales Office
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

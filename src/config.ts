@@ -3,17 +3,23 @@ export const companyConfig = {
   shortName: "KOMODO",
   brandName: "KOMODO Engine Parts",
   tagline: "Your trusted partner for high quality auto and agricultural spare parts.",
+  subtitle: "Manufacturer of Cylinder Liners, Pistons & Engine Valves. We are one of the leading engine parts manufacturers & exporters, serving automotive OEMs and aftermarket customers around the world with decades of excellence in customer service.",
   email: "sales@indiasparepart.com",
   phone: "+91 9999999999",
   whatsapp: "+91 9999999999",
   address: "Agra, India",
   established: "1966",
+  moq: "300 pieces",
   countriesServed: "45+",
   productionCapacity: "500K+ units/month",
-  certifications: ["ISO 9001:2015", "IATF 16949:2016", "ISO 14001:2015"],
+  certifications: ["ISO 9001:2015 Certified"],
   social: {
-    linkedin: "#",
-    twitter: "#",
-    facebook: "#",
+    linkedin: "https://linkedin.com",
+    twitter: "https://twitter.com",
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+    youtube: "https://youtube.com"
   }
 };
+
+
