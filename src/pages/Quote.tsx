@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
 import { companyConfig } from '../config';
 
@@ -15,7 +15,7 @@ export function Quote() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };
