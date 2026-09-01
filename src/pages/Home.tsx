@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Package, Eye, Target, ChevronLeft, ChevronRight, Plus, Minus, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Package, Eye, Target, ChevronLeft, ChevronRight, Plus, Minus, CheckCircle2, ShieldCheck, Building2, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
 import { useState } from 'react';
@@ -132,58 +132,72 @@ export function Home() {
         </div>
       </section>
 
-      {/* About Heritage Section */}
-      <section className="py-20 bg-white">
+      {/* Stats Banner Section */}
+      <section className="py-12 md:py-16 bg-white border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                Established 1966 | Agra, India
-              </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 leading-tight mb-6">
-                Singhal Industrial Corporation – {companyConfig.brandName}
-              </h2>
-              <p className="text-zinc-700 leading-relaxed mb-4 text-sm">
-                <strong>Singhal Industrial Corporation</strong>, established in <strong>1966</strong>, is a trusted name in the global automotive and agricultural aftermarket, with more than six decades of experience in manufacturing, sourcing, and exporting high-quality engine spare parts.
-              </p>
-              <p className="text-zinc-700 leading-relaxed mb-8 text-sm">
-                Our aftermarket brand, <strong>KOMODO Engine Parts</strong>, represents our commitment to delivering reliable, high-performance engine components for a wide range of automotive, commercial vehicle, and agricultural applications worldwide.
-              </p>
-
-              <div className="flex items-center space-x-8 mb-8">
-                <div>
-                  <div className="text-3xl font-black text-[#D32F2F]">1966</div>
-                  <div className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">Established Year</div>
+          <div className="bg-[#18181C] rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl border border-zinc-800">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+              
+              {/* Stat 1: 60+ Years */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2.5 bg-emerald-500/10 text-emerald-500 rounded-xl shrink-0 mt-1">
+                  <Building2 className="w-6 h-6 stroke-[2]" />
                 </div>
-                <div className="h-10 w-px bg-zinc-200" />
                 <div>
-                  <div className="text-3xl font-black text-[#D32F2F]">60+</div>
-                  <div className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">Years Experience</div>
-                </div>
-                <div className="h-10 w-px bg-zinc-200" />
-                <div>
-                  <div className="text-3xl font-black text-[#D32F2F]">KOMODO</div>
-                  <div className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">Global Brand</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-emerald-500 tracking-tight mb-1">
+                    60+
+                  </div>
+                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                    Years Manufacturing Experience
+                  </div>
                 </div>
               </div>
 
-              <Link to="/about" className="inline-flex items-center px-8 py-3.5 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors">
-                Read Full About Us <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
-                alt="Singhal Industrial Corporation Plant" 
-                className="w-full h-[450px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
-                <div className="text-white">
-                  <div className="font-bold text-lg">Singhal Industrial Corporation</div>
-                  <div className="text-xs text-zinc-300">Agra, India | Built for Performance. Trusted for Quality.</div>
+              {/* Stat 2: 25+ Export Markets */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2.5 bg-blue-500/10 text-blue-500 rounded-xl shrink-0 mt-1">
+                  <Globe className="w-6 h-6 stroke-[2]" />
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-500 tracking-tight mb-1">
+                    25+
+                  </div>
+                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                    Export Markets
+                  </div>
                 </div>
               </div>
+
+              {/* Stat 3: 3,000 Cylinder Liners / Month */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2.5 bg-orange-500/10 text-orange-500 rounded-xl shrink-0 mt-1">
+                  <Package className="w-6 h-6 stroke-[2]" />
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 tracking-tight mb-1">
+                    3,000
+                  </div>
+                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                    Cylinder Liners / Month
+                  </div>
+                </div>
+              </div>
+
+              {/* Stat 4: OEM Quality */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2.5 bg-purple-500/10 text-purple-500 rounded-xl shrink-0 mt-1">
+                  <CheckCircle2 className="w-6 h-6 stroke-[2]" />
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-500 tracking-tight mb-1">
+                    OEM Quality
+                  </div>
+                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                    Mercedes • Volvo • Cummins • MAN
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
