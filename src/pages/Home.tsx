@@ -292,7 +292,7 @@ export function Home() {
                   <img 
                     src="/images/kat.jpeg" 
                     alt="KAT Brand Logo" 
-                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" 
+                    className="w-full h-full object-contain p-1 scale-125 md:scale-140 group-hover:scale-150 transition-transform duration-300" 
                   />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">KAT</h3>
@@ -309,7 +309,7 @@ export function Home() {
                   <img 
                     src="/images/englishpetter.jpeg" 
                     alt="ENGLISH PETTER Brand Logo" 
-                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" 
+                    className="w-full h-full object-contain p-1 scale-150 md:scale-[1.75] group-hover:scale-[1.85] transition-transform duration-300" 
                   />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">ENGLISH PETTER</h3>
@@ -326,7 +326,7 @@ export function Home() {
                   <img 
                     src="/images/indoland.jpeg" 
                     alt="INDOLAND Brand Logo" 
-                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" 
+                    className="w-full h-full object-contain p-1 scale-125 md:scale-135 group-hover:scale-145 transition-transform duration-300" 
                   />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">INDOLAND</h3>
