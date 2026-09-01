@@ -37,14 +37,6 @@ const productsGrid = [
   }
 ];
 
-const showcaseProducts = [
-  { name: 'Precision Piston Assembly', spec: 'High-strength alloy | Controlled Thermal Expansion', img: '/images/piston_hero.jpg' },
-  { name: 'Dry Type Cylinder Liner', spec: 'Centrifugal casting | Pearlitic Cast Iron', img: '/images/cylinder_liners.jpg' },
-  { name: 'Wet Type Coolant Sleeve', spec: 'Liquid coolant contact | Anti-Cavitation hone', img: '/images/cylinder_liners.jpg' },
-  { name: 'Air Brake Compressor Kit', spec: 'OEM-grade block, pistons, and rings', img: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=800' },
-  { name: 'Engine Valves', spec: 'Precision ground intake and exhaust valves', img: 'https://images.unsplash.com/photo-1498887960847-2a5e46312788?auto=format&fit=crop&q=80&w=800' },
-];
-
 const faqs = [
   { q: "What is your Minimum Order Quantity (MOQ)?", a: "Our MOQ is 300 pieces per order per line item." },
   { q: "Are you a certified engine parts manufacturer?", a: "Yes, Singhal Industrial Corporation (KOMODO Engine Parts) is ISO 9001:2015 certified for manufacturing and quality control." },
@@ -55,15 +47,6 @@ const faqs = [
 
 export function Home() {
   const [openFaq, setOpenFaq] = useState<number>(0);
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % showcaseProducts.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + showcaseProducts.length) % showcaseProducts.length);
-  };
 
   return (
     <div className="w-full bg-white">
@@ -368,77 +351,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Interactive Products Showcase Slider */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-            <div>
-              <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                Interactive Showcase
-              </span>
-              <h2 className="text-3xl font-extrabold text-zinc-900">Our Products Showcase</h2>
-              <p className="text-zinc-500 text-xs mt-1">Engineered for Maximum Durability & Performance</p>
-            </div>
-            
-            <div className="flex items-center space-x-3 mt-4 md:mt-0">
-              <button 
-                onClick={prevSlide}
-                className="p-3 rounded-full border border-zinc-200 text-zinc-700 hover:bg-[#D32F2F] hover:text-white hover:border-[#D32F2F] transition-all"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button 
-                onClick={nextSlide}
-                className="p-3 rounded-full border border-zinc-200 text-zinc-700 hover:bg-[#D32F2F] hover:text-white hover:border-[#D32F2F] transition-all"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
 
-          <div className="bg-zinc-50 rounded-3xl p-8 md:p-12 border border-zinc-200/80">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <span className="text-xs font-bold text-red-600 bg-red-100 px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
-                  Featured Component 0{currentSlide + 1}
-                </span>
-                <h3 className="text-3xl font-extrabold text-zinc-900 mb-4">
-                  {showcaseProducts[currentSlide].name}
-                </h3>
-                <p className="text-zinc-600 text-sm mb-6">
-                  {showcaseProducts[currentSlide].spec}
-                </p>
-                <ul className="space-y-2 mb-8">
-                  <li className="flex items-center text-xs text-zinc-700 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-[#D32F2F] mr-2" /> 100% Quality Inspection Passed
-                  </li>
-                  <li className="flex items-center text-xs text-zinc-700 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-[#D32F2F] mr-2" /> Precision Machined to OEM Specifications
-                  </li>
-                  <li className="flex items-center text-xs text-zinc-700 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-[#D32F2F] mr-2" /> Custom Packaging & Branding Available
-                  </li>
-                </ul>
-                <Link to="/quote" className="inline-flex items-center px-6 py-3 bg-[#D32F2F] text-white font-bold text-xs uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors">
-                  Inquire For Bulk Supply
-                </Link>
-              </div>
-
-              <div className="flex justify-center">
-                <div className="relative max-w-sm w-full bg-white p-6 rounded-2xl shadow-lg border border-zinc-100">
-                  <img 
-                    src={showcaseProducts[currentSlide].img} 
-                    alt={showcaseProducts[currentSlide].name}
-                    className="w-full h-64 object-contain" 
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ISO Certification Section */}
       <section className="py-16 bg-zinc-900 text-white">
