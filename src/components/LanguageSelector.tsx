@@ -23,34 +23,11 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
   const [currentLang, setCurrentLang] = useState<Language>(LANGUAGES[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Check saved cookie or translate state
-    const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
-    if (match) {
-      const langCode = match[1].split('/').pop();
-      const found = LANGUAGES.find(l => l.code === langCode);
-      if (found) {
-        setCurrentLang(found);
-        if (found.rtl) {
-          document.documentElement.dir = 'rtl';
-        }
-      }
-    }
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   const changeLanguage = (lang: Language) => {
     setCurrentLang(lang);
     setIsOpen(false);
 
-    // Update document direction for RTL languages
+    // Update document direction for RTL languages (Arabic / Persian)
     if (lang.rtl) {
       document.documentElement.dir = 'rtl';
     } else {
@@ -69,10 +46,41 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
     if (selectElem) {
       selectElem.value = lang.code;
       selectElem.dispatchEvent(new Event('change'));
-    } else {
-      window.location.reload();
     }
   };
+
+  useEffect(() => {
+    // 1. Check saved cookie preference
+    const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+    if (match) {
+      const langCode = match[1].split('/').pop();
+      const found = LANGUAGES.find(l => l.code === langCode);
+      if (found) {
+        setCurrentLang(found);
+        if (found.rtl) {
+          document.documentElement.dir = 'rtl';
+        }
+        return;
+      }
+    }
+
+    // 2. Automatic Region / Browser Language Detection
+    const browserLang = (navigator.language || (navigator as any).userLanguage || 'en').toLowerCase();
+    const primaryCode = browserLang.split('-')[0]; // Extract primary language tag (e.g. 'ar', 'es', 'ru', 'fa', 'fr')
+
+    const detectedLang = LANGUAGES.find(l => l.code === primaryCode);
+    if (detectedLang && detectedLang.code !== 'en') {
+      changeLanguage(detectedLang);
+    }
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
