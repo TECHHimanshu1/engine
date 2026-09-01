@@ -69,7 +69,30 @@ export function Navbar() {
     <>
       {/* Top Red Bar */}
       <div className="bg-[#D34747] text-white py-2 z-50 relative border-b border-red-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start space-x-6 text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs">
+          
+          {/* Left Side: Language Controls */}
+          <div className="flex items-center space-x-3 text-[11px] font-bold tracking-wider">
+            {['EN', 'AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
+              <button 
+                key={lang} 
+                onClick={() => {
+                  setActiveLang(lang);
+                  setSiteLanguageByCode(lang.toLowerCase());
+                }}
+                className={`hover:text-zinc-200 transition-colors ${
+                  activeLang === lang ? 'underline font-extrabold' : ''
+                }`}
+              >
+                {lang}
+              </button>
+            ))}
+            <div className="ml-2 border-l border-white/40 pl-2.5">
+              <LanguageSelector />
+            </div>
+          </div>
+
+          {/* Right Side: Social Media Icons */}
           <div className="flex items-center space-x-1.5">
             {[
               { icon: Facebook, href: companyConfig.social.facebook },
@@ -90,25 +113,6 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center space-x-3 text-[11px] font-bold tracking-wider">
-            {['EN', 'AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
-              <button 
-                key={lang} 
-                onClick={() => {
-                  setActiveLang(lang);
-                  setSiteLanguageByCode(lang.toLowerCase());
-                }}
-                className={`hover:text-zinc-200 transition-colors ${
-                  activeLang === lang ? 'underline font-extrabold' : ''
-                }`}
-              >
-                {lang}
-              </button>
-            ))}
-            <div className="ml-2 border-l border-white/40 pl-2.5">
-              <LanguageSelector />
-            </div>
-          </div>
         </div>
       </div>
 
