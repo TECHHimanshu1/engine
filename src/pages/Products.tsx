@@ -6,7 +6,7 @@ const products = [
   { 
     id: '1', 
     slug: 'pistons', 
-    name: 'Pistons (Alfin & Steel Strut)', 
+    name: 'Precision Engine Pistons', 
     category: 'Engine Components', 
     shortDescription: 'Precision engineered eutectic aluminum pistons with Ni-Resist ring carrier inserts, oil cooling galleries, and moly skirt coatings.', 
     image: '/images/piston_hero.jpg' 

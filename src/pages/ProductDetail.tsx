@@ -17,13 +17,13 @@ const STATIC_PRODUCTS: Record<string, any> = {
     materials: ['Grey Cast Iron (95%+ Pearlite)', 'Alloyed Centrifugal Cast Iron', 'Centrifugal Shell Moulded Alloy']
   },
   'pistons': {
-    name: 'Pistons (Alfin, Steel Strut & Oil Gallery)',
+    name: 'Precision Engine Pistons',
     category: 'Engine Components',
     image: '/images/piston_hero.jpg',
-    description: 'Precision engineered eutectic aluminum pistons with Ni-Resist ring carrier inserts and graphite skirt coating.',
+    description: 'Precision engineered eutectic aluminum pistons with Ni-Resist ring groove inserts and graphite skirt coating.',
     richDescription: `
       <p class="mb-4">KOMODO Pistons are gravity die-cast from eutectic silicon-aluminum alloy (LM13) and solution heat-treated to T6 condition for maximum tensile strength, low thermal expansion, and optimum hardness (85-110 HB).</p>
-      <p class="mb-4">Our Alfin pistons feature metallurgically bonded austenitic cast iron (Ni-Resist) inserts in the top ring groove to prevent groove pounding in turbocharged diesel engines. Oil cooling gallery pistons incorporate internal oil circulation channels to reduce crown temperatures by 30-50°C.</p>
+      <p class="mb-4">Our pistons feature metallurgically bonded austenitic cast iron (Ni-Resist) inserts in the top ring groove to prevent groove pounding in turbocharged diesel engines. Oil cooling gallery pistons incorporate internal oil circulation channels to reduce crown temperatures by 30-50°C.</p>
       <p class="mb-4">With 60+ years of export expertise, Singhal Industrial Corporation supplies pistons across 50-180mm bore sizes for light automotive, tractor, and heavy commercial diesel engines worldwide.</p>
     `,
     applications: ['Automotive Diesel Engines', 'Agricultural Tractors', 'Stationary Power Gensets', 'Light & Heavy Commercial Vehicles'],

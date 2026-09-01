@@ -171,7 +171,7 @@ export function Quote() {
                           onChange={(e) => setFormData({ ...formData, productCategory: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:border-[#D32F2F] text-xs font-medium bg-white"
                         >
-                          <option value="Pistons">Engine Pistons (Alfin / Steel Strut / Conventional)</option>
+                          <option value="Pistons">Engine Pistons (Steel Strut / Conventional)</option>
                           <option value="Cylinder Liners">Cylinder Liners (Dry / Wet / Finned)</option>
                           <option value="Custom Manufacturing">Custom Casting & CNC Machining</option>
                           <option value="Bush Pins">Precision Bush Pins & Rings</option>

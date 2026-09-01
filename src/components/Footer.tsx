@@ -66,7 +66,7 @@ export function Footer() {
               Our Products
             </h3>
             <ul className="space-y-2.5 text-xs">
-              <li><Link to="/products/pistons" className="hover:text-red-400 transition-colors flex items-center">Pistons (Alfin & Steel Strut) <ArrowRight className="w-3 h-3 ml-1 text-red-500" /></Link></li>
+              <li><Link to="/products/pistons" className="hover:text-red-400 transition-colors flex items-center">Engine Pistons <ArrowRight className="w-3 h-3 ml-1 text-red-500" /></Link></li>
               <li><Link to="/products/cylinder-liners" className="hover:text-red-400 transition-colors flex items-center">Cylinder Liners (Dry & Wet) <ArrowRight className="w-3 h-3 ml-1 text-red-500" /></Link></li>
               <li><Link to="/products/piston-rings" className="hover:text-red-400 transition-colors">Piston Rings & Pins</Link></li>
               <li><Link to="/products/bush-pins" className="hover:text-red-400 transition-colors">Precision Bush Pins</Link></li>

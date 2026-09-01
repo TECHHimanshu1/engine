@@ -13,7 +13,7 @@ const productsGrid = [
   },
   { 
     name: 'PISTONS', 
-    desc: 'Durable and efficient pistons including Alfin ring carrier and oil-cooled designs.', 
+    desc: 'Durable and efficient alloy pistons for automotive and agricultural engines.', 
     img: '/images/piston_hero.jpg', 
     path: '/products/pistons' 
   },
@@ -38,7 +38,7 @@ const productsGrid = [
 ];
 
 const showcaseProducts = [
-  { name: 'Alfin Piston Assembly', spec: 'High-strength alloy | Ni-Resist Ring Groove', img: '/images/piston_hero.jpg' },
+  { name: 'Precision Piston Assembly', spec: 'High-strength alloy | Controlled Thermal Expansion', img: '/images/piston_hero.jpg' },
   { name: 'Dry Type Cylinder Liner', spec: 'Centrifugal casting | Pearlitic Cast Iron', img: '/images/cylinder_liners.jpg' },
   { name: 'Wet Type Coolant Sleeve', spec: 'Liquid coolant contact | Anti-Cavitation hone', img: '/images/cylinder_liners.jpg' },
   { name: 'Air Brake Compressor Kit', spec: 'OEM-grade block, pistons, and rings', img: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=800' },
