@@ -58,7 +58,7 @@ export function AirCompressorKitsPage() {
 
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200">
               <img 
-                src="https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=1200" 
+                src="/images/image1.jpeg" 
                 alt="Air Brake Compressor Kit" 
                 className="w-full h-auto object-cover"
               />
