@@ -24,6 +24,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [activeLang, setActiveLang] = useState('EN');
 
   useEffect(() => {
@@ -158,26 +159,45 @@ export function Navbar() {
             <div className="px-4 pt-3 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <div key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="flex justify-between items-center px-3 py-3 text-sm font-bold text-zinc-800 hover:text-[#D34747] hover:bg-zinc-50 rounded-md"
-                    onClick={() => !link.hasDropdown && setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                  {link.hasDropdown && (
-                    <div className="pl-6 space-y-1 pb-2 border-l-2 border-red-100 ml-3">
-                      {productCategories.map((category) => (
-                        <Link
-                          key={category.name}
-                          to={category.path}
-                          className="block px-3 py-2 text-xs font-semibold text-zinc-600 hover:text-[#D34747] uppercase"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          - {category.name}
-                        </Link>
-                      ))}
+                  {link.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                        className="w-full flex justify-between items-center px-3 py-3 text-sm font-bold text-zinc-800 hover:text-[#D34747] hover:bg-zinc-50 rounded-md transition-colors"
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${mobileProductsOpen ? 'rotate-180 text-[#D34747]' : ''}`} />
+                      </button>
+                      {mobileProductsOpen && (
+                        <div className="pl-4 pr-2 space-y-1 py-2 my-1 border-l-2 border-[#D34747] ml-3 bg-zinc-50/70 rounded-r-md">
+                          <Link
+                            to="/products"
+                            className="block px-3 py-2 text-xs font-extrabold text-[#D34747] uppercase tracking-wider"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            All Products Catalog &rarr;
+                          </Link>
+                          {productCategories.map((category) => (
+                            <Link
+                              key={category.name}
+                              to={category.path}
+                              className="block px-3 py-2 text-xs font-semibold text-zinc-700 hover:text-[#D34747] uppercase tracking-wide border-b border-zinc-100 last:border-0"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {category.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="flex justify-between items-center px-3 py-3 text-sm font-bold text-zinc-800 hover:text-[#D34747] hover:bg-zinc-50 rounded-md"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
                   )}
                 </div>
               ))}
