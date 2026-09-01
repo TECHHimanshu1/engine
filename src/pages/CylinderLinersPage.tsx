@@ -70,8 +70,8 @@ export function CylinderLinersPage() {
 
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200">
               <img 
-                src="/images/cylinder_liners.jpg" 
-                alt="KOMODO Cylinder Liners" 
+                src="/images/in_cylinder_liners.jpeg" 
+                alt="Singhal Industrial Cylinder Liners" 
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">

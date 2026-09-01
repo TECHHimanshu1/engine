@@ -7,7 +7,7 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'cylinder-liners': {
     name: 'Cylinder Liners (Dry & Wet Type)',
     category: 'Engine Components',
-    image: '/images/cylinder_liners.jpg',
+    image: '/images/in_cylinder_liners.jpeg',
     description: 'High performance centrifugally cast dry, wet, and air-cooled cylinder liners with 95%+ pearlitic micro-structure.',
     richDescription: `
       <p class="mb-4">Singhal Industrial Corporation manufactures Cylinder Liners, Sleeves, and Air-Cooled Blocks to exact OE specifications or custom drawing requirements. Our expertise in alloy metallurgy and centrifugal casting delivers durable, high-performance liners built for severe thermal loads.</p>
@@ -33,7 +33,7 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'air-compressor-kits': {
     name: 'Air Brake Compressor Repair Kits',
     category: 'Braking Systems',
-    image: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/air_compressor_kits.jpeg',
     description: 'Complete overhaul repair kits including cylinder block, pistons, and piston rings for heavy-duty truck air brake compressors.',
     richDescription: `
       <p class="mb-4">Heavy-duty air brake compressors produce the pressurized air essential for safe, responsive braking in trucks, buses and trailers. Singhal Industrial Corporation manufactures complete repair kits including cylinder block, pistons, and piston rings.</p>

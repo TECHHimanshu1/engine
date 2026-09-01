@@ -17,10 +17,18 @@ const products = [
     name: 'Cylinder Liners (Dry & Wet)', 
     category: 'Engine Components', 
     shortDescription: 'Centrifugally cast grey iron cylinder liners with 95%+ pearlitic micro-structure, plateau honing, and high thermal wear resistance.', 
-    image: '/images/cylinder_liners.jpg' 
+    image: '/images/in_cylinder_liners.jpeg' 
   },
   { 
     id: '3', 
+    slug: 'air-compressor-kits', 
+    name: 'Air Brake Compressor Kits', 
+    category: 'Braking Systems', 
+    shortDescription: 'Complete repair kits including cylinder block, pistons, and piston rings for heavy-duty commercial truck air brake compressors.', 
+    image: '/images/air_compressor_kits.jpeg' 
+  },
+  { 
+    id: '4', 
     slug: 'connecting-rods', 
     name: 'Forged Steel Connecting Rods', 
     category: 'Engine Components', 
@@ -28,7 +36,7 @@ const products = [
     image: '/images/connecting_rods.jpeg' 
   },
   { 
-    id: '4', 
+    id: '5', 
     slug: 'agricultural-diesel-engines', 
     name: 'Agricultural Diesel Engine Components', 
     category: 'Agricultural Engines', 
@@ -36,7 +44,7 @@ const products = [
     image: '/images/agricultural_engines.jpeg' 
   },
   { 
-    id: '5', 
+    id: '6', 
     slug: 'valve-guides', 
     name: 'Precision Valve Guides', 
     category: 'Valve Train', 
@@ -44,7 +52,7 @@ const products = [
     image: '/images/valve_guides.jpeg' 
   },
   { 
-    id: '6', 
+    id: '7', 
     slug: 'bush-pins', 
     name: 'Precision Bush Pins', 
     category: 'Machined Parts', 
@@ -52,7 +60,7 @@ const products = [
     image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800' 
   },
   { 
-    id: '7', 
+    id: '8', 
     slug: 'piston-rings', 
     name: 'Piston Rings & Pins', 
     category: 'Engine Components', 
