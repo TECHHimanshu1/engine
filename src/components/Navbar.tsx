@@ -93,12 +93,17 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group py-1">
-              <img 
-                src="/images/logo.jpeg" 
-                alt="Singhal Industrial Corporation" 
-                className="h-11 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-[1.02]" 
-              />
+            <Link to="/" className="flex flex-col items-start group">
+              <span className="text-[10px] font-bold text-zinc-500 tracking-wider uppercase leading-none">Since {companyConfig.established}</span>
+              <div className="flex items-end">
+                <span className="text-[#D34747] font-black text-4xl md:text-5xl tracking-tighter uppercase leading-none group-hover:text-red-700 transition-colors">
+                  {companyConfig.shortName}
+                </span>
+                <span className="text-zinc-600 font-bold text-[10px] ml-0.5 mb-1">&reg;</span>
+              </div>
+              <span className="text-zinc-800 font-bold text-[9px] tracking-widest uppercase mt-0.5">
+                INDUSTRIAL CORPORATION
+              </span>
             </Link>
 
             {/* Desktop Nav */}

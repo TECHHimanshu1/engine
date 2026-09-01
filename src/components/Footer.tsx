@@ -9,12 +9,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Column 1: Brand info */}
           <div>
-            <Link to="/" className="inline-block mb-5 group">
-              <img 
-                src="/images/logo.jpeg" 
-                alt="Singhal Industrial Corporation" 
-                className="h-12 w-auto object-contain bg-white/90 p-1.5 rounded-lg border border-zinc-700/60" 
-              />
+            <Link to="/" className="flex flex-col items-start mb-5 group">
+              <span className="text-[10px] font-bold text-zinc-500 tracking-wider uppercase leading-none">Since {companyConfig.established}</span>
+              <div className="flex items-end">
+                <span className="text-[#D34747] font-black text-3xl tracking-tighter uppercase leading-none group-hover:text-red-400 transition-colors">
+                  {companyConfig.shortName}
+                </span>
+                <span className="text-zinc-500 font-bold text-[10px] ml-0.5 mb-1">&reg;</span>
+              </div>
+              <span className="text-zinc-400 font-bold text-[9px] tracking-widest mt-1 uppercase">
+                INDUSTRIAL CORPORATION
+              </span>
             </Link>
             <p className="text-xs text-zinc-400 leading-relaxed mb-6">
               {companyConfig.tagline} Manufacturer & exporter of precision pistons, cylinder liners, rings, and custom components since {companyConfig.established}.

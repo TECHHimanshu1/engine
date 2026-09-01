@@ -246,106 +246,108 @@ export function Home() {
       </section>
 
       {/* OUR BRANDS Section */}
-      <section className="py-16 md:py-20 bg-[#0F0F12] text-white border-t border-b border-zinc-800">
+      <section className="py-16 md:py-20 bg-zinc-50 border-t border-b border-zinc-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header Card */}
-          <div className="bg-[#18181C] rounded-3xl p-8 md:p-12 text-center mb-8 border border-zinc-800 shadow-xl">
-            <span className="text-zinc-400 font-extrabold text-xs tracking-widest uppercase block mb-2">
-              OUR BRANDS
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[#D34747] text-xs font-extrabold uppercase tracking-widest block mb-2">
+              Our Multi-Brand Portfolio
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-3">
-              Five brands. One manufacturer.
+            <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 mb-3 uppercase">
+              Five Brands. One Manufacturer.
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-normal">
-              Manufactured and exported by Singhal Industrial Corporation, Agra, India.
+            <p className="text-zinc-600 text-sm md:text-base">
+              Manufactured and exported worldwide by <strong>Singhal Industrial Corporation</strong>, Agra, India.
             </p>
           </div>
 
           {/* Brands Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Brand 1: KOMODO */}
-            <div className="bg-[#18181C] rounded-2xl p-6 md:p-8 border border-zinc-800/80 hover:border-zinc-700 transition-all group flex flex-col justify-between">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center space-x-3">
-                    <h3 className="text-xl md:text-2xl font-black tracking-wide text-white">KOMODO</h3>
-                    <span className="bg-emerald-950/90 text-emerald-400 border border-emerald-800/80 text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
-                      Primary Brand
-                    </span>
-                  </div>
+                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-between mb-6 group-hover:bg-red-50/30 transition-colors">
+                  <img 
+                    src="/images/logo.jpeg" 
+                    alt="KOMODO Logo" 
+                    className="h-12 w-auto object-contain max-w-[150px]" 
+                  />
+                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Primary Brand
+                  </span>
                 </div>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Premium export engine parts for trucks, buses and heavy-duty diesel engines.
+                <h3 className="text-xl font-extrabold text-zinc-900 mb-2">KOMODO</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
+                  Premium export engine parts for trucks, buses, commercial vehicles, and heavy-duty diesel engines.
                 </p>
-              </div>
-              <div className="pt-4 border-t border-zinc-800/60 flex items-center">
-                <img 
-                  src="/images/logo.jpeg" 
-                  alt="KOMODO Logo" 
-                  className="h-10 w-auto object-contain rounded bg-white/90 p-1" 
-                />
               </div>
             </div>
 
             {/* Brand 2: KAT */}
-            <div className="bg-[#18181C] rounded-2xl p-6 md:p-8 border border-zinc-800/80 hover:border-zinc-700 transition-all group flex flex-col justify-between">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <h3 className="text-xl md:text-2xl font-black tracking-wide text-white mb-3">KAT</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Heavy-duty engine components for commercial vehicles and industrial applications.
+                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-start mb-6 group-hover:bg-red-50/30 transition-colors">
+                  <img 
+                    src="/images/kat.jpeg" 
+                    alt="KAT Brand Logo" 
+                    className="h-14 w-auto object-contain max-w-[160px]" 
+                  />
+                </div>
+                <h3 className="text-xl font-extrabold text-zinc-900 mb-2">KAT</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
+                  Heavy-duty engine components engineered for commercial vehicles, tractors, and industrial applications.
                 </p>
-              </div>
-              <div className="pt-4 border-t border-zinc-800/60 flex items-center">
-                <img 
-                  src="/images/kat.jpeg" 
-                  alt="KAT Brand Logo" 
-                  className="h-12 w-auto object-contain rounded bg-white p-1" 
-                />
               </div>
             </div>
 
             {/* Brand 3: ENGLISH PETTER */}
-            <div className="bg-[#18181C] rounded-2xl p-6 md:p-8 border border-zinc-800/80 hover:border-zinc-700 transition-all group flex flex-col justify-between">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <h3 className="text-xl md:text-2xl font-black tracking-wide text-white mb-3">ENGLISH PETTER</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Components for diesel engines and agricultural machinery.
+                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-start mb-6 group-hover:bg-red-50/30 transition-colors">
+                  <img 
+                    src="/images/englishpetter.jpeg" 
+                    alt="ENGLISH PETTER Brand Logo" 
+                    className="h-14 w-auto object-contain max-w-[160px]" 
+                  />
+                </div>
+                <h3 className="text-xl font-extrabold text-zinc-900 mb-2">ENGLISH PETTER</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
+                  Precision components manufactured specifically for stationary diesel engines and agricultural machinery.
                 </p>
-              </div>
-              <div className="pt-4 border-t border-zinc-800/60 flex items-center">
-                <img 
-                  src="/images/englishpetter.jpeg" 
-                  alt="ENGLISH PETTER Brand Logo" 
-                  className="h-12 w-auto object-contain rounded bg-white p-1" 
-                />
               </div>
             </div>
 
             {/* Brand 4: INDOLAND */}
-            <div className="bg-[#18181C] rounded-2xl p-6 md:p-8 border border-zinc-800/80 hover:border-zinc-700 transition-all group flex flex-col justify-between">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <h3 className="text-xl md:text-2xl font-black tracking-wide text-white mb-3">INDOLAND</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Automotive and industrial replacement engine components.
+                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-start mb-6 group-hover:bg-red-50/30 transition-colors">
+                  <img 
+                    src="/images/indoland.jpeg" 
+                    alt="INDOLAND Brand Logo" 
+                    className="h-14 w-auto object-contain max-w-[160px]" 
+                  />
+                </div>
+                <h3 className="text-xl font-extrabold text-zinc-900 mb-2">INDOLAND</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
+                  Automotive and industrial replacement engine components for high-mileage global aftermarket applications.
                 </p>
-              </div>
-              <div className="pt-4 border-t border-zinc-800/60 flex items-center">
-                <img 
-                  src="/images/indoland.jpeg" 
-                  alt="INDOLAND Brand Logo" 
-                  className="h-12 w-auto object-contain rounded bg-white p-1" 
-                />
               </div>
             </div>
 
             {/* Brand 5: PROMAX */}
-            <div className="bg-[#18181C] rounded-2xl p-6 md:p-8 border border-zinc-800/80 hover:border-zinc-700 transition-all group flex flex-col justify-between md:col-span-2">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-2">
               <div>
-                <h3 className="text-xl md:text-2xl font-black tracking-wide text-white mb-3">PROMAX</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  Value-focused aftermarket engine parts.
+                <div className="h-20 bg-gradient-to-r from-red-50 to-zinc-50 rounded-xl border border-zinc-100 p-4 flex items-center justify-start mb-6">
+                  <div className="font-black text-2xl tracking-tighter text-[#D34747] uppercase">PROMAX</div>
+                  <span className="ml-3 bg-red-100 text-[#D34747] text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Value Aftermarket
+                  </span>
+                </div>
+                <h3 className="text-xl font-extrabold text-zinc-900 mb-2">PROMAX</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
+                  Value-focused aftermarket engine parts offering dependable performance and competitive pricing for volume buyers.
                 </p>
               </div>
             </div>
