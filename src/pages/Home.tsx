@@ -135,19 +135,19 @@ export function Home() {
       {/* Stats Banner Section */}
       <section className="py-12 md:py-16 bg-white border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#18181C] rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl border border-zinc-800">
+          <div className="bg-[#F8FAFC] rounded-3xl p-8 sm:p-12 md:p-14 shadow-sm border border-zinc-200/80">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
               
               {/* Stat 1: 60+ Years */}
               <div className="flex items-start space-x-4">
-                <div className="p-2.5 bg-emerald-500/10 text-emerald-500 rounded-xl shrink-0 mt-1">
+                <div className="p-3 bg-emerald-500/10 text-emerald-600 rounded-2xl shrink-0 mt-1">
                   <Building2 className="w-6 h-6 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-emerald-500 tracking-tight mb-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-emerald-600 tracking-tight mb-1">
                     60+
                   </div>
-                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
                     Years Manufacturing Experience
                   </div>
                 </div>
@@ -155,14 +155,14 @@ export function Home() {
 
               {/* Stat 2: 25+ Export Markets */}
               <div className="flex items-start space-x-4">
-                <div className="p-2.5 bg-blue-500/10 text-blue-500 rounded-xl shrink-0 mt-1">
+                <div className="p-3 bg-blue-500/10 text-blue-600 rounded-2xl shrink-0 mt-1">
                   <Globe className="w-6 h-6 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-500 tracking-tight mb-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 tracking-tight mb-1">
                     25+
                   </div>
-                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
                     Export Markets
                   </div>
                 </div>
@@ -170,14 +170,14 @@ export function Home() {
 
               {/* Stat 3: 3,000 Cylinder Liners / Month */}
               <div className="flex items-start space-x-4">
-                <div className="p-2.5 bg-orange-500/10 text-orange-500 rounded-xl shrink-0 mt-1">
+                <div className="p-3 bg-orange-500/10 text-orange-600 rounded-2xl shrink-0 mt-1">
                   <Package className="w-6 h-6 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 tracking-tight mb-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-600 tracking-tight mb-1">
                     3,000
                   </div>
-                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
                     Cylinder Liners / Month
                   </div>
                 </div>
@@ -185,14 +185,14 @@ export function Home() {
 
               {/* Stat 4: OEM Quality */}
               <div className="flex items-start space-x-4">
-                <div className="p-2.5 bg-purple-500/10 text-purple-500 rounded-xl shrink-0 mt-1">
+                <div className="p-3 bg-purple-500/10 text-purple-600 rounded-2xl shrink-0 mt-1">
                   <CheckCircle2 className="w-6 h-6 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-500 tracking-tight mb-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-600 tracking-tight mb-1">
                     OEM Quality
                   </div>
-                  <div className="text-zinc-300 text-sm md:text-base font-medium leading-snug">
+                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
                     Mercedes • Volvo • Cummins • MAN
                   </div>
                 </div>
