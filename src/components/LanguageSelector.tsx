@@ -18,35 +18,38 @@ export const LANGUAGES: Language[] = [
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
 ];
 
+export function setSiteLanguage(lang: Language) {
+  // Update document direction for RTL languages (Arabic / Persian)
+  if (lang.rtl) {
+    document.documentElement.dir = 'rtl';
+  } else {
+    document.documentElement.dir = 'ltr';
+  }
+
+  // Set Google Translate cookies
+  const domain = window.location.hostname;
+  const cookieValue = `/en/${lang.code}`;
+  
+  document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}`;
+  document.cookie = `googtrans=${cookieValue}; path=/`;
+
+  // Trigger translate change
+  const selectElem = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+  if (selectElem) {
+    selectElem.value = lang.code;
+    selectElem.dispatchEvent(new Event('change'));
+  }
+}
+
 export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState<Language>(LANGUAGES[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const changeLanguage = (lang: Language) => {
+  const handleLanguageSelect = (lang: Language) => {
     setCurrentLang(lang);
     setIsOpen(false);
-
-    // Update document direction for RTL languages (Arabic / Persian)
-    if (lang.rtl) {
-      document.documentElement.dir = 'rtl';
-    } else {
-      document.documentElement.dir = 'ltr';
-    }
-
-    // Set Google Translate cookies
-    const domain = window.location.hostname;
-    const cookieValue = `/en/${lang.code}`;
-    
-    document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}`;
-    document.cookie = `googtrans=${cookieValue}; path=/`;
-
-    // Trigger translate change
-    const selectElem = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (selectElem) {
-      selectElem.value = lang.code;
-      selectElem.dispatchEvent(new Event('change'));
-    }
+    setSiteLanguage(lang);
   };
 
   useEffect(() => {
@@ -66,11 +69,11 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
 
     // 2. Automatic Region / Browser Language Detection
     const browserLang = (navigator.language || (navigator as any).userLanguage || 'en').toLowerCase();
-    const primaryCode = browserLang.split('-')[0]; // Extract primary language tag (e.g. 'ar', 'es', 'ru', 'fa', 'fr')
+    const primaryCode = browserLang.split('-')[0];
 
     const detectedLang = LANGUAGES.find(l => l.code === primaryCode);
     if (detectedLang && detectedLang.code !== 'en') {
-      changeLanguage(detectedLang);
+      handleLanguageSelect(detectedLang);
     }
 
     const handleClickOutside = (e: MouseEvent) => {
@@ -113,7 +116,7 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
             return (
               <button
                 key={lang.code}
-                onClick={() => changeLanguage(lang)}
+                onClick={() => handleLanguageSelect(lang)}
                 className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-red-50 hover:text-[#D34747] transition-colors ${
                   isSelected ? 'bg-red-50/70 text-[#D34747] font-bold' : 'text-zinc-700 font-medium'
                 }`}

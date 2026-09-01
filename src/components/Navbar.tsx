@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Youtube, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { companyConfig } from '../config';
-import { LanguageSelector } from './LanguageSelector';
+import { LanguageSelector, LANGUAGES, setSiteLanguage } from './LanguageSelector';
 
 const productCategories = [
   { name: 'CYLINDER LINERS', path: '/products/cylinder-liners' },
@@ -74,6 +74,20 @@ export function Navbar() {
                 >
                   <item.icon className="w-3 h-3 fill-current stroke-none" />
                 </a>
+              ))}
+            </div>
+
+            {/* Quick Language Text Bar */}
+            <div className="flex items-center space-x-2 text-[11px] font-extrabold tracking-wider border-l border-white/30 pl-3">
+              {LANGUAGES.map((lang) => (
+                <button 
+                  key={lang.code} 
+                  onClick={() => setSiteLanguage(lang)}
+                  className="hover:text-zinc-200 uppercase transition-colors px-1 py-0.5 hover:bg-white/10 rounded"
+                  title={lang.nativeName}
+                >
+                  {lang.code.toUpperCase()}
+                </button>
               ))}
             </div>
 
