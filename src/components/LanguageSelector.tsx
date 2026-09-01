@@ -28,6 +28,14 @@ export function setSiteLanguageByCode(code: string) {
 }
 
 export function setSiteLanguage(lang: Language) {
+  // Check if target language is already active
+  const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+  const currentLangCode = match ? match[1].split('/').pop() : 'en';
+  
+  if (currentLangCode === lang.code) {
+    return;
+  }
+
   // Update document direction for RTL languages (Arabic / Persian)
   if (lang.rtl) {
     document.documentElement.dir = 'rtl';
@@ -35,22 +43,21 @@ export function setSiteLanguage(lang: Language) {
     document.documentElement.dir = 'ltr';
   }
 
-  // Set Google Translate cookies
-  const domain = window.location.hostname;
+  // Set Google Translate cookies for root domain & current path
+  const host = window.location.hostname;
   const cookieValue = `/en/${lang.code}`;
   
-  document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}`;
   document.cookie = `googtrans=${cookieValue}; path=/`;
+  document.cookie = `googtrans=${cookieValue}; path=/; domain=${host}`;
+  document.cookie = `googtrans=${cookieValue}; path=/; domain=.${host}`;
 
-  // Trigger translate change
-  const selectElem = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-  if (selectElem) {
-    selectElem.value = lang.code;
-    selectElem.dispatchEvent(new Event('change'));
-  }
-
-  // Broadcast custom event so all components sync state in real time
+  // Broadcast custom event so UI syncs
   window.dispatchEvent(new CustomEvent('appLanguageChanged', { detail: lang }));
+
+  // Automatically refresh the page to apply full translation instantly
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
 }
 
 interface LanguageSelectorProps {
