@@ -109,90 +109,88 @@ export function Home() {
         </div>
       </section>
 
-      {/* Value Props Section */}
-      <section className="py-16 bg-white border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* Combined Value Props & Performance Stats Section */}
+      <section className="py-10 md:py-14 bg-white border-b border-zinc-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          
+          {/* Top Row: Quality, Vision, Mission */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: Package, title: 'QUALITY', desc: 'Renowned for its quality and commitment to excellence' },
               { icon: Eye, title: 'VISION', desc: 'Our aim is to be a market leader in machined parts across industries' },
               { icon: Target, title: 'MISSION', desc: 'Delivering precision-engineered engine components with reliability, innovation, and partnership for long-term global success.' }
             ].map((prop, i) => (
-              <div key={i} className="flex items-start space-x-5 p-6 rounded-2xl bg-zinc-50 border border-zinc-100/80 hover:border-red-100 transition-colors">
-                <div className="p-3 bg-red-50 text-[#D32F2F] rounded-xl shrink-0">
-                  <prop.icon className="w-7 h-7 stroke-[1.75]" />
+              <div key={i} className="flex items-start space-x-4 p-5 rounded-2xl bg-[#F8FAFC] border border-zinc-200/70 hover:border-red-200 transition-colors">
+                <div className="p-2.5 bg-red-50 text-[#D34747] rounded-xl shrink-0">
+                  <prop.icon className="w-6 h-6 stroke-[1.75]" />
                 </div>
                 <div>
-                  <h3 className="font-black text-zinc-900 text-lg mb-1 tracking-wide">{prop.title}</h3>
+                  <h3 className="font-extrabold text-zinc-900 text-base mb-1 tracking-wide">{prop.title}</h3>
                   <p className="text-zinc-600 text-xs leading-relaxed">{prop.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Stats Banner Section */}
-      <section className="py-12 md:py-16 bg-white border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#F8FAFC] rounded-3xl p-8 sm:p-12 md:p-14 shadow-sm border border-zinc-200/80">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+          {/* Bottom Card: Key Performance Stats */}
+          <div className="bg-[#F8FAFC] rounded-2xl p-6 sm:p-8 md:p-10 border border-zinc-200/70">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               
               {/* Stat 1: 60+ Years */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-emerald-500/10 text-emerald-600 rounded-2xl shrink-0 mt-1">
-                  <Building2 className="w-6 h-6 stroke-[2]" />
+              <div className="flex items-start space-x-3.5">
+                <div className="p-2.5 bg-emerald-500/10 text-emerald-600 rounded-xl shrink-0 mt-0.5">
+                  <Building2 className="w-5 h-5 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-emerald-600 tracking-tight mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-emerald-600 tracking-tight mb-0.5">
                     60+
                   </div>
-                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
+                  <div className="text-zinc-700 text-xs md:text-sm font-semibold leading-snug">
                     Years Manufacturing Experience
                   </div>
                 </div>
               </div>
 
               {/* Stat 2: 25+ Export Markets */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-blue-500/10 text-blue-600 rounded-2xl shrink-0 mt-1">
-                  <Globe className="w-6 h-6 stroke-[2]" />
+              <div className="flex items-start space-x-3.5">
+                <div className="p-2.5 bg-blue-500/10 text-blue-600 rounded-xl shrink-0 mt-0.5">
+                  <Globe className="w-5 h-5 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 tracking-tight mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 tracking-tight mb-0.5">
                     25+
                   </div>
-                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
+                  <div className="text-zinc-700 text-xs md:text-sm font-semibold leading-snug">
                     Export Markets
                   </div>
                 </div>
               </div>
 
               {/* Stat 3: 3,000 Cylinder Liners / Month */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-orange-500/10 text-orange-600 rounded-2xl shrink-0 mt-1">
-                  <Package className="w-6 h-6 stroke-[2]" />
+              <div className="flex items-start space-x-3.5">
+                <div className="p-2.5 bg-orange-500/10 text-orange-600 rounded-xl shrink-0 mt-0.5">
+                  <Package className="w-5 h-5 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-600 tracking-tight mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-orange-600 tracking-tight mb-0.5">
                     3,000
                   </div>
-                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
+                  <div className="text-zinc-700 text-xs md:text-sm font-semibold leading-snug">
                     Cylinder Liners / Month
                   </div>
                 </div>
               </div>
 
               {/* Stat 4: OEM Quality */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-purple-500/10 text-purple-600 rounded-2xl shrink-0 mt-1">
-                  <CheckCircle2 className="w-6 h-6 stroke-[2]" />
+              <div className="flex items-start space-x-3.5">
+                <div className="p-2.5 bg-purple-500/10 text-purple-600 rounded-xl shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-5 h-5 stroke-[2]" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-600 tracking-tight mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-purple-600 tracking-tight mb-0.5">
                     OEM Quality
                   </div>
-                  <div className="text-zinc-700 text-sm md:text-base font-semibold leading-snug">
+                  <div className="text-zinc-700 text-xs md:text-sm font-semibold leading-snug">
                     Mercedes • Volvo • Cummins • MAN
                   </div>
                 </div>
@@ -200,6 +198,7 @@ export function Home() {
 
             </div>
           </div>
+
         </div>
       </section>
 
