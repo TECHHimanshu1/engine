@@ -1,4 +1,4 @@
-import { Award, CheckCircle2, ArrowRight, ShieldCheck, Building2, Target } from 'lucide-react';
+import { Award, CheckCircle2, ArrowRight, ShieldCheck, Building2, Target, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
 
@@ -53,6 +53,24 @@ export function About() {
                 <p className="font-bold text-[#D32F2F]">
                   We strongly believe that quality is never an accident—it is the result of disciplined processes, continuous improvement, technical expertise, and an uncompromising commitment to excellence.
                 </p>
+              </div>
+
+              {/* Global Reach Map Section */}
+              <div className="my-10 bg-zinc-50 rounded-3xl p-6 md:p-8 border border-zinc-200/80 shadow-sm">
+                <div className="flex items-center space-x-3 mb-3">
+                  <Globe className="w-6 h-6 text-[#D32F2F]" />
+                  <h3 className="text-xl font-extrabold text-zinc-900">Global Export Network & Presence</h3>
+                </div>
+                <p className="text-zinc-600 text-sm mb-6">
+                  Serving automotive OEMs, commercial fleets, and agricultural aftermarket distributors across 25+ international markets worldwide.
+                </p>
+                <div className="rounded-2xl overflow-hidden bg-white border border-zinc-200 p-3 shadow-sm">
+                  <img 
+                    src="/images/map.png" 
+                    alt="Singhal Industrial Corporation Global Export Reach Map" 
+                    className="w-full h-auto object-contain rounded-xl"
+                  />
+                </div>
               </div>
 
               <p>
