@@ -20,19 +20,19 @@ const productsGrid = [
   { 
     name: 'AIR BRAKE COMPRESSOR KITS', 
     desc: 'Complete repair kits including cylinder block, pistons, and piston rings for heavy-duty braking systems.', 
-    img: '/images/image1.jpeg', 
+    img: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=800', 
     path: '/products/air-compressor-kits' 
   },
   { 
     name: 'VALVES', 
     desc: 'Engineered engine intake and exhaust valves built for high temperature wear resistance and performance.', 
-    img: '/images/image2.jpeg', 
+    img: 'https://images.unsplash.com/photo-1498887960847-2a5e46312788?auto=format&fit=crop&q=80&w=800', 
     path: '/products/valves' 
   },
   { 
     name: 'POWER GENSETS', 
     desc: 'Reliable stationary power generation solutions and diesel generator components.', 
-    img: '/images/image1.jpeg', 
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800', 
     path: '/products/power-gensets' 
   }
 ];
@@ -41,8 +41,8 @@ const showcaseProducts = [
   { name: 'Precision Piston Assembly', spec: 'High-strength alloy | Controlled Thermal Expansion', img: '/images/piston_hero.jpg' },
   { name: 'Dry Type Cylinder Liner', spec: 'Centrifugal casting | Pearlitic Cast Iron', img: '/images/cylinder_liners.jpg' },
   { name: 'Wet Type Coolant Sleeve', spec: 'Liquid coolant contact | Anti-Cavitation hone', img: '/images/cylinder_liners.jpg' },
-  { name: 'Air Brake Compressor Kit', spec: 'OEM-grade block, pistons, and rings', img: '/images/image1.jpeg' },
-  { name: 'Engine Valves', spec: 'Precision ground intake and exhaust valves', img: '/images/image2.jpeg' },
+  { name: 'Air Brake Compressor Kit', spec: 'OEM-grade block, pistons, and rings', img: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=800' },
+  { name: 'Engine Valves', spec: 'Precision ground intake and exhaust valves', img: 'https://images.unsplash.com/photo-1498887960847-2a5e46312788?auto=format&fit=crop&q=80&w=800' },
 ];
 
 const faqs = [

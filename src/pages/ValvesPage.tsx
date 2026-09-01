@@ -24,29 +24,16 @@ export function ValvesPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 text-zinc-700 leading-relaxed text-sm">
-              <span className="text-[#D34747] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                High Temperature Metallurgical Precision
-              </span>
-              <h2 className="text-3xl font-extrabold text-zinc-900 mb-4">Precision Engine Valves & Valve Guides</h2>
-              <p>
-                Singhal Industrial Corporation manufactures and supplies a comprehensive range of Engine Valves and Valve Guides for automotive, commercial vehicle, and agricultural diesel engines.
-              </p>
-              <p>
-                Our valves undergo friction welding of valve stems, hard chrome plating, and seat stellite facing for extreme operating temperatures and wear resistance under continuous load.
-              </p>
-            </div>
-
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-zinc-200">
-              <img 
-                src="/images/image2.jpeg" 
-                alt="Precision Engine Valves" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          <div className="max-w-3xl space-y-6 text-zinc-700 leading-relaxed text-sm">
+            <h2 className="text-3xl font-extrabold text-zinc-900 mb-4">Precision Engine Valves & Valve Guides</h2>
+            <p>
+              Singhal Industrial Corporation manufactures and supplies a comprehensive range of Engine Valves and Valve Guides for automotive, commercial vehicle, and agricultural diesel engines.
+            </p>
+            <p>
+              Our valves undergo friction welding of valve stems, hard chrome plating, and seat stellite facing for extreme operating temperatures and wear resistance under continuous load.
+            </p>
           </div>
         </div>
       </section>
