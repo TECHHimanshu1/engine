@@ -64,9 +64,10 @@ interface LanguageSelectorProps {
   isMobile?: boolean;
   currentCode?: string;
   onSelect?: (code: string) => void;
+  align?: 'left' | 'right';
 }
 
-export function LanguageSelector({ isMobile = false, currentCode, onSelect }: LanguageSelectorProps) {
+export function LanguageSelector({ isMobile = false, currentCode, onSelect, align = 'left' }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState<Language>(LANGUAGES[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -153,8 +154,8 @@ export function LanguageSelector({ isMobile = false, currentCode, onSelect }: La
       </button>
 
       {isOpen && (
-        <div className={`absolute z-50 mt-2 w-48 rounded-xl bg-white shadow-2xl border border-zinc-200 py-1.5 ring-1 ring-black/5 ${
-          isMobile ? 'left-0 right-0 w-full' : 'right-0'
+        <div className={`absolute z-[100] mt-2 w-48 rounded-xl bg-white shadow-2xl border border-zinc-200 py-1.5 ring-1 ring-black/5 ${
+          isMobile ? 'left-0 right-0 w-full' : align === 'left' ? 'left-0' : 'right-0'
         }`}>
           <div className="px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 border-b border-zinc-100 mb-1">
             Select Language

@@ -68,27 +68,32 @@ export function Navbar() {
   return (
     <>
       {/* Top Red Bar */}
-      <div className="bg-[#D34747] text-white py-1.5 sm:py-2 z-50 relative border-b border-red-600 max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 flex items-center justify-between text-xs gap-1.5 sm:gap-4">
+      <div className="bg-[#D34747] text-white py-1.5 sm:py-2 z-[60] relative border-b border-red-600 max-w-full overflow-visible">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 flex items-center justify-between text-xs gap-1.5 sm:gap-4 overflow-visible">
           
           {/* Left Side: Language Controls */}
-          <div className="flex items-center space-x-2 sm:space-x-3 text-[10px] sm:text-[11px] font-bold tracking-wider overflow-x-auto no-scrollbar py-0.5 whitespace-nowrap shrink max-w-[72vw] sm:max-w-none">
-            {['EN', 'AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
-              <button 
-                key={lang} 
-                onClick={() => {
-                  setActiveLang(lang);
-                  setSiteLanguageByCode(lang.toLowerCase());
-                }}
-                className={`hover:text-zinc-200 transition-colors shrink-0 ${
-                  activeLang === lang ? 'underline font-extrabold text-white' : 'text-white/90'
-                }`}
-              >
-                {lang}
-              </button>
-            ))}
-            <div className="ml-1 sm:ml-2 border-l border-white/40 pl-1.5 sm:pl-2.5 shrink-0">
-              <LanguageSelector />
+          <div className="flex items-center space-x-2 sm:space-x-3 text-[10px] sm:text-[11px] font-bold tracking-wider shrink max-w-full overflow-visible">
+            {/* Scrollable text shortcuts */}
+            <div className="flex items-center space-x-2 sm:space-x-3 overflow-x-auto no-scrollbar py-0.5 whitespace-nowrap max-w-[48vw] sm:max-w-none">
+              {['EN', 'AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
+                <button 
+                  key={lang} 
+                  onClick={() => {
+                    setActiveLang(lang);
+                    setSiteLanguageByCode(lang.toLowerCase());
+                  }}
+                  className={`hover:text-zinc-200 transition-colors shrink-0 ${
+                    activeLang === lang ? 'underline font-extrabold text-white' : 'text-white/90'
+                  }`}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
+
+            {/* Language Selector Dropdown (Unclipped container) */}
+            <div className="ml-1 sm:ml-2 border-l border-white/40 pl-1.5 sm:pl-2.5 shrink-0 relative z-[70]">
+              <LanguageSelector align="left" />
             </div>
           </div>
 
