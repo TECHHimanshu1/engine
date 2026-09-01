@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, Award } from 'lucide-react';
 import { companyConfig } from '../config';
@@ -146,12 +147,18 @@ const STATIC_PRODUCTS: Record<string, any> = {
     name: 'Agricultural Diesel Engine Components',
     category: 'Agricultural Engines',
     image: '/images/agricultural_engines.jpeg',
+    gallery: [
+      '/images/agricultural_engines.jpeg',
+      '/images/agricultural_engines_1.jpeg',
+      '/images/agricultural_engines_2.jpeg'
+    ],
     description: 'Heavy duty replacement spare parts for 1 to 4 cylinder agricultural tractors and pump engines.',
     richDescription: `
-      <p class="mb-4">Complete range of spare parts for agricultural water pump engines and tractor diesel engines.</p>
+      <p class="mb-4">Singhal Industrial Corporation produces a complete range of heavy-duty replacement spare parts and engine assemblies for agricultural water pump engines, diesel generators, and agricultural tractors.</p>
+      <p class="mb-4">Our agricultural diesel engine components are manufactured from premium pearlitic cast iron and eutectic aluminum alloys, designed for continuous high-torque field operation under severe dust, heat, and load conditions.</p>
     `,
-    applications: ['Agricultural Pumps', 'Tractors', 'Field Generators'],
-    materials: ['Pearlitic Cast Iron', 'LM13 Aluminum Alloy']
+    applications: ['Agricultural Water Pumps', 'Field Diesel Generators', 'Single & Multi-Cylinder Tractors', 'Stationary Power Units'],
+    materials: ['Pearlitic Grey Cast Iron (>95% Pearlite)', 'LM13 Eutectic Aluminum Alloy', 'Case Hardened Forged Steel']
   },
   'power-gensets': {
     name: 'Power Gensets & Stationary Engines',
@@ -168,9 +175,14 @@ const STATIC_PRODUCTS: Record<string, any> = {
 
 export function ProductDetail() {
   const { slug } = useParams();
-  
-  // Try to find in our static detailed list, otherwise fallback to generic entry
   const product = slug ? STATIC_PRODUCTS[slug] : null;
+  const [activeImage, setActiveImage] = useState<string>('');
+
+  useEffect(() => {
+    if (product) {
+      setActiveImage(product.image);
+    }
+  }, [product]);
 
   if (!product) {
     return (
@@ -178,7 +190,7 @@ export function ProductDetail() {
         <h1 className="text-3xl font-extrabold text-zinc-900 mb-4">Product Category Catalog</h1>
         <p className="text-zinc-600 mb-8 max-w-md">Contact Singhal Industrial Corporation for custom OEM manufacturing or catalog specifications.</p>
         <div className="flex space-x-4">
-          <Link to="/products" className="px-6 py-3 bg-[#D32F2F] text-white font-bold text-xs uppercase tracking-wider rounded-md">
+          <Link to="/products" className="px-6 py-3 bg-[#D34747] text-white font-bold text-xs uppercase tracking-wider rounded-md">
             Return to Products
           </Link>
           <Link to="/quote" className="px-6 py-3 bg-zinc-900 text-white font-bold text-xs uppercase tracking-wider rounded-md">
@@ -193,19 +205,41 @@ export function ProductDetail() {
     <div className="w-full pt-20 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <Link to="/products" className="inline-flex items-center text-xs font-bold text-zinc-500 hover:text-[#D32F2F] transition-colors mb-8 uppercase tracking-wider">
+        <Link to="/products" className="inline-flex items-center text-xs font-bold text-zinc-500 hover:text-[#D34747] transition-colors mb-8 uppercase tracking-wider">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Catalog
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Image */}
-          <div className="relative h-[380px] lg:h-[500px] rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200 p-6 flex items-center justify-center shadow-lg">
-            <img 
-              src={product.image} 
-              alt={product.name}
-              className="w-full h-full object-contain rounded-2xl"
-            />
+          {/* Image & Gallery */}
+          <div className="space-y-4">
+            <div className="relative h-[380px] lg:h-[480px] rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200 p-6 flex items-center justify-center shadow-lg">
+              <img 
+                src={activeImage || product.image} 
+                alt={product.name}
+                className="w-full h-full object-contain rounded-2xl transition-all duration-300"
+              />
+            </div>
+
+            {/* Thumbnail Gallery */}
+            {product.gallery && product.gallery.length > 1 && (
+              <div className="flex items-center space-x-3 overflow-x-auto pb-2">
+                {product.gallery.map((imgUrl: string, idx: number) => {
+                  const isSelected = (activeImage || product.image) === imgUrl;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImage(imgUrl)}
+                      className={`relative w-20 h-20 rounded-2xl overflow-hidden border-2 bg-white p-1 transition-all shrink-0 ${
+                        isSelected ? 'border-[#D34747] ring-2 ring-red-100 shadow-md' : 'border-zinc-200 opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      <img src={imgUrl} alt={`${product.name} view ${idx + 1}`} className="w-full h-full object-contain" />
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Details */}
