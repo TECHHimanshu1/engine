@@ -51,7 +51,7 @@ export function Quote() {
                   Direct Communication
                 </span>
                 <h2 className="text-2xl font-extrabold text-zinc-900 mb-6">
-                  Tracko International Office
+                  Singhal Industrial Corporation Sales Office
                 </h2>
                 <p className="text-zinc-600 text-xs leading-relaxed mb-6">
                   Our sales and engineering offices in Agra are available Monday through Saturday to discuss your engine part needs.
@@ -109,7 +109,7 @@ export function Quote() {
                     <CheckCircle2 className="w-12 h-12 text-[#D32F2F] mx-auto mb-4" />
                     <h4 className="text-xl font-extrabold text-zinc-900 mb-2">Thank You for Reaching Out!</h4>
                     <p className="text-zinc-600 text-xs leading-relaxed max-w-md mx-auto">
-                      Your inquiry has been received by Tracko International. Our sales engineering team at <strong>{companyConfig.email}</strong> will review your request and contact you shortly.
+                      Your inquiry has been received by Singhal Industrial Corporation. Our sales engineering team at <strong>{companyConfig.email}</strong> will review your request and contact you shortly.
                     </p>
                   </div>
                 ) : (

@@ -104,7 +104,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500">
-          <p>Copyright &copy; 2025 Tracko Internationals. All Rights Reserved. ISO 9001:2015 Certified.</p>
+          <p>Copyright &copy; 2025 Singhal Industrial Corporation. All Rights Reserved. ISO 9001:2015 Certified.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-zinc-400 transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-zinc-400 transition-colors">Terms of Service</Link>

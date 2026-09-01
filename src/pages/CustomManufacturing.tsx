@@ -26,7 +26,7 @@ export function CustomManufacturing() {
               Custom Manufacturing & OEM Branding
             </h1>
             <p className="text-zinc-300 text-lg leading-relaxed mb-8">
-              Tracko International specializes in custom engine part development according to sample components or CAD technical drawings.
+              Singhal Industrial Corporation specializes in custom engine part development according to sample components or CAD technical drawings.
             </p>
             <Link to="/quote" className="px-6 py-3 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors shadow-lg inline-block">
               Submit Custom Inquiry
@@ -76,7 +76,7 @@ export function CustomManufacturing() {
                 Custom OEM Packaging & Laser Marking
               </h2>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4">
-                We understand that brand identity is crucial for global distributors. Tracko provides full private-label packaging support:
+                We understand that brand identity is crucial for global distributors. Singhal Industrial Corporation provides full private-label packaging support:
               </p>
               <ul className="space-y-3 mb-8">
                 {[

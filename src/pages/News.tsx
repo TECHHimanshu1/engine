@@ -9,7 +9,7 @@ const articles = [
     date: "1 August 2025",
     readTime: "5 min read",
     title: "Oversized Pistons Explained: When Your Engine Needs Them and Why They Boost Performance",
-    summary: "When engine cylinders wear down or become scored over time, standard pistons lose compression. Learn how reboring cylinders to oversized diameters (+0.25mm, +0.50mm, +1.00mm) paired with Tracko precision oversized pistons restores engine power, compression ratio, and thermal efficiency.",
+    summary: "When engine cylinders wear down or become scored over time, standard pistons lose compression. Learn how reboring cylinders to oversized diameters (+0.25mm, +0.50mm, +1.00mm) paired with Singhal Industrial precision oversized pistons restores engine power, compression ratio, and thermal efficiency.",
     img: "https://images.unsplash.com/photo-1632731149791-238d21c3b177?auto=format&fit=crop&q=80&w=800",
     content: "Engine reconditioning often requires cylinder reboring after high mileage or severe operating wear. Installing precision oversized pistons (+0.25mm to +1.00mm) eliminates blow-by gases, restores cylinder wall oil film retention, and ensures proper compression seal."
   },
@@ -19,7 +19,7 @@ const articles = [
     date: "30 March 2025",
     readTime: "7 min read",
     title: "The Role of High-Quality Auto Parts in Engine Performance & Operating Life",
-    summary: "High-temperature combustion chambers demand unyielding metallurgical standards. Discover how Tracko's 95%+ pearlitic cast iron cylinder liners and Alfin ring carrier pistons withstand extreme friction, thermal expansion, and peak cylinder pressures in commercial diesel engines.",
+    summary: "High-temperature combustion chambers demand unyielding metallurgical standards. Discover how Singhal Industrial's 95%+ pearlitic cast iron cylinder liners and ring carrier pistons withstand extreme friction, thermal expansion, and peak cylinder pressures in commercial diesel engines.",
     img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
     content: "Substandard alloy compositions lead to premature ring groove failure, piston scuffing, and liner cavitation. Utilizing ISO 9001 certified components guarantees microstructural integrity and long service life."
   }

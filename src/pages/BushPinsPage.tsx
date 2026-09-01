@@ -32,7 +32,7 @@ export function BushPinsPage() {
               <span className="text-[#D32F2F] text-xs font-bold uppercase tracking-widest block mb-2">Technical Rigor</span>
               <h2 className="text-3xl font-extrabold text-zinc-900 mb-6">Engineered for High-Load Mechanical Wear</h2>
               <p className="text-zinc-600 leading-relaxed mb-4">
-                Tracko bush pins are produced from alloy steel and brass stock, undergoing case hardening (58-62 HRC) and precision centerless grinding.
+                Singhal Industrial bush pins are produced from alloy steel and brass stock, undergoing case hardening (58-62 HRC) and precision centerless grinding.
               </p>
               <ul className="space-y-3">
                 {["High-frequency induction hardening", "Precision cylindrical tolerance within ±0.003mm", "100% surface crack detection & micro-hardness testing"].map((item, idx) => (
