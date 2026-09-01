@@ -33,7 +33,28 @@ export function Navbar() {
       setScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const handleGlobalLangChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ code: string }>;
+      if (customEvent.detail && customEvent.detail.code) {
+        setActiveLang(customEvent.detail.code.toUpperCase());
+      }
+    };
+    window.addEventListener('appLanguageChanged', handleGlobalLangChange);
+
+    // Check saved cookie preference for initial active code
+    const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+    if (match) {
+      const langCode = match[1].split('/').pop();
+      if (langCode) {
+        setActiveLang(langCode.toUpperCase());
+      }
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('appLanguageChanged', handleGlobalLangChange);
+    };
   }, []);
 
   const navLinks = [

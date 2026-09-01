@@ -48,9 +48,18 @@ export function setSiteLanguage(lang: Language) {
     selectElem.value = lang.code;
     selectElem.dispatchEvent(new Event('change'));
   }
+
+  // Broadcast custom event so all components sync state in real time
+  window.dispatchEvent(new CustomEvent('appLanguageChanged', { detail: lang }));
 }
 
-export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
+interface LanguageSelectorProps {
+  isMobile?: boolean;
+  currentCode?: string;
+  onSelect?: (code: string) => void;
+}
+
+export function LanguageSelector({ isMobile = false, currentCode, onSelect }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState<Language>(LANGUAGES[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -58,10 +67,30 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
   const handleLanguageSelect = (lang: Language) => {
     setCurrentLang(lang);
     setIsOpen(false);
+    if (onSelect) {
+      onSelect(lang.code.toUpperCase());
+    }
     setSiteLanguage(lang);
   };
 
   useEffect(() => {
+    // Sync if currentCode prop passed
+    if (currentCode) {
+      const found = LANGUAGES.find(l => l.code.toLowerCase() === currentCode.toLowerCase());
+      if (found && found.code !== currentLang.code) {
+        setCurrentLang(found);
+      }
+    }
+
+    // Listen to window-wide language changes
+    const handleGlobalLangChange = (e: Event) => {
+      const customEvent = e as CustomEvent<Language>;
+      if (customEvent.detail) {
+        setCurrentLang(customEvent.detail);
+      }
+    };
+    window.addEventListener('appLanguageChanged', handleGlobalLangChange);
+
     // 1. Check saved cookie preference
     const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
     if (match) {
@@ -72,17 +101,16 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
         if (found.rtl) {
           document.documentElement.dir = 'rtl';
         }
-        return;
       }
-    }
+    } else {
+      // 2. Automatic Region / Browser Language Detection
+      const browserLang = (navigator.language || (navigator as any).userLanguage || 'en').toLowerCase();
+      const primaryCode = browserLang.split('-')[0];
 
-    // 2. Automatic Region / Browser Language Detection
-    const browserLang = (navigator.language || (navigator as any).userLanguage || 'en').toLowerCase();
-    const primaryCode = browserLang.split('-')[0];
-
-    const detectedLang = LANGUAGES.find(l => l.code === primaryCode);
-    if (detectedLang && detectedLang.code !== 'en') {
-      handleLanguageSelect(detectedLang);
+      const detectedLang = LANGUAGES.find(l => l.code === primaryCode);
+      if (detectedLang && detectedLang.code !== 'en') {
+        handleLanguageSelect(detectedLang);
+      }
     }
 
     const handleClickOutside = (e: MouseEvent) => {
@@ -91,8 +119,12 @@ export function LanguageSelector({ isMobile = false }: { isMobile?: boolean }) {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+
+    return () => {
+      window.removeEventListener('appLanguageChanged', handleGlobalLangChange);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [currentCode]);
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
