@@ -69,13 +69,13 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'valve-guides': {
     name: 'Precision Valve Guides',
     category: 'Valve Train',
-    image: 'https://images.unsplash.com/photo-1498887960847-2a5e46312788?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/valve_guides.jpeg',
     description: 'Pearlitic cast iron and bronze alloy valve guides for thermal conductivity and low valve stem wear.',
     richDescription: `
-      <p class="mb-4">KOMODO Valve Guides are centrifugally cast from high-phosphorus grey iron or sintered bronze for superior thermal dissipation and stem lubrication.</p>
+      <p class="mb-4">Singhal Industrial Corporation Valve Guides are centrifugally cast from high-phosphorus grey iron or sintered bronze for superior thermal dissipation and stem lubrication.</p>
     `,
-    applications: ['Automotive & Tractor Engines', 'Industrial Power Gensets'],
-    materials: ['Pearlitic Cast Iron', 'Sintered Bronze']
+    applications: ['Automotive & Tractor Engines', 'Industrial Power Gensets', 'Commercial Heavy Diesel Vehicles'],
+    materials: ['Pearlitic Grey Cast Iron', 'Sintered Bronze Alloy']
   },
   'engine-bearings': {
     name: 'Engine Bearings & Bushings',

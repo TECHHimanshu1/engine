@@ -37,6 +37,14 @@ const products = [
   },
   { 
     id: '5', 
+    slug: 'valve-guides', 
+    name: 'Precision Valve Guides', 
+    category: 'Valve Train', 
+    shortDescription: 'Pearlitic cast iron and sintered bronze alloy valve guides for optimal thermal conductivity, lubrication retention, and low valve stem wear.', 
+    image: '/images/valve_guides.jpeg' 
+  },
+  { 
+    id: '6', 
     slug: 'bush-pins', 
     name: 'Precision Bush Pins', 
     category: 'Machined Parts', 
@@ -44,7 +52,7 @@ const products = [
     image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800' 
   },
   { 
-    id: '6', 
+    id: '7', 
     slug: 'piston-rings', 
     name: 'Piston Rings & Pins', 
     category: 'Engine Components', 
