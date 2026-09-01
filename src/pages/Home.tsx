@@ -273,7 +273,7 @@ export function Home() {
                     Primary Brand
                   </span>
                   <img 
-                    src="/images/logo.jpeg" 
+                    src="/images/komodo_logo.jpeg" 
                     alt="KOMODO Logo" 
                     className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" 
                   />
@@ -340,9 +340,6 @@ export function Home() {
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-2">
               <div>
                 <div className="h-40 md:h-44 bg-white rounded-2xl border border-zinc-200 p-4 flex items-center justify-center relative mb-6 shadow-sm overflow-hidden">
-                  <span className="absolute top-3 right-3 bg-red-100 text-[#D34747] text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
-                    Value Aftermarket
-                  </span>
                   <img 
                     src="/images/promax.jpeg" 
                     alt="PROMAX Brand Logo" 
