@@ -68,11 +68,11 @@ export function Navbar() {
   return (
     <>
       {/* Top Red Bar */}
-      <div className="bg-[#D34747] text-white py-2 z-50 relative border-b border-red-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs">
+      <div className="bg-[#D34747] text-white py-1.5 sm:py-2 z-50 relative border-b border-red-600 max-w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 flex items-center justify-between text-xs gap-1.5 sm:gap-4">
           
           {/* Left Side: Language Controls */}
-          <div className="flex items-center space-x-3 text-[11px] font-bold tracking-wider">
+          <div className="flex items-center space-x-2 sm:space-x-3 text-[10px] sm:text-[11px] font-bold tracking-wider overflow-x-auto no-scrollbar py-0.5 whitespace-nowrap shrink max-w-[72vw] sm:max-w-none">
             {['EN', 'AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
               <button 
                 key={lang} 
@@ -80,20 +80,20 @@ export function Navbar() {
                   setActiveLang(lang);
                   setSiteLanguageByCode(lang.toLowerCase());
                 }}
-                className={`hover:text-zinc-200 transition-colors ${
-                  activeLang === lang ? 'underline font-extrabold' : ''
+                className={`hover:text-zinc-200 transition-colors shrink-0 ${
+                  activeLang === lang ? 'underline font-extrabold text-white' : 'text-white/90'
                 }`}
               >
                 {lang}
               </button>
             ))}
-            <div className="ml-2 border-l border-white/40 pl-2.5">
+            <div className="ml-1 sm:ml-2 border-l border-white/40 pl-1.5 sm:pl-2.5 shrink-0">
               <LanguageSelector />
             </div>
           </div>
 
           {/* Right Side: Social Media Icons */}
-          <div className="flex items-center space-x-1.5">
+          <div className="flex items-center space-x-1 sm:space-x-1.5 shrink-0">
             {[
               { icon: Facebook, href: companyConfig.social.facebook },
               { icon: Twitter, href: companyConfig.social.twitter },
@@ -108,7 +108,7 @@ export function Navbar() {
                 rel="noreferrer"
                 className="bg-white text-[#D34747] p-1 rounded-sm hover:bg-zinc-100 transition-colors"
               >
-                <item.icon className="w-3 h-3 fill-current stroke-none" />
+                <item.icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-current stroke-none" />
               </a>
             ))}
           </div>

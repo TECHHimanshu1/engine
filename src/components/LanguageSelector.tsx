@@ -138,16 +138,16 @@ export function LanguageSelector({ isMobile = false, currentCode, onSelect }: La
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`inline-flex items-center space-x-2 rounded-lg font-medium transition-all ${
+        className={`inline-flex items-center space-x-1.5 rounded-lg font-medium transition-all ${
           isMobile
             ? 'w-full px-4 py-2.5 bg-zinc-800 text-zinc-200 border border-zinc-700 text-sm justify-between'
-            : 'px-3 py-1.5 bg-zinc-100 hover:bg-zinc-200/80 text-zinc-800 border border-zinc-200 text-xs shadow-sm'
+            : 'px-2 py-1 sm:px-3 sm:py-1.5 bg-zinc-100 hover:bg-zinc-200/80 text-zinc-800 border border-zinc-200 text-[11px] sm:text-xs shadow-sm'
         }`}
       >
-        <div className="flex items-center space-x-2">
-          <Globe className="w-4 h-4 text-red-600 shrink-0" />
-          <span className="text-base leading-none">{currentLang.flag}</span>
-          <span className="font-bold tracking-tight">{currentLang.nativeName}</span>
+        <div className="flex items-center space-x-1.5">
+          <Globe className="w-3.5 h-3.5 text-red-600 shrink-0" />
+          <span className="text-sm sm:text-base leading-none">{currentLang.flag}</span>
+          <span className="font-bold tracking-tight text-[11px] sm:text-xs">{currentLang.nativeName}</span>
         </div>
         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 text-zinc-500 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
