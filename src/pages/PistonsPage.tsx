@@ -26,10 +26,10 @@ export function PistonsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <span className="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-              <Award className="w-4 h-4 mr-1" /> KOMODO Engine Parts
+              <Award className="w-4 h-4 mr-1" /> Singhal Industrial Corporation
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-              KOMODO Precision Pistons
+              Singhal Precision Pistons
             </h1>
             <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8">
               Engineered from high-strength alloys for automotive, commercial vehicle, and agricultural engines worldwide.

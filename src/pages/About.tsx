@@ -38,7 +38,7 @@ export function About() {
               </p>
 
               <p>
-                Our aftermarket brand, <strong>KOMODO Engine Parts</strong>, represents our commitment to delivering reliable, high-performance engine components for a wide range of automotive, commercial vehicle, and agricultural applications.
+                Singhal Industrial Corporation is committed to delivering reliable, high-performance engine components for a wide range of automotive, commercial vehicle, and agricultural applications.
               </p>
 
               <p>
@@ -100,7 +100,7 @@ export function About() {
                 <h3 className="font-black text-xl text-zinc-900 mb-1 uppercase">Singhal Industrial Corporation</h3>
                 <div className="text-xs font-bold text-[#D32F2F] uppercase tracking-wider mb-4">Established 1966 | Agra, India</div>
                 <div className="p-4 rounded-xl bg-white border border-zinc-200 text-xs font-bold text-zinc-800">
-                  KOMODO Engine Parts<br/>
+                  Singhal Industrial Corporation<br/>
                   <span className="text-zinc-500 font-normal">Built for Performance. Trusted for Quality.</span>
                 </div>
               </div>

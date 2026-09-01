@@ -1,7 +1,7 @@
 export const companyConfig = {
   name: "Singhal Industrial Corporation",
-  shortName: "KOMODO",
-  brandName: "KOMODO Engine Parts",
+  shortName: "SINGHAL",
+  brandName: "Singhal Industrial Corporation",
   tagline: "Your trusted partner for high quality auto and agricultural spare parts.",
   subtitle: "Manufacturer of Cylinder Liners, Pistons & Engine Valves. We are one of the leading engine parts manufacturers & exporters, serving automotive OEMs and aftermarket customers around the world with decades of excellence in customer service.",
   email: "sales@indiasparepart.com",
@@ -21,5 +21,3 @@ export const companyConfig = {
     youtube: "https://youtube.com"
   }
 };
-
-

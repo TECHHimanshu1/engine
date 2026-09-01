@@ -101,8 +101,8 @@ export function Navbar() {
                 </span>
                 <span className="text-zinc-600 font-bold text-[10px] ml-0.5 mb-1">&reg;</span>
               </div>
-              <span className="text-zinc-800 font-bold text-[10px] tracking-widest uppercase mt-0.5">
-                ENGINE PARTS
+              <span className="text-zinc-800 font-bold text-[9px] tracking-widest uppercase mt-0.5">
+                INDUSTRIAL CORPORATION
               </span>
             </Link>
 
