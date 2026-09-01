@@ -263,20 +263,20 @@ export function Home() {
           </div>
 
           {/* Brands Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Brand 1: KOMODO */}
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-between mb-6 group-hover:bg-red-50/30 transition-colors">
+                <div className="h-32 md:h-36 bg-zinc-50 rounded-2xl border border-zinc-200/70 p-4 flex items-center justify-center relative mb-6 group-hover:bg-red-50/20 transition-colors">
+                  <span className="absolute top-3 right-3 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
+                    Primary Brand
+                  </span>
                   <img 
                     src="/images/logo.jpeg" 
                     alt="KOMODO Logo" 
-                    className="h-12 w-auto object-contain max-w-[150px]" 
+                    className="max-h-24 md:max-h-28 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300" 
                   />
-                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                    Primary Brand
-                  </span>
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">KOMODO</h3>
                 <p className="text-zinc-600 text-xs leading-relaxed">
@@ -288,11 +288,11 @@ export function Home() {
             {/* Brand 2: KAT */}
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-start mb-6 group-hover:bg-red-50/30 transition-colors">
+                <div className="h-32 md:h-36 bg-zinc-50 rounded-2xl border border-zinc-200/70 p-4 flex items-center justify-center relative mb-6 group-hover:bg-red-50/20 transition-colors">
                   <img 
                     src="/images/kat.jpeg" 
                     alt="KAT Brand Logo" 
-                    className="h-14 w-auto object-contain max-w-[160px]" 
+                    className="max-h-24 md:max-h-28 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300" 
                   />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">KAT</h3>
@@ -305,11 +305,11 @@ export function Home() {
             {/* Brand 3: ENGLISH PETTER */}
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-start mb-6 group-hover:bg-red-50/30 transition-colors">
+                <div className="h-32 md:h-36 bg-zinc-50 rounded-2xl border border-zinc-200/70 p-4 flex items-center justify-center relative mb-6 group-hover:bg-red-50/20 transition-colors">
                   <img 
                     src="/images/englishpetter.jpeg" 
                     alt="ENGLISH PETTER Brand Logo" 
-                    className="h-14 w-auto object-contain max-w-[160px]" 
+                    className="max-h-24 md:max-h-28 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300" 
                   />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">ENGLISH PETTER</h3>
@@ -322,11 +322,11 @@ export function Home() {
             {/* Brand 4: INDOLAND */}
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
-                <div className="h-20 bg-zinc-50 rounded-xl border border-zinc-100 p-3 flex items-center justify-start mb-6 group-hover:bg-red-50/30 transition-colors">
+                <div className="h-32 md:h-36 bg-zinc-50 rounded-2xl border border-zinc-200/70 p-4 flex items-center justify-center relative mb-6 group-hover:bg-red-50/20 transition-colors">
                   <img 
                     src="/images/indoland.jpeg" 
                     alt="INDOLAND Brand Logo" 
-                    className="h-14 w-auto object-contain max-w-[160px]" 
+                    className="max-h-24 md:max-h-28 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300" 
                   />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">INDOLAND</h3>
@@ -339,11 +339,15 @@ export function Home() {
             {/* Brand 5: PROMAX */}
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-2">
               <div>
-                <div className="h-20 bg-gradient-to-r from-red-50 to-zinc-50 rounded-xl border border-zinc-100 p-4 flex items-center justify-start mb-6">
-                  <div className="font-black text-2xl tracking-tighter text-[#D34747] uppercase">PROMAX</div>
-                  <span className="ml-3 bg-red-100 text-[#D34747] text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                <div className="h-32 md:h-36 bg-zinc-50 rounded-2xl border border-zinc-200/70 p-4 flex items-center justify-center relative mb-6 group-hover:bg-red-50/20 transition-colors">
+                  <span className="absolute top-3 right-3 bg-red-100 text-[#D34747] text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
                     Value Aftermarket
                   </span>
+                  <img 
+                    src="/images/promax.jpeg" 
+                    alt="PROMAX Brand Logo" 
+                    className="max-h-24 md:max-h-28 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300" 
+                  />
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">PROMAX</h3>
                 <p className="text-zinc-600 text-xs leading-relaxed">
