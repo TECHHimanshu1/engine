@@ -13,12 +13,9 @@ export function About() {
             <span className="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 uppercase tracking-wider">
               <Award className="w-4 h-4 mr-1" /> Established 1966 | Agra, India
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight leading-tight">
               About Singhal Industrial Corporation
             </h1>
-            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-4">
-              KOMODO Engine Parts – Built for Performance. Trusted for Quality.
-            </p>
           </div>
         </div>
       </section>
