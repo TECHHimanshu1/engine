@@ -324,7 +324,7 @@ export function Home() {
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">ENGLISH PETTER</h3>
                 <p className="text-zinc-600 text-xs leading-relaxed">
-                  Precision components manufactured specifically for stationary diesel engines and agricultural machinery.
+                  Heavy Duty Diesel engines and pumpsets for agriculture for the export market.
                 </p>
               </div>
             </div>
@@ -341,7 +341,7 @@ export function Home() {
                 </div>
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">INDOLAND</h3>
                 <p className="text-zinc-600 text-xs leading-relaxed">
-                  Automotive and industrial replacement engine components for high-mileage global aftermarket applications.
+                  Premium quality Heavy Duty Diesel engines and pumpsets for agriculture and power generation for the export market.
                 </p>
               </div>
             </div>
