@@ -21,6 +21,22 @@ const products = [
   },
   { 
     id: '3', 
+    slug: 'connecting-rods', 
+    name: 'Forged Steel Connecting Rods', 
+    category: 'Engine Components', 
+    shortDescription: 'Drop-forged micro-alloy steel connecting rods engineered for high fatigue strength, fracture splitting, and precise center-to-center tolerances.', 
+    image: '/images/connecting_rods.jpeg' 
+  },
+  { 
+    id: '4', 
+    slug: 'agricultural-diesel-engines', 
+    name: 'Agricultural Diesel Engine Components', 
+    category: 'Agricultural Engines', 
+    shortDescription: 'Heavy-duty replacement engine assemblies and spare parts for 1 to 4 cylinder agricultural tractors, water pumps, and field generators.', 
+    image: '/images/agricultural_engines.jpeg' 
+  },
+  { 
+    id: '5', 
     slug: 'bush-pins', 
     name: 'Precision Bush Pins', 
     category: 'Machined Parts', 
@@ -28,7 +44,7 @@ const products = [
     image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800' 
   },
   { 
-    id: '4', 
+    id: '6', 
     slug: 'piston-rings', 
     name: 'Piston Rings & Pins', 
     category: 'Engine Components', 

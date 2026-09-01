@@ -112,7 +112,7 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'connecting-rods': {
     name: 'Forged Steel Connecting Rods',
     category: 'Engine Components',
-    image: '/images/banner.png',
+    image: '/images/connecting_rods.jpeg',
     description: 'Fracture-split forged steel connecting rods engineered for fatigue strength.',
     richDescription: `
       <p class="mb-4">KOMODO connecting rods are drop-forged from micro-alloyed steel and precision bored for exact center-to-center dimensions.</p>
@@ -145,7 +145,7 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'agricultural-diesel-engines': {
     name: 'Agricultural Diesel Engine Components',
     category: 'Agricultural Engines',
-    image: '/images/cylinder_liners.jpg',
+    image: '/images/agricultural_engines.jpeg',
     description: 'Heavy duty replacement spare parts for 1 to 4 cylinder agricultural tractors and pump engines.',
     richDescription: `
       <p class="mb-4">Complete range of spare parts for agricultural water pump engines and tractor diesel engines.</p>
