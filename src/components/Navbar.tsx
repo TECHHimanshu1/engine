@@ -70,7 +70,7 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center space-x-3 text-[11px] font-bold tracking-wider">
-            {['AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
+            {['EN', 'AR', 'FR', 'DE', 'IT', 'RU', 'ES'].map(lang => (
               <button 
                 key={lang} 
                 onClick={() => {
