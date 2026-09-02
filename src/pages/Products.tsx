@@ -69,6 +69,14 @@ const products = [
   },
   { 
     id: '9', 
+    slug: 'castings', 
+    name: 'Precision Iron & Aluminum Castings', 
+    category: 'Foundry Products', 
+    shortDescription: 'Custom shell-moulded grey iron, ductile SG iron, and aluminum gravity die castings produced to exact customer drawings.', 
+    image: '/images/our_castings.jpeg' 
+  },
+  { 
+    id: '10', 
     slug: 'piston-rings', 
     name: 'Piston Rings & Pins', 
     category: 'Engine Components', 

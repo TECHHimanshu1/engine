@@ -135,10 +135,10 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'castings': {
     name: 'Precision Iron & Aluminum Castings',
     category: 'Foundry Products',
-    image: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/our_castings.jpeg',
     description: 'Custom shell-moulded grey iron, SG iron, and aluminum gravity castings.',
     richDescription: `
-      <p class="mb-4">Foundry solutions by Singhal Industrial Corporation producing custom agricultural and industrial component castings.</p>
+      <p class="mb-4">Foundry solutions by Singhal Industrial Corporation producing custom agricultural and industrial component castings according to exact CAD drawings or physical samples.</p>
     `,
     applications: ['Custom OEM Machinery', 'Agricultural Implements', 'Industrial Pumps'],
     materials: ['Grey Iron', 'Ductile SG Iron', 'Aluminum Alloy']
