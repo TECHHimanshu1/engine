@@ -163,13 +163,18 @@ const STATIC_PRODUCTS: Record<string, any> = {
   'power-gensets': {
     name: 'Power Gensets & Stationary Engines',
     category: 'Power Solutions',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
-    description: 'Heavy-duty stationary power generation components and engine repair assemblies.',
+    image: '/images/power_gensets_1.jpeg',
+    gallery: [
+      '/images/power_gensets_1.jpeg',
+      '/images/power_gensets_2.jpeg'
+    ],
+    description: 'Heavy-duty stationary power generation components, agricultural pumpsets, and engine repair assemblies.',
     richDescription: `
-      <p class="mb-4">High reliability generator engine spare parts for continuous prime power applications.</p>
+      <p class="mb-4">Singhal Industrial Corporation supplies high-reliability stationary generator engine assemblies and spare parts for continuous prime power and agricultural water pump applications.</p>
+      <p class="mb-4">Designed for maximum thermal endurance and steady power output under severe field conditions.</p>
     `,
-    applications: ['Commercial Prime Power', 'Emergency Standby Gensets'],
-    materials: ['Heavy Duty Engine Alloys']
+    applications: ['Commercial Prime Power', 'Emergency Standby Gensets', 'Agricultural Water Pumpsets', 'Industrial Engines'],
+    materials: ['Heavy Duty Engine Alloys', 'Pearlitic Cast Iron']
   }
 };
 

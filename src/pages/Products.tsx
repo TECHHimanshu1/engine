@@ -61,6 +61,14 @@ const products = [
   },
   { 
     id: '8', 
+    slug: 'power-gensets', 
+    name: 'Power Gensets & Stationary Engines', 
+    category: 'Power Solutions', 
+    shortDescription: 'Heavy-duty stationary power generation components, agricultural pumpsets, and engine repair assemblies.', 
+    image: '/images/power_gensets_1.jpeg' 
+  },
+  { 
+    id: '9', 
     slug: 'piston-rings', 
     name: 'Piston Rings & Pins', 
     category: 'Engine Components', 
