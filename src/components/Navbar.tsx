@@ -35,7 +35,6 @@ const productCategories = [
   { name: 'GASKETS', path: '/products/gaskets' },
   { name: 'CRANKSHAFTS', path: '/products/crankshafts' },
   { name: 'CONNECTING RODS', path: '/products/connecting-rods' },
-  { name: 'CYLINDER HEADS', path: '/products/cylinder-heads' },
   { name: 'CASTINGS', path: '/products/castings' },
   { name: 'AGRICULTURAL DIESEL ENGINES', path: '/products/agricultural-diesel-engines' },
   { name: 'POWER GENSETS', path: '/products/power-gensets' },
