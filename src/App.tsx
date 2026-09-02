@@ -16,6 +16,7 @@ import { PowerGensetsPage } from './pages/PowerGensetsPage';
 import { EngineBearingsPage } from './pages/EngineBearingsPage';
 import { GasketsPage } from './pages/GasketsPage';
 import { AgriculturalEnginesPage } from './pages/AgriculturalEnginesPage';
+import { CrankshaftsPage } from './pages/CrankshaftsPage';
 import { ProductDetail } from './pages/ProductDetail';
 import { Quote } from './pages/Quote';
 import { Quality } from './pages/Quality';
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: 'products/engine-bearings', element: <EngineBearingsPage /> },
       { path: 'products/gaskets', element: <GasketsPage /> },
       { path: 'products/agricultural-diesel-engines', element: <AgriculturalEnginesPage /> },
+      { path: 'products/crankshafts', element: <CrankshaftsPage /> },
       { path: 'products/:slug', element: <ProductDetail /> },
       { path: 'quote', element: <Quote /> },
       { path: 'quality', element: <Quality /> },

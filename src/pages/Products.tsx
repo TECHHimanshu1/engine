@@ -61,14 +61,22 @@ const products = [
   },
   { 
     id: '8', 
-    slug: 'valve-guides', 
-    name: 'Precision Valve Guides', 
+    slug: 'valves', 
+    name: 'Engine Intake & Exhaust Valves', 
     category: 'Valve Train', 
-    shortDescription: 'Pearlitic cast iron and sintered bronze alloy valve guides for optimal thermal conductivity, lubrication retention, and low valve stem wear.', 
-    image: '/images/valve_guides.jpeg' 
+    shortDescription: 'Bi-metallic alloy steel engine valves with friction-welded stems, hard chrome plating, and stellite faced seats.', 
+    image: '/images/products/valves/img_1.jpeg' 
   },
   { 
     id: '9', 
+    slug: 'crankshafts', 
+    name: 'Precision Forged Crankshafts', 
+    category: 'Engine Components', 
+    shortDescription: 'Drop-forged alloy steel and SG iron crankshafts, induction hardened and dynamic balanced for heavy duty performance.', 
+    image: '/images/products/crankshafts/img_1.jpeg' 
+  },
+  { 
+    id: '10', 
     slug: 'power-gensets', 
     name: 'Power Gensets & Stationary Engines', 
     category: 'Power Solutions', 
@@ -76,7 +84,7 @@ const products = [
     image: '/images/products/power_gensets/genset_1.jpeg' 
   },
   { 
-    id: '10', 
+    id: '11', 
     slug: 'castings', 
     name: 'Precision Iron & Aluminum Castings', 
     category: 'Foundry Products', 

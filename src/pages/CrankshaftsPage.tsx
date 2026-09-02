@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const valvePhotos = [
-  { url: '/images/products/valves/img_1.jpeg', title: 'Bi-Metallic Engine Intake & Exhaust Valve Set' },
-  { url: '/images/products/valves/img_2.jpeg', title: 'Stellite Faced Heavy Duty Diesel Engine Valves' },
-  { url: '/images/products/valves/img_3.jpeg', title: 'Chrome Plated Precision Stem Engine Valves' }
+const crankshaftPhotos = [
+  { url: '/images/products/crankshafts/img_1.jpeg', title: 'Forged Steel Single Cylinder Crankshaft' },
+  { url: '/images/products/crankshafts/img_2.jpeg', title: 'Induction Hardened Agricultural Engine Crankshaft' },
+  { url: '/images/products/crankshafts/img_3.jpeg', title: 'Precision Ground Heavy Duty Crankshaft Assembly' }
 ];
 
-export function ValvesPage() {
+export function CrankshaftsPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
   return (
@@ -19,17 +19,19 @@ export function ValvesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <span className="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-              <Award className="w-4 h-4 mr-1" /> KOMODO Engine Parts
+              <Award className="w-4 h-4 mr-1" /> Singhal Industrial Corporation
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-              Engine Intake & Exhaust Valves
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+              Precision Forged Crankshafts
             </h1>
-            <p className="text-zinc-300 text-lg mb-8">
-              Manufactured by Singhal Industrial Corporation from bi-metallic alloy steel for high heat resistance, precision sealing, and long service life.
+            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8">
+              Forged steel and ductile iron crankshafts induction-hardened and dynamic balanced for heavy-duty engines.
             </p>
-            <Link to="/quote" className="px-6 py-3 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors inline-block shadow-lg">
-              Request Quote
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/quote" className="px-6 py-3 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors shadow-lg">
+                Get Quotation
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -40,28 +42,28 @@ export function ValvesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-zinc-700 leading-relaxed text-sm md:text-base">
               <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                Valve Train Engineering
+                Heavy Duty Power Transmission
               </span>
               <h2 className="text-3xl font-extrabold text-zinc-900 mb-6">
-                Bi-Metallic Heat Treated Engine Valves
+                Forged Alloy Steel & Ductile SG Iron Crankshafts
               </h2>
 
               <p>
-                Singhal Industrial Corporation manufactures and supplies a comprehensive range of <strong>Engine Valves and Valve Guides</strong> for automotive, commercial vehicle, and agricultural diesel engines.
+                Singhal Industrial Corporation manufactures precision <strong>Engine Crankshafts</strong> for agricultural diesel engines, commercial vehicles, and generator power packs.
               </p>
 
               <p>
-                Our valves undergo friction welding of valve stems, hard chrome plating, and seat stellite facing for extreme operating temperatures and wear resistance under continuous load.
+                Each crankshaft is precision drop-forged, fillet-rolled, and induction-hardened at main journals and crankpins to deliver extreme torsional stiffness and vibration resistance under high torque loads.
               </p>
             </div>
 
             <div 
-              onClick={() => setSelectedPhoto('/images/products/valves/img_1.jpeg')}
+              onClick={() => setSelectedPhoto('/images/products/crankshafts/img_1.jpeg')}
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 cursor-pointer group"
             >
               <img 
-                src="/images/products/valves/img_1.jpeg" 
-                alt="Engine Valves" 
+                src="/images/products/crankshafts/img_1.jpeg" 
+                alt="Engine Crankshaft" 
                 className="w-full h-80 md:h-[400px] object-contain bg-zinc-50 p-6 transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -83,7 +85,7 @@ export function ValvesPage() {
                 Factory Product Gallery
               </span>
               <h2 className="text-3xl font-extrabold text-zinc-900">
-                Engine Valves Product Gallery
+                Engine Crankshaft Lineup
               </h2>
             </div>
             <p className="text-zinc-500 text-xs mt-2 md:mt-0">
@@ -92,7 +94,7 @@ export function ValvesPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {valvePhotos.map((photo, idx) => (
+            {crankshaftPhotos.map((photo, idx) => (
               <div 
                 key={idx}
                 onClick={() => setSelectedPhoto(photo.url)}
@@ -118,9 +120,9 @@ export function ValvesPage() {
       {/* CTA Quote */}
       <section className="py-16 bg-[#111827] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-4">Inquire About Engine Valves</h2>
+          <h2 className="text-3xl font-extrabold mb-4">Inquire About Engine Crankshafts</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-sm">
-            Contact Singhal Industrial Corporation for valve catalog specifications and volume pricing.
+            Contact Singhal Industrial Corporation for custom crankshaft drawing inquiries and OEM pricing.
           </p>
           <Link to="/quote" className="inline-flex items-center px-8 py-3.5 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors">
             Request Quote <ArrowRight className="ml-2 w-4 h-4" />
