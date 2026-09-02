@@ -21,20 +21,25 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-2">
               {[
-                { icon: Facebook, href: companyConfig.social.facebook },
-                { icon: Twitter, href: companyConfig.social.twitter },
-                { icon: Instagram, href: companyConfig.social.instagram },
-                { icon: Linkedin, href: companyConfig.social.linkedin },
-                { icon: Youtube, href: companyConfig.social.youtube }
+                { name: 'Facebook', icon: Facebook, href: companyConfig.social.facebook, type: 'fill' },
+                { name: 'Instagram', icon: Instagram, href: companyConfig.social.instagram, type: 'stroke' },
+                { name: 'YouTube', icon: Youtube, href: companyConfig.social.youtube, type: 'fill' }
               ].map((item, i) => (
                 <a 
                   key={i} 
                   href={item.href} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#D32F2F] hover:text-white transition-all duration-200"
+                  title={item.name}
+                  className="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center text-zinc-300 hover:bg-[#D32F2F] hover:text-white transition-all duration-200"
                 >
-                  <item.icon className="w-3.5 h-3.5" />
+                  <item.icon 
+                    className={`w-4 h-4 ${
+                      item.type === 'stroke' 
+                        ? 'stroke-current fill-none stroke-[2]' 
+                        : 'fill-current stroke-none'
+                    }`} 
+                  />
                 </a>
               ))}
             </div>

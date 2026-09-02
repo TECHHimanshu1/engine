@@ -77,22 +77,27 @@ export function Navbar() {
           </div>
 
           {/* Right Side: Social Media Icons */}
-          <div className="flex items-center space-x-1 sm:space-x-1.5 shrink-0">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
             {[
-              { icon: Facebook, href: companyConfig.social.facebook },
-              { icon: Twitter, href: companyConfig.social.twitter },
-              { icon: Instagram, href: companyConfig.social.instagram },
-              { icon: Linkedin, href: companyConfig.social.linkedin },
-              { icon: Youtube, href: companyConfig.social.youtube }
+              { name: 'Facebook', icon: Facebook, href: companyConfig.social.facebook, type: 'fill' },
+              { name: 'Instagram', icon: Instagram, href: companyConfig.social.instagram, type: 'stroke' },
+              { name: 'YouTube', icon: Youtube, href: companyConfig.social.youtube, type: 'fill' }
             ].map((item, i) => (
               <a 
                 key={i} 
                 href={item.href} 
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-[#D34747] p-1 rounded-sm hover:bg-zinc-100 transition-colors"
+                title={item.name}
+                className="bg-white text-[#D34747] p-1.5 rounded-sm hover:bg-zinc-100 transition-colors flex items-center justify-center"
               >
-                <item.icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-current stroke-none" />
+                <item.icon 
+                  className={`w-3.5 h-3.5 ${
+                    item.type === 'stroke' 
+                      ? 'stroke-current fill-none stroke-[2]' 
+                      : 'fill-current stroke-none'
+                  }`} 
+                />
               </a>
             ))}
           </div>
