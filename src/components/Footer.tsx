@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <Link to="/" className="flex items-center mb-5 group bg-white p-2 rounded-lg border border-zinc-700 w-fit">
               <img 
-                src="/images/singhal_logo.jpeg" 
+                src="/images/footer_logo.jpeg" 
                 alt="Singhal Industrial Corporation" 
                 className="h-10 sm:h-12 w-auto object-contain"
               />
