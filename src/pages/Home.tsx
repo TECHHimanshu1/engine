@@ -248,7 +248,7 @@ export function Home() {
               Our Multi-Brand Portfolio
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 mb-3 uppercase">
-              Five Brands. One Manufacturer.
+              Six Brands. One Manufacturer.
             </h2>
             <p className="text-zinc-600 text-sm md:text-base">
               Manufactured and exported worldwide by <strong>Singhal Industrial Corporation</strong>, Agra, India.
@@ -330,7 +330,7 @@ export function Home() {
             </div>
 
             {/* Brand 5: PROMAX */}
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-2">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
               <div>
                 <div className="h-40 md:h-44 bg-white rounded-2xl border border-zinc-200 p-4 flex items-center justify-center relative mb-6 shadow-sm overflow-hidden">
                   <img 
@@ -342,6 +342,23 @@ export function Home() {
                 <h3 className="text-xl font-extrabold text-zinc-900 mb-2">PROMAX</h3>
                 <p className="text-zinc-600 text-xs leading-relaxed">
                   Value-focused aftermarket engine parts offering dependable performance and competitive pricing for volume buyers.
+                </p>
+              </div>
+            </div>
+
+            {/* Brand 6: GR */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="h-40 md:h-44 bg-white rounded-2xl border border-zinc-200 p-4 flex items-center justify-center relative mb-6 shadow-sm overflow-hidden">
+                  <img 
+                    src="/images/gr_logo.jpeg" 
+                    alt="GR Brand Logo" 
+                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" 
+                  />
+                </div>
+                <h3 className="text-xl font-extrabold text-zinc-900 mb-2">GR</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
+                  High quality agricultural engine spare parts for Petter type engines.
                 </p>
               </div>
             </div>
