@@ -21,7 +21,7 @@ export const companyConfig = {
     youtube: "https://youtube.com"
   },
   recaptcha: {
-    siteKey: "6LehHqUtAAAAAIcmLJPnH7fMd5ctZ-RDe07925QK",
-    secretKey: "6LehHqUtAAAAAL7Z-wuRcyTGMITj2Nl7DBs1Bvk-"
+    siteKey: "6LfyzaQtAAAAABx1laFyw_dpdXXV5zQccEklbSOg",
+    secretKey: "6LfyzaQtAAAAAP-WcjD9nckGIRZ0Px_DhAoxlYcF"
   }
 };
