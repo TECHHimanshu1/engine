@@ -10,7 +10,7 @@ export function AdminDashboard() {
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'enquiries', label: 'Enquiries', icon: Users },
     { id: 'products', label: 'Products', icon: Package },
-    { id: 'blog', label: 'Blog', icon: FileText },
+    { id: 'blog', label: 'News & Events', icon: FileText },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 

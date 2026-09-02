@@ -56,7 +56,7 @@ export function Footer() {
               <li><Link to="/products" className="hover:text-red-400 transition-colors">Products Catalog</Link></li>
               <li><Link to="/infrastructure" className="hover:text-red-400 transition-colors">Infrastructure & QC</Link></li>
               <li><Link to="/custom-manufacturing" className="hover:text-red-400 transition-colors">Custom Manufacturing</Link></li>
-              <li><Link to="/news" className="hover:text-red-400 transition-colors">News & Knowledge Base</Link></li>
+              <li><Link to="/news" className="hover:text-red-400 transition-colors">News & Events</Link></li>
               <li><Link to="/quote" className="hover:text-red-400 transition-colors">Contact Us / Get Quote</Link></li>
             </ul>
           </div>

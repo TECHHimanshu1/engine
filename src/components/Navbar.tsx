@@ -61,7 +61,7 @@ export function Navbar() {
     { name: 'About Us', path: '/about' },
     { name: 'Products', path: '/products', hasDropdown: true },
     { name: 'Infrastructure', path: '/infrastructure' },
-    { name: 'Blog', path: '/news' },
+    { name: 'News & Events', path: '/news' },
     { name: 'Contact', path: '/quote' },
   ];
 
