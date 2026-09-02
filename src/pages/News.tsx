@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Calendar, Clock, MapPin, X, Images, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
@@ -125,6 +125,18 @@ export function News() {
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
   const [activePhotoIdx, setActivePhotoIdx] = useState<number>(0);
 
+  // Lock body scroll when modal lightbox is active to prevent scroll jitter
+  useEffect(() => {
+    if (selectedEvent) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedEvent]);
+
   const openLightbox = (evt: EventItem) => {
     setSelectedEvent(evt);
     setActivePhotoIdx(0);
@@ -135,18 +147,20 @@ export function News() {
     setActivePhotoIdx(0);
   };
 
-  const prevPhoto = () => {
+  const prevPhoto = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (!selectedEvent) return;
     setActivePhotoIdx((prev) => (prev === 0 ? selectedEvent.gallery.length - 1 : prev - 1));
   };
 
-  const nextPhoto = () => {
+  const nextPhoto = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (!selectedEvent) return;
     setActivePhotoIdx((prev) => (prev === selectedEvent.gallery.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full max-w-full overflow-x-hidden bg-white">
       {/* Top Header */}
       <section className="py-12 bg-white text-center border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -220,8 +234,14 @@ export function News() {
 
       {/* Lightbox Modal for Past Event Photos */}
       {selectedEvent && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 flex flex-col max-h-[90vh]">
+        <div 
+          onClick={closeLightbox}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 flex flex-col max-h-[90vh] my-auto"
+          >
             
             {/* Modal Header */}
             <div className="p-4 sm:p-6 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
@@ -250,13 +270,13 @@ export function News() {
                 <>
                   <button 
                     onClick={prevPhoto}
-                    className="absolute left-4 p-2.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors border border-white/20"
+                    className="absolute left-4 p-2.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors border border-white/20 z-10"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button 
                     onClick={nextPhoto}
-                    className="absolute right-4 p-2.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors border border-white/20"
+                    className="absolute right-4 p-2.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors border border-white/20 z-10"
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>
@@ -275,7 +295,10 @@ export function News() {
                 {selectedEvent.gallery.map((url, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActivePhotoIdx(idx)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActivePhotoIdx(idx);
+                    }}
                     className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
                       activePhotoIdx === idx ? 'border-[#D34747] scale-105' : 'border-zinc-700 opacity-60 hover:opacity-100'
                     }`}
