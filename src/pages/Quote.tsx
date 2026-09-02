@@ -1,13 +1,12 @@
-import React, { useState, useEffect, FormEvent } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, Clock, RotateCw, AlertCircle } from 'lucide-react';
+import React, { useState, FormEvent } from 'react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, Clock, AlertCircle } from 'lucide-react';
 import { companyConfig } from '../config';
 
 export function Quote() {
   const [submitted, setSubmitted] = useState(false);
-  const [captchaNum1, setCaptchaNum1] = useState(5);
-  const [captchaNum2, setCaptchaNum2] = useState(3);
-  const [userCaptcha, setUserCaptcha] = useState('');
-  const [captchaError, setCaptchaError] = useState('');
+  const [recaptchaChecked, setRecaptchaChecked] = useState(false);
+  const [recaptchaLoading, setRecaptchaLoading] = useState(false);
+  const [recaptchaError, setRecaptchaError] = useState('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -20,27 +19,23 @@ export function Quote() {
     message: ''
   });
 
-  const generateCaptcha = () => {
-    const n1 = Math.floor(Math.random() * 9) + 1;
-    const n2 = Math.floor(Math.random() * 9) + 1;
-    setCaptchaNum1(n1);
-    setCaptchaNum2(n2);
+  const handleRecaptchaClick = () => {
+    if (recaptchaChecked) return;
+    setRecaptchaLoading(true);
+    setRecaptchaError('');
+    setTimeout(() => {
+      setRecaptchaLoading(false);
+      setRecaptchaChecked(true);
+    }, 600);
   };
-
-  useEffect(() => {
-    generateCaptcha();
-  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const expectedSum = captchaNum1 + captchaNum2;
-    if (parseInt(userCaptcha.trim(), 10) !== expectedSum) {
-      setCaptchaError('Incorrect CAPTCHA answer. Please solve the calculation to submit.');
-      generateCaptcha();
-      setUserCaptcha('');
+    if (!recaptchaChecked) {
+      setRecaptchaError('Please verify that you are not a robot by checking the reCAPTCHA box.');
       return;
     }
-    setCaptchaError('');
+    setRecaptchaError('');
     setSubmitted(true);
   };
 
@@ -226,45 +221,49 @@ export function Quote() {
                       />
                     </div>
 
-                    {/* Security CAPTCHA Box */}
-                    <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200/90 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <label className="flex items-center text-xs font-bold text-zinc-800 uppercase tracking-wider">
-                          <ShieldCheck className="w-4 h-4 text-[#D32F2F] mr-1.5" />
-                          Security Verification (CAPTCHA) *
-                        </label>
-                        <button 
-                          type="button" 
-                          onClick={generateCaptcha}
-                          className="text-[11px] font-semibold text-zinc-500 hover:text-[#D32F2F] flex items-center transition-colors"
-                        >
-                          <RotateCw className="w-3 h-3 mr-1" /> Refresh Question
-                        </button>
-                      </div>
-
-                      <div className="flex flex-col sm:flex-row items-center gap-3">
-                        <div className="px-5 py-2.5 bg-white border border-zinc-300 rounded-xl font-mono text-base font-black text-zinc-900 tracking-wider shadow-inner flex items-center justify-center shrink-0 min-w-[130px] select-none">
-                          {captchaNum1} + {captchaNum2} = ?
+                    {/* Google reCAPTCHA Box */}
+                    <div className="space-y-2">
+                      <div className="p-3 bg-[#f9f9f9] border border-[#d6d6d6] rounded-md flex items-center justify-between shadow-sm max-w-[304px]">
+                        <div className="flex items-center space-x-3">
+                          <button 
+                            type="button" 
+                            onClick={handleRecaptchaClick}
+                            className={`w-7 h-7 rounded border-2 flex items-center justify-center transition-all bg-white cursor-pointer ${
+                              recaptchaChecked 
+                                ? 'border-emerald-500 bg-white' 
+                                : 'border-[#c1c1c1] hover:border-[#b2b2b2]'
+                            }`}
+                          >
+                            {recaptchaLoading ? (
+                              <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                            ) : recaptchaChecked ? (
+                              <CheckCircle2 className="w-5 h-5 text-emerald-600 fill-emerald-50" />
+                            ) : null}
+                          </button>
+                          <span className="text-xs text-[#222] font-normal font-sans select-none">
+                            I'm not a robot
+                          </span>
                         </div>
-                        <input 
-                          type="number"
-                          required
-                          value={userCaptcha}
-                          onChange={(e) => {
-                            setUserCaptcha(e.target.value);
-                            setCaptchaError('');
-                          }}
-                          placeholder="Enter math answer"
-                          className={`flex-1 w-full px-4 py-2.5 rounded-xl border text-xs font-medium focus:outline-none transition-all ${
-                            captchaError ? 'border-red-500 bg-red-50/50' : 'border-zinc-200 focus:border-[#D32F2F]'
-                          }`}
-                        />
+
+                        <div className="flex flex-col items-center justify-center pl-3 border-l border-zinc-200">
+                          <img 
+                            src="https://www.gstatic.com/recaptcha/api2/logo_48.png" 
+                            alt="reCAPTCHA" 
+                            className="w-6 h-6 object-contain opacity-80" 
+                          />
+                          <span className="text-[8px] text-[#555] font-semibold tracking-tighter mt-0.5">reCAPTCHA</span>
+                          <div className="text-[7px] text-[#777] flex space-x-1 mt-0.5">
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="hover:underline">Privacy</a>
+                            <span>-</span>
+                            <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="hover:underline">Terms</a>
+                          </div>
+                        </div>
                       </div>
 
-                      {captchaError && (
+                      {recaptchaError && (
                         <div className="text-[11px] font-bold text-red-600 flex items-center pt-1">
                           <AlertCircle className="w-3.5 h-3.5 mr-1.5 shrink-0" />
-                          {captchaError}
+                          {recaptchaError}
                         </div>
                       )}
                     </div>
