@@ -19,5 +19,9 @@ export const companyConfig = {
     facebook: "https://www.facebook.com/share/17VFoEkaoX/",
     instagram: "https://www.instagram.com/komodo_engine_parts?igsi=bWp0aHpyankwbDV1",
     youtube: "https://youtube.com"
+  },
+  recaptcha: {
+    siteKey: "6LehHqUtAAAAAIcmLJPnH7fMd5ctZ-RDe07925QK",
+    secretKey: "6LehHqUtAAAAAL7Z-wuRcyTGMITj2Nl7DBs1Bvk-"
   }
 };
