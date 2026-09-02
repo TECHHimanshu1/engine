@@ -7,33 +7,51 @@ import { useState } from 'react';
 const productsGrid = [
   { 
     name: 'CYLINDER LINERS', 
-    desc: 'High performance dry, wet and air-cooled cylinder liners manufactured to OE and custom specifications.', 
-    img: '/images/cylinder_liners.jpg', 
+    desc: 'High performance dry, wet and air-cooled cylinder liners centrifugally cast to OE & custom specifications.', 
+    img: '/images/in_cylinder_liners.jpeg', 
     path: '/products/cylinder-liners' 
   },
   { 
     name: 'PISTONS', 
-    desc: 'Durable and efficient alloy pistons for automotive and agricultural engines.', 
+    desc: 'Durable eutectic silicon-aluminum alloy pistons with Ni-Resist ring groove carrier inserts.', 
     img: '/images/piston_hero.jpg', 
     path: '/products/pistons' 
   },
   { 
     name: 'AIR BRAKE COMPRESSOR KITS', 
-    desc: 'Complete repair kits including cylinder block, pistons, and piston rings for heavy-duty braking systems.', 
-    img: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=800', 
+    desc: 'Complete repair overhaul kits including cylinder block, pistons, and piston rings for heavy-duty trucks.', 
+    img: '/images/air_compressor_kits.jpeg', 
     path: '/products/air-compressor-kits' 
   },
   { 
-    name: 'VALVES', 
-    desc: 'Engineered engine intake and exhaust valves built for high temperature wear resistance and performance.', 
-    img: 'https://images.unsplash.com/photo-1498887960847-2a5e46312788?auto=format&fit=crop&q=80&w=800', 
-    path: '/products/valves' 
+    name: 'CONNECTING RODS', 
+    desc: 'Drop-forged micro-alloy steel connecting rods engineered for high fatigue strength and precise tolerances.', 
+    img: '/images/connecting_rods.jpeg', 
+    path: '/products/connecting-rods' 
+  },
+  { 
+    name: 'AGRICULTURAL DIESEL ENGINES', 
+    desc: 'Heavy-duty replacement engine spare parts and assemblies for agricultural tractors and water pumps.', 
+    img: '/images/agricultural_engines.jpeg', 
+    path: '/products/agricultural-diesel-engines' 
   },
   { 
     name: 'POWER GENSETS', 
-    desc: 'Reliable stationary power generation solutions and diesel generator components.', 
-    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800', 
+    desc: 'Reliable stationary power generation components, agricultural pumpsets, and diesel generator assemblies.', 
+    img: '/images/power_gensets_1.jpeg', 
     path: '/products/power-gensets' 
+  },
+  { 
+    name: 'VALVE GUIDES', 
+    desc: 'Pearlitic cast iron and sintered bronze alloy valve guides for optimal thermal conductivity & stem protection.', 
+    img: '/images/valve_guides.jpeg', 
+    path: '/products/valve-guides' 
+  },
+  { 
+    name: 'PRECISION CASTINGS', 
+    desc: 'Custom shell-moulded grey iron, SG iron, and aluminum gravity castings built to CAD drawings.', 
+    img: '/images/our_castings.jpeg', 
+    path: '/products/castings' 
   }
 ];
 
@@ -213,14 +231,14 @@ export function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productsGrid.map((product, i) => (
               <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-200/80 flex flex-col justify-between group">
-                <div className="h-56 overflow-hidden relative">
+                <div className="h-56 overflow-hidden relative bg-zinc-50 flex items-center justify-center p-4">
                   <img 
                     src={product.img} 
                     alt={product.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <h3 className="absolute bottom-4 left-6 text-xl font-black text-white">{product.name}</h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                  <h3 className="absolute bottom-4 left-6 text-xl font-black text-white drop-shadow-md">{product.name}</h3>
                 </div>
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
