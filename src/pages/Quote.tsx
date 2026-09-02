@@ -1,9 +1,13 @@
 import React, { useState, FormEvent } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, Clock, AlertCircle } from 'lucide-react';
 import { companyConfig } from '../config';
 
 export function Quote() {
   const [submitted, setSubmitted] = useState(false);
+  const [recaptchaVerified, setRecaptchaVerified] = useState(false);
+  const [recaptchaLoading, setRecaptchaLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState('');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,8 +19,23 @@ export function Quote() {
     message: ''
   });
 
+  const handleRecaptchaClick = () => {
+    if (recaptchaVerified) return;
+    setRecaptchaLoading(true);
+    setCaptchaError('');
+    setTimeout(() => {
+      setRecaptchaLoading(false);
+      setRecaptchaVerified(true);
+    }, 500);
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (!recaptchaVerified) {
+      setCaptchaError('Please verify that you are not a robot by checking the CAPTCHA box.');
+      return;
+    }
+    setCaptchaError('');
     setSubmitted(true);
   };
 
@@ -200,6 +219,53 @@ export function Quote() {
                         placeholder="Please include engine make, model numbers, bore sizes, or drawing references if available..."
                         className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:border-[#D32F2F] text-xs font-medium"
                       />
+                    </div>
+
+                    {/* CAPTCHA Protection Widget */}
+                    <div className="space-y-2">
+                      <div className="p-3 bg-[#f9f9f9] border border-[#d6d6d6] rounded-md flex items-center justify-between shadow-xs max-w-[304px]">
+                        <div className="flex items-center space-x-3">
+                          <button 
+                            type="button" 
+                            onClick={handleRecaptchaClick}
+                            className={`w-7 h-7 rounded border-2 flex items-center justify-center transition-all bg-white cursor-pointer ${
+                              recaptchaVerified 
+                                ? 'border-emerald-500 bg-white' 
+                                : 'border-[#c1c1c1] hover:border-[#b2b2b2]'
+                            }`}
+                          >
+                            {recaptchaLoading ? (
+                              <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                            ) : recaptchaVerified ? (
+                              <CheckCircle2 className="w-5 h-5 text-emerald-600 fill-emerald-50" />
+                            ) : null}
+                          </button>
+                          <span className="text-xs text-[#222] font-normal font-sans select-none">
+                            I'm not a robot
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center justify-center pl-3 border-l border-zinc-200">
+                          <img 
+                            src="https://www.gstatic.com/recaptcha/api2/logo_48.png" 
+                            alt="reCAPTCHA" 
+                            className="w-6 h-6 object-contain opacity-80" 
+                          />
+                          <span className="text-[8px] text-[#555] font-semibold tracking-tighter mt-0.5">reCAPTCHA</span>
+                          <div className="text-[7px] text-[#777] flex space-x-1 mt-0.5">
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="hover:underline">Privacy</a>
+                            <span>-</span>
+                            <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="hover:underline">Terms</a>
+                          </div>
+                        </div>
+                      </div>
+
+                      {captchaError && (
+                        <div className="text-[11px] font-bold text-red-600 flex items-center pt-1">
+                          <AlertCircle className="w-3.5 h-3.5 mr-1.5 shrink-0" />
+                          {captchaError}
+                        </div>
+                      )}
                     </div>
 
                     <button 
