@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Calendar, MapPin, X, Images, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin, X, Images, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
 
