@@ -1,6 +1,16 @@
-import { ArrowRight, BookOpen, Clock, Calendar, MapPin, Building, Flag } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, Calendar, MapPin, X, Images, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
+
+interface EventItem {
+  id: string;
+  title: string;
+  location: string;
+  date: string;
+  mainImg: string;
+  gallery: string[];
+}
 
 const upcomingEvent = {
   title: "Automechanika Frankfurt 2026",
@@ -8,38 +18,93 @@ const upcomingEvent = {
   boothNo: "J26",
   date: "8th–12th September, 2026",
   location: "Messe Frankfurt, Frankfurt am Main, Germany",
-  img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
+  img: "/images/events/dubai_2025/img_1.jpeg",
   desc: "Join Singhal Industrial Corporation at the world's leading trade fair for the automotive service industry. Discover our high-performance cylinder liners, precision engine pistons, valve guides, and custom casting solutions."
 };
 
-const pastEvents = [
+const pastEvents: EventItem[] = [
   {
-    id: 1,
-    title: "Automechanika Istanbul 2026",
-    location: "Istanbul Expo Center, Turkey",
-    date: "23-26 May 2026",
-    img: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800"
+    id: 'dubai-2025',
+    title: "Automechanika Dubai 2025",
+    location: "Dubai World Trade Centre, UAE",
+    date: "10–12 December 2025",
+    mainImg: "/images/events/dubai_2025/img_1.jpeg",
+    gallery: [
+      "/images/events/dubai_2025/img_1.jpeg",
+      "/images/events/dubai_2025/img_2.jpeg",
+      "/images/events/dubai_2025/img_3.jpeg",
+      "/images/events/dubai_2025/img_4.jpeg"
+    ]
   },
   {
-    id: 2,
-    title: "Automechanika New Delhi 2026",
+    id: 'dubai-2024',
+    title: "Automechanika Dubai 2024",
+    location: "Dubai World Trade Centre, UAE",
+    date: "10–12 December 2024",
+    mainImg: "/images/events/dubai_2024/img_1.jpeg",
+    gallery: [
+      "/images/events/dubai_2024/img_1.jpeg",
+      "/images/events/dubai_2024/img_2.jpeg",
+      "/images/events/dubai_2024/img_3.jpeg"
+    ]
+  },
+  {
+    id: 'delhi-2024',
+    title: "Automechanika New Delhi 2024",
     location: "Pragati Maidan, New Delhi, India",
-    date: "1-3 February 2026",
-    img: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&q=80&w=800"
+    date: "1–3 February 2024",
+    mainImg: "/images/events/delhi_2024/img_1.jpeg",
+    gallery: [
+      "/images/events/delhi_2024/img_1.jpeg",
+      "/images/events/delhi_2024/img_2.jpeg",
+      "/images/events/delhi_2024/img_3.jpeg",
+      "/images/events/delhi_2024/img_4.jpeg"
+    ]
   },
   {
-    id: 3,
-    title: "Agritechnika Germany 2025",
-    location: "Exhibition Grounds Hannover, Germany",
-    date: "9-15 November 2025",
-    img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800"
+    id: 'dubai-2023',
+    title: "Automechanika Dubai 2023",
+    location: "Dubai World Trade Centre, UAE",
+    date: "2–4 October 2023",
+    mainImg: "/images/events/dubai_2023/img_1.jpeg",
+    gallery: [
+      "/images/events/dubai_2023/img_1.jpeg",
+      "/images/events/dubai_2023/img_2.jpeg",
+      "/images/events/dubai_2023/img_3.jpeg",
+      "/images/events/dubai_2023/img_4.jpeg",
+      "/images/events/dubai_2023/img_5.jpeg",
+      "/images/events/dubai_2023/img_6.jpeg"
+    ]
   },
   {
-    id: 4,
-    title: "AM Istanbul 2025",
-    location: "TUYAP Fair & Congress Center, Istanbul",
-    date: "12-15 June 2025",
-    img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800"
+    id: 'dubai-2022',
+    title: "Automechanika Dubai 2022",
+    location: "Dubai World Trade Centre, UAE",
+    date: "22–24 November 2022",
+    mainImg: "/images/events/dubai_2022/img_1.jpeg",
+    gallery: [
+      "/images/events/dubai_2022/img_1.jpeg",
+      "/images/events/dubai_2022/img_2.jpeg",
+      "/images/events/dubai_2022/img_3.jpeg",
+      "/images/events/dubai_2022/img_4.jpeg",
+      "/images/events/dubai_2022/img_5.jpeg",
+      "/images/events/dubai_2022/img_6.jpeg",
+      "/images/events/dubai_2022/img_7.jpeg"
+    ]
+  },
+  {
+    id: 'istanbul-2022',
+    title: "Automechanika Istanbul 2022",
+    location: "TUYAP Fair & Congress Center, Istanbul, Turkey",
+    date: "2–5 June 2022",
+    mainImg: "/images/events/istanbul_2022/img_1.jpeg",
+    gallery: [
+      "/images/events/istanbul_2022/img_1.jpeg",
+      "/images/events/istanbul_2022/img_2.jpeg",
+      "/images/events/istanbul_2022/img_3.jpeg",
+      "/images/events/istanbul_2022/img_4.jpeg",
+      "/images/events/istanbul_2022/img_5.jpeg"
+    ]
   }
 ];
 
@@ -67,6 +132,29 @@ const articles = [
 ];
 
 export function News() {
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const [activePhotoIdx, setActivePhotoIdx] = useState<number>(0);
+
+  const openLightbox = (evt: EventItem) => {
+    setSelectedEvent(evt);
+    setActivePhotoIdx(0);
+  };
+
+  const closeLightbox = () => {
+    setSelectedEvent(null);
+    setActivePhotoIdx(0);
+  };
+
+  const prevPhoto = () => {
+    if (!selectedEvent) return;
+    setActivePhotoIdx((prev) => (prev === 0 ? selectedEvent.gallery.length - 1 : prev - 1));
+  };
+
+  const nextPhoto = () => {
+    if (!selectedEvent) return;
+    setActivePhotoIdx((prev) => (prev === selectedEvent.gallery.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div className="w-full bg-white">
       {/* Top Header */}
@@ -76,7 +164,7 @@ export function News() {
             News & Events
           </h1>
           <p className="text-zinc-500 text-sm max-w-xl mx-auto font-medium">
-            Explore global trade fairs, exhibition schedules, and technical automotive engineering guides from {companyConfig.brandName}.
+            Explore global trade fairs, exhibition booth photos, and technical automotive engineering guides from {companyConfig.brandName}.
           </p>
         </div>
       </section>
@@ -160,42 +248,129 @@ export function News() {
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#1E293B] tracking-tight">
               Past Events Gallery
             </h2>
+            <p className="text-zinc-500 text-xs mt-2">
+              Click on any trade fair below to view high-resolution exhibition booth photos.
+            </p>
           </div>
 
-          {/* 4-Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Events Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {pastEvents.map((evt) => (
               <div 
                 key={evt.id} 
-                className="bg-white rounded-xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                onClick={() => openLightbox(evt)}
+                className="bg-white rounded-2xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer group"
               >
                 <div>
-                  <div className="relative h-48 overflow-hidden bg-zinc-100">
+                  <div className="relative h-52 overflow-hidden bg-zinc-100">
                     <img 
-                      src={evt.img} 
+                      src={evt.mainImg} 
                       alt={evt.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
-                    <div className="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-md">
-                      {evt.date}
+                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold px-2.5 py-1 rounded-lg flex items-center shadow-md">
+                      <Images className="w-3.5 h-3.5 mr-1.5 text-red-400" />
+                      {evt.gallery.length} Photos
                     </div>
                   </div>
 
-                  <div className="p-4">
-                    <h3 className="text-sm font-extrabold text-[#1E293B] mb-1.5 leading-snug group-hover:text-[#D34747] transition-colors">
+                  <div className="p-5">
+                    <h3 className="text-base font-extrabold text-[#1E293B] mb-2 leading-snug group-hover:text-[#D34747] transition-colors">
                       {evt.title}
                     </h3>
-                    <p className="text-[11px] text-zinc-500 flex items-center font-medium">
-                      <MapPin className="w-3 h-3 text-red-500 mr-1 shrink-0" />
+                    <p className="text-xs text-zinc-500 flex items-center font-medium mb-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#D34747] mr-1.5 shrink-0" />
                       {evt.location}
                     </p>
+                    <p className="text-xs text-zinc-400 flex items-center font-medium">
+                      <Calendar className="w-3.5 h-3.5 text-zinc-400 mr-1.5 shrink-0" />
+                      {evt.date}
+                    </p>
                   </div>
+                </div>
+
+                <div className="px-5 pb-5 pt-0">
+                  <span className="inline-flex items-center text-xs font-bold text-[#D34747] group-hover:underline">
+                    View Photo Gallery &rarr;
+                  </span>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal for Past Event Photos */}
+      {selectedEvent && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 flex flex-col max-h-[90vh]">
+            
+            {/* Modal Header */}
+            <div className="p-4 sm:p-6 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-white">{selectedEvent.title}</h3>
+                <p className="text-xs text-zinc-400">{selectedEvent.location} • {selectedEvent.date}</p>
+              </div>
+              <button 
+                onClick={closeLightbox}
+                className="p-2 bg-zinc-800 text-zinc-300 hover:text-white rounded-full hover:bg-zinc-700 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Main Photo View */}
+            <div className="relative flex-1 bg-black flex items-center justify-center min-h-[300px] sm:min-h-[420px] p-4">
+              <img 
+                src={selectedEvent.gallery[activePhotoIdx]} 
+                alt={`${selectedEvent.title} photo ${activePhotoIdx + 1}`} 
+                className="max-h-[60vh] max-w-full object-contain rounded-lg"
+              />
+
+              {/* Prev / Next buttons */}
+              {selectedEvent.gallery.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevPhoto}
+                    className="absolute left-4 p-2.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors border border-white/20"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button 
+                    onClick={nextPhoto}
+                    className="absolute right-4 p-2.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors border border-white/20"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Modal Footer / Thumbnails */}
+            <div className="p-4 bg-zinc-900 border-t border-zinc-800 flex items-center justify-between">
+              <div className="text-xs text-zinc-400 font-medium">
+                Photo {activePhotoIdx + 1} of {selectedEvent.gallery.length}
+              </div>
+
+              {/* Thumbnails row */}
+              <div className="flex items-center space-x-2 overflow-x-auto max-w-[60vw] py-1 no-scrollbar">
+                {selectedEvent.gallery.map((url, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActivePhotoIdx(idx)}
+                    className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
+                      activePhotoIdx === idx ? 'border-[#D34747] scale-105' : 'border-zinc-700 opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={url} alt="thumbnail" className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      )}
 
       {/* Technical Articles & Knowledge Base */}
       <section className="py-16 bg-[#F8FAFC]">
