@@ -12,16 +12,6 @@ interface EventItem {
   gallery: string[];
 }
 
-const upcomingEvent = {
-  title: "Automechanika Frankfurt 2026",
-  stallNo: "1.1",
-  boothNo: "J26",
-  date: "8th–12th September, 2026",
-  location: "Messe Frankfurt, Frankfurt am Main, Germany",
-  img: "/images/events/dubai_2025/img_1.jpeg",
-  desc: "Join Singhal Industrial Corporation at the world's leading trade fair for the automotive service industry. Discover our high-performance cylinder liners, precision engine pistons, valve guides, and custom casting solutions."
-};
-
 const pastEvents: EventItem[] = [
   {
     id: 'dubai-2025',
@@ -166,78 +156,6 @@ export function News() {
           <p className="text-zinc-500 text-sm max-w-xl mx-auto font-medium">
             Explore global trade fairs, exhibition booth photos, and technical automotive engineering guides from {companyConfig.brandName}.
           </p>
-        </div>
-      </section>
-
-      {/* Upcoming Events Section */}
-      <section className="py-16 bg-[#F8FAFC] border-b border-zinc-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#1E293B] tracking-tight">
-              Upcoming Events
-            </h2>
-          </div>
-
-          {/* Featured Upcoming Event Card */}
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-zinc-200/90 shadow-sm hover:shadow-md transition-all p-6 md:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              
-              {/* Event Image */}
-              <div className="md:col-span-5 relative rounded-xl overflow-hidden shadow-sm h-56 md:h-64 bg-zinc-100 border border-zinc-200">
-                <img 
-                  src={upcomingEvent.img} 
-                  alt={upcomingEvent.title} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-3 left-3 bg-[#D34747] text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                  Upcoming Fair
-                </div>
-              </div>
-
-              {/* Event Details */}
-              <div className="md:col-span-7 space-y-4 text-zinc-700">
-                <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
-                  Visit us at
-                </div>
-                
-                <h3 className="text-xl md:text-2xl font-extrabold text-[#1E293B] leading-snug">
-                  {upcomingEvent.title}
-                </h3>
-
-                <div className="space-y-1.5 text-xs md:text-sm font-medium text-zinc-700">
-                  <div className="flex items-center text-zinc-800">
-                    <span className="font-bold text-zinc-900 min-w-[90px]">Stall No.:</span> 
-                    <span>{upcomingEvent.stallNo}</span>
-                  </div>
-
-                  <div className="flex items-center text-zinc-800">
-                    <span className="font-bold text-zinc-900 min-w-[90px]">Booth No.:</span> 
-                    <span>{upcomingEvent.boothNo}</span>
-                  </div>
-
-                  <div className="flex items-center text-zinc-800">
-                    <span className="font-bold text-zinc-900 min-w-[90px]">Date:</span> 
-                    <span>{upcomingEvent.date}</span>
-                  </div>
-
-                  <div className="flex items-start text-zinc-500 pt-1 text-xs">
-                    <MapPin className="w-3.5 h-3.5 text-[#D34747] mr-1.5 shrink-0 mt-0.5" />
-                    <span>{upcomingEvent.location}</span>
-                  </div>
-                </div>
-
-                <div className="pt-3">
-                  <Link 
-                    to="/quote" 
-                    className="inline-flex items-center px-5 py-2.5 bg-[#D34747] text-white text-xs font-bold rounded-lg hover:bg-red-700 transition-colors shadow-sm uppercase tracking-wider"
-                  >
-                    Schedule Meeting At Stall <ArrowRight className="w-3.5 h-3.5 ml-2" />
-                  </Link>
-                </div>
-              </div>
-
-            </div>
-          </div>
         </div>
       </section>
 
