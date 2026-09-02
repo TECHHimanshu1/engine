@@ -1,6 +1,17 @@
-import { CheckCircle2, ArrowRight, Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { companyConfig } from '../config';
+
+const pistonPhotos = [
+  { url: '/images/products/pistons/img_1.jpeg', title: 'Heavy Duty Commercial Diesel Engine Piston' },
+  { url: '/images/products/pistons/img_2.jpeg', title: 'Alfin Ring Insert Steel Strut Piston' },
+  { url: '/images/products/pistons/img_3.jpeg', title: 'Tractor & Agricultural Engine Piston' },
+  { url: '/images/products/pistons/img_4.jpeg', title: 'High-Compression Automotive Piston' },
+  { url: '/images/products/pistons/img_5.jpeg', title: 'Precision Machined Piston with Pin & Rings' },
+  { url: '/images/products/pistons/img_6.jpeg', title: 'Air Compressor & Generator Piston' },
+  { url: '/images/products/pistons/img_7.jpeg', title: 'Coated Crown Heat-Resistant Piston' },
+  { url: '/images/products/pistons/img_8.jpeg', title: 'OEM Specification Heavy Duty Piston Set' }
+];
 
 const pistonHighlights = [
   {
@@ -18,6 +29,8 @@ const pistonHighlights = [
 ];
 
 export function PistonsPage() {
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+
   return (
     <div className="w-full bg-white">
       {/* Hero Banner */}
@@ -60,25 +73,74 @@ export function PistonsPage() {
               </p>
 
               <p>
-                Our carefully engineered piston designs combine high thermal conductivity, lightweight construction, and structural strength for efficient engine operation and effective heat dissipation. Enhanced resistance to wear in the ring grooves, piston skirt, and gudgeon pin bore helps maintain critical dimensions and performance throughout the service life. All alloy piston castings undergo controlled heat treatment and ageing to achieve optimum strength and durability.
+                Our pistons combine high thermal conductivity, lightweight construction, and structural strength to ensure efficient engine operation and effective heat dissipation. Enhanced wear resistance in key stress areas—including ring grooves, piston skirt, and gudgeon pin bore—helps maintain peak performance over long operating periods.
               </p>
 
               <p>
-                With extensive manufacturing and export experience, <strong>Singhal Industrial Corporation</strong> produces Pistons in a wide range of designs and dimensions, including custom specifications to meet specific customer and market requirements. Manufactured in accordance with international quality standards, KOMODO Pistons are suitable for OEM replacement applications across a broad range of automotive and agricultural engines worldwide.
+                Controlled heat treatment and ageing processes ensure optimal mechanical properties, helping prevent distortion and thermal fatigue during high-load applications.
               </p>
             </div>
 
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200">
+            <div 
+              onClick={() => setSelectedPhoto('/images/products/pistons/img_1.jpeg')}
+              className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 cursor-pointer group"
+            >
               <img 
-                src="/images/piston_hero.jpg" 
-                alt="KOMODO Precision Piston" 
-                className="w-full h-auto object-cover"
+                src="/images/products/pistons/img_1.jpeg" 
+                alt="Singhal Precision Pistons" 
+                className="w-full h-80 md:h-[420px] object-contain bg-zinc-50 p-6 transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="bg-white/90 text-zinc-900 px-4 py-2 rounded-full font-bold text-xs shadow-lg flex items-center">
+                  <ZoomIn className="w-4 h-4 mr-2 text-[#D32F2F]" /> Click to Zoom
+                </span>
+              </div>
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
-                <div className="font-bold text-lg">KOMODO Alloy Piston Assembly</div>
-                <div className="text-xs text-zinc-300">Heat Treated & Aged | Controlled Thermal Expansion</div>
+                <div className="font-bold text-lg">KOMODO & KAT Precision Pistons</div>
+                <div className="text-xs text-zinc-300">Commercial Vehicles, Tractors & Heavy Duty Engines</div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Product Photo Gallery Grid */}
+      <section className="py-16 bg-white border-b border-zinc-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+              <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
+                Factory Product Gallery
+              </span>
+              <h2 className="text-3xl font-extrabold text-zinc-900">
+                Precision Engine Piston Range
+              </h2>
+            </div>
+            <p className="text-zinc-500 text-xs mt-2 md:mt-0">
+              Actual manufactured products from Singhal Industrial Corporation Agra factory
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {pistonPhotos.map((photo, idx) => (
+              <div 
+                key={idx}
+                onClick={() => setSelectedPhoto(photo.url)}
+                className="group relative rounded-2xl overflow-hidden bg-zinc-50 border border-zinc-200 shadow-sm hover:shadow-xl transition-all cursor-pointer"
+              >
+                <div className="h-56 overflow-hidden bg-white p-4 flex items-center justify-center">
+                  <img 
+                    src={photo.url} 
+                    alt={photo.title}
+                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
+                  />
+                </div>
+                <div className="p-3 bg-zinc-900 text-white flex items-center justify-between">
+                  <span className="font-bold text-xs truncate">{photo.title}</span>
+                  <ZoomIn className="w-4 h-4 text-red-400 shrink-0 ml-2 opacity-70 group-hover:opacity-100" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -88,7 +150,7 @@ export function PistonsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-extrabold text-zinc-900 mb-4">
-              Piston Engineering Features
+              Piston Technical Highlights
             </h2>
           </div>
 
@@ -111,15 +173,39 @@ export function PistonsPage() {
       {/* CTA Quote */}
       <section className="py-16 bg-[#111827] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-4">Need Custom KOMODO Pistons?</h2>
+          <h2 className="text-3xl font-extrabold mb-4">Inquire About Precision Pistons</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-sm">
-            Contact our engineering team for technical catalogs or custom OEM manufacturing quotes. Minimum Order Quantity (MOQ): 300 pieces.
+            Contact Singhal Industrial Corporation for technical catalogs and volume pricing. MOQ: 300 pieces.
           </p>
           <Link to="/quote" className="inline-flex items-center px-8 py-3.5 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors">
-            Contact Engineering Team <ArrowRight className="ml-2 w-4 h-4" />
+            Request Quote <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedPhoto && (
+        <div 
+          onClick={() => setSelectedPhoto(null)}
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+        >
+          <div className="relative max-w-4xl w-full bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 p-4">
+            <button 
+              onClick={() => setSelectedPhoto(null)}
+              className="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 p-2 rounded-full z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="h-[75vh] flex items-center justify-center bg-white rounded-xl p-4">
+              <img 
+                src={selectedPhoto} 
+                alt="Product Enlarged" 
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

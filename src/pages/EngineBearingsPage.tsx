@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const compressorPhotos = [
-  { url: '/images/products/air_compressor/compressor_1.jpeg', title: 'Industrial Air Compressor Cylinder & Piston Repair Kit' },
-  { url: '/images/products/air_compressor/compressor_2.jpeg', title: 'Heavy Duty Air Compressor Block & Ring Assembly' }
+const bearingPhotos = [
+  { url: '/images/products/engine_bearings/img_1.jpeg', title: 'Main Engine Bearing Shell Set' },
+  { url: '/images/products/engine_bearings/img_2.jpeg', title: 'Connecting Rod Bearing Shells' },
+  { url: '/images/products/engine_bearings/img_3.jpeg', title: 'Heavy Duty Bi-Metal & Tri-Metal Bearings' },
+  { url: '/images/products/engine_bearings/img_4.jpeg', title: 'Precision Crankshaft Bushings' },
+  { url: '/images/products/engine_bearings/img_5.jpeg', title: 'Agricultural & Diesel Engine Bearings' },
+  { url: '/images/products/engine_bearings/img_6.jpeg', title: 'Flanged Thrust Washers & Bearing Bushings' }
 ];
 
-export function AirCompressorKitsPage() {
+export function EngineBearingsPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
   return (
@@ -21,10 +25,10 @@ export function AirCompressorKitsPage() {
               <Award className="w-4 h-4 mr-1" /> Singhal Industrial Corporation
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-              Air Compressor Cylinder Kits & Blocks
+              Precision Engine Bearings & Bushings
             </h1>
             <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8">
-              Precision-cast air compressor cylinder liners, pistons, and valve assemblies for pneumatic brake and industrial systems.
+              High-performance main bearings, rod bearings, and thrust washers engineered for heavy-duty commercial and agricultural engines.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/quote" className="px-6 py-3 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors shadow-lg">
@@ -41,28 +45,28 @@ export function AirCompressorKitsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-zinc-700 leading-relaxed text-sm md:text-base">
               <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                Pneumatic Engineering
+                Metallurgical Precision
               </span>
               <h2 className="text-3xl font-extrabold text-zinc-900 mb-6">
-                Air Compressor Repair Kits & Blocks
+                Tri-Metal & Bi-Metal Heavy Duty Engine Bearings
               </h2>
 
               <p>
-                Singhal Industrial Corporation manufactures high-precision <strong>Air Compressor Kits, Cylinder Blocks, Pistons, and Valves</strong> for heavy commercial vehicle air brake compressors, agricultural air systems, and industrial air units.
+                Singhal Industrial Corporation produces high-grade <strong>Engine Bearings, Connecting Rod Bushings, and Thrust Washers</strong> designed to withstand extreme load pressures and high RPM operation in automotive, commercial vehicle, and agricultural diesel engines.
               </p>
 
               <p>
-                Engineered with close-grained wear-resistant cast iron and precision honed cylinder bores to deliver maximum air delivery and extended seal life.
+                Utilizing advanced bimetal (copper-lead/aluminum alloy) and trimetal overlay technology, our bearings offer exceptional fatigue resistance, anti-friction characteristics, and thermal conductivity.
               </p>
             </div>
 
             <div 
-              onClick={() => setSelectedPhoto('/images/products/air_compressor/compressor_1.jpeg')}
+              onClick={() => setSelectedPhoto('/images/products/engine_bearings/img_1.jpeg')}
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 cursor-pointer group"
             >
               <img 
-                src="/images/products/air_compressor/compressor_1.jpeg" 
-                alt="Air Compressor Kit" 
+                src="/images/products/engine_bearings/img_1.jpeg" 
+                alt="Engine Bearings" 
                 className="w-full h-80 md:h-[400px] object-contain bg-zinc-50 p-6 transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -84,7 +88,7 @@ export function AirCompressorKitsPage() {
                 Factory Product Gallery
               </span>
               <h2 className="text-3xl font-extrabold text-zinc-900">
-                Air Compressor Product Lineup
+                Engine Bearing Lineup
               </h2>
             </div>
             <p className="text-zinc-500 text-xs mt-2 md:mt-0">
@@ -92,14 +96,14 @@ export function AirCompressorKitsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {compressorPhotos.map((photo, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {bearingPhotos.map((photo, idx) => (
               <div 
                 key={idx}
                 onClick={() => setSelectedPhoto(photo.url)}
                 className="group relative rounded-2xl overflow-hidden bg-zinc-50 border border-zinc-200 shadow-sm hover:shadow-xl transition-all cursor-pointer"
               >
-                <div className="h-72 overflow-hidden bg-white p-6 flex items-center justify-center">
+                <div className="h-60 overflow-hidden bg-white p-4 flex items-center justify-center">
                   <img 
                     src={photo.url} 
                     alt={photo.title}
@@ -119,9 +123,9 @@ export function AirCompressorKitsPage() {
       {/* CTA Quote */}
       <section className="py-16 bg-[#111827] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-4">Inquire About Air Compressor Kits</h2>
+          <h2 className="text-3xl font-extrabold mb-4">Inquire About Engine Bearings</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-sm">
-            Contact Singhal Industrial Corporation for volume air compressor pricing and technical specs.
+            Contact Singhal Industrial Corporation for custom bearing sizing and OEM inquiries.
           </p>
           <Link to="/quote" className="inline-flex items-center px-8 py-3.5 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors">
             Request Quote <ArrowRight className="ml-2 w-4 h-4" />

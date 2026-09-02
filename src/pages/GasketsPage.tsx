@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const compressorPhotos = [
-  { url: '/images/products/air_compressor/compressor_1.jpeg', title: 'Industrial Air Compressor Cylinder & Piston Repair Kit' },
-  { url: '/images/products/air_compressor/compressor_2.jpeg', title: 'Heavy Duty Air Compressor Block & Ring Assembly' }
+const gasketPhotos = [
+  { url: '/images/products/gaskets/img_1.jpeg', title: 'Multi-Layer Steel Cylinder Head Gasket' },
+  { url: '/images/products/gaskets/img_2.jpeg', title: 'Complete Heavy Duty Engine Gasket Kit Set' }
 ];
 
-export function AirCompressorKitsPage() {
+export function GasketsPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
   return (
@@ -21,10 +21,10 @@ export function AirCompressorKitsPage() {
               <Award className="w-4 h-4 mr-1" /> Singhal Industrial Corporation
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-              Air Compressor Cylinder Kits & Blocks
+              Engine Gaskets & High-Pressure Seals
             </h1>
             <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8">
-              Precision-cast air compressor cylinder liners, pistons, and valve assemblies for pneumatic brake and industrial systems.
+              Multi-Layer Steel (MLS) head gaskets and complete engine seal kits engineered for high thermal and compression resistance.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/quote" className="px-6 py-3 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors shadow-lg">
@@ -41,28 +41,28 @@ export function AirCompressorKitsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-zinc-700 leading-relaxed text-sm md:text-base">
               <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                Pneumatic Engineering
+                High Sealing Reliability
               </span>
               <h2 className="text-3xl font-extrabold text-zinc-900 mb-6">
-                Air Compressor Repair Kits & Blocks
+                MLS Head Gaskets & Full Overhaul Seal Kits
               </h2>
 
               <p>
-                Singhal Industrial Corporation manufactures high-precision <strong>Air Compressor Kits, Cylinder Blocks, Pistons, and Valves</strong> for heavy commercial vehicle air brake compressors, agricultural air systems, and industrial air units.
+                Singhal Industrial Corporation manufactures high-performance <strong>Multi-Layer Steel (MLS), Graphite, and Composite Gaskets</strong> designed for automotive, commercial truck, and industrial diesel engines.
               </p>
 
               <p>
-                Engineered with close-grained wear-resistant cast iron and precision honed cylinder bores to deliver maximum air delivery and extended seal life.
+                Engineered to maintain strict compression boundaries and fluid isolation under peak combustion pressures and extreme thermal cycling.
               </p>
             </div>
 
             <div 
-              onClick={() => setSelectedPhoto('/images/products/air_compressor/compressor_1.jpeg')}
+              onClick={() => setSelectedPhoto('/images/products/gaskets/img_1.jpeg')}
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 cursor-pointer group"
             >
               <img 
-                src="/images/products/air_compressor/compressor_1.jpeg" 
-                alt="Air Compressor Kit" 
+                src="/images/products/gaskets/img_1.jpeg" 
+                alt="Engine Gaskets" 
                 className="w-full h-80 md:h-[400px] object-contain bg-zinc-50 p-6 transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -84,7 +84,7 @@ export function AirCompressorKitsPage() {
                 Factory Product Gallery
               </span>
               <h2 className="text-3xl font-extrabold text-zinc-900">
-                Air Compressor Product Lineup
+                Engine Gaskets & Seal Kit Lineup
               </h2>
             </div>
             <p className="text-zinc-500 text-xs mt-2 md:mt-0">
@@ -93,7 +93,7 @@ export function AirCompressorKitsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {compressorPhotos.map((photo, idx) => (
+            {gasketPhotos.map((photo, idx) => (
               <div 
                 key={idx}
                 onClick={() => setSelectedPhoto(photo.url)}
@@ -119,9 +119,9 @@ export function AirCompressorKitsPage() {
       {/* CTA Quote */}
       <section className="py-16 bg-[#111827] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-4">Inquire About Air Compressor Kits</h2>
+          <h2 className="text-3xl font-extrabold mb-4">Inquire About Engine Gaskets</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-sm">
-            Contact Singhal Industrial Corporation for volume air compressor pricing and technical specs.
+            Contact Singhal Industrial Corporation for custom gasket drawing inquiries.
           </p>
           <Link to="/quote" className="inline-flex items-center px-8 py-3.5 bg-[#D32F2F] text-white font-bold text-sm uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors">
             Request Quote <ArrowRight className="ml-2 w-4 h-4" />

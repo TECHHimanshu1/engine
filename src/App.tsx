@@ -13,6 +13,9 @@ import { BushPinsPage } from './pages/BushPinsPage';
 import { AirCompressorKitsPage } from './pages/AirCompressorKitsPage';
 import { ValvesPage } from './pages/ValvesPage';
 import { PowerGensetsPage } from './pages/PowerGensetsPage';
+import { EngineBearingsPage } from './pages/EngineBearingsPage';
+import { GasketsPage } from './pages/GasketsPage';
+import { AgriculturalEnginesPage } from './pages/AgriculturalEnginesPage';
 import { ProductDetail } from './pages/ProductDetail';
 import { Quote } from './pages/Quote';
 import { Quality } from './pages/Quality';
@@ -37,6 +40,9 @@ const router = createBrowserRouter([
       { path: 'products/air-compressor-kits', element: <AirCompressorKitsPage /> },
       { path: 'products/valves', element: <ValvesPage /> },
       { path: 'products/power-gensets', element: <PowerGensetsPage /> },
+      { path: 'products/engine-bearings', element: <EngineBearingsPage /> },
+      { path: 'products/gaskets', element: <GasketsPage /> },
+      { path: 'products/agricultural-diesel-engines', element: <AgriculturalEnginesPage /> },
       { path: 'products/:slug', element: <ProductDetail /> },
       { path: 'quote', element: <Quote /> },
       { path: 'quality', element: <Quality /> },

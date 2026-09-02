@@ -1,6 +1,15 @@
-import { CheckCircle2, ArrowRight, Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { companyConfig } from '../config';
+
+const linerPhotos = [
+  { url: '/images/products/cylinder_liners/img_1.jpeg', title: 'Dry Type Engine Cylinder Liner' },
+  { url: '/images/products/cylinder_liners/img_2.jpeg', title: 'Flanged Heavy Duty Cylinder Sleeve' },
+  { url: '/images/products/cylinder_liners/img_3.jpeg', title: 'Precision CNC Machined Liner' },
+  { url: '/images/products/cylinder_liners/img_4.jpeg', title: 'Wet Type Engine Cylinder Sleeve' },
+  { url: '/images/products/cylinder_liners/img_5.jpeg', title: 'Air-Cooled Finned Cylinder Block' },
+  { url: '/images/products/cylinder_liners/img_6.jpeg', title: 'Industrial & Agricultural Liner Set' }
+];
 
 const linerFeatures = [
   {
@@ -18,6 +27,8 @@ const linerFeatures = [
 ];
 
 export function CylinderLinersPage() {
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+
   return (
     <div className="w-full bg-white">
       {/* Hero Banner */}
@@ -68,12 +79,20 @@ export function CylinderLinersPage() {
               </p>
             </div>
 
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200">
+            <div 
+              onClick={() => setSelectedPhoto('/images/products/cylinder_liners/img_1.jpeg')}
+              className="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 cursor-pointer group"
+            >
               <img 
-                src="/images/in_cylinder_liners.jpeg" 
+                src="/images/products/cylinder_liners/img_1.jpeg" 
                 alt="Singhal Industrial Cylinder Liners" 
-                className="w-full h-auto object-cover"
+                className="w-full h-80 md:h-[420px] object-contain bg-zinc-50 p-6 transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="bg-white/90 text-zinc-900 px-4 py-2 rounded-full font-bold text-xs shadow-lg flex items-center">
+                  <ZoomIn className="w-4 h-4 mr-2 text-[#D32F2F]" /> Click to Zoom
+                </span>
+              </div>
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
                 <div className="font-bold text-lg">KOMODO Centrifugal Cylinder Liners</div>
                 <div className="text-xs text-zinc-300">Dry & Wet Type Liners | Shell Moulded Air-Cooled Blocks</div>
@@ -83,12 +102,53 @@ export function CylinderLinersPage() {
         </div>
       </section>
 
+      {/* Real Product Photo Gallery Grid */}
+      <section className="py-16 bg-white border-b border-zinc-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+              <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
+                Factory Product Gallery
+              </span>
+              <h2 className="text-3xl font-extrabold text-zinc-900">
+                Precision Cylinder Liner Lineup
+              </h2>
+            </div>
+            <p className="text-zinc-500 text-xs mt-2 md:mt-0">
+              Actual manufactured products from Singhal Industrial Corporation Agra factory
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {linerPhotos.map((photo, idx) => (
+              <div 
+                key={idx}
+                onClick={() => setSelectedPhoto(photo.url)}
+                className="group relative rounded-2xl overflow-hidden bg-zinc-50 border border-zinc-200 shadow-sm hover:shadow-xl transition-all cursor-pointer"
+              >
+                <div className="h-64 overflow-hidden bg-white p-4 flex items-center justify-center">
+                  <img 
+                    src={photo.url} 
+                    alt={photo.title}
+                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
+                  />
+                </div>
+                <div className="p-4 bg-zinc-900 text-white flex items-center justify-between">
+                  <span className="font-bold text-xs truncate">{photo.title}</span>
+                  <ZoomIn className="w-4 h-4 text-red-400 shrink-0 ml-2 opacity-70 group-hover:opacity-100" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Feature Grid */}
       <section className="py-20 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-extrabold text-zinc-900 mb-4">
-              Cylinder Liner Highlights
+              Cylinder Liner Technical Highlights
             </h2>
           </div>
 
@@ -120,6 +180,30 @@ export function CylinderLinersPage() {
           </Link>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedPhoto && (
+        <div 
+          onClick={() => setSelectedPhoto(null)}
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+        >
+          <div className="relative max-w-4xl w-full bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 p-4">
+            <button 
+              onClick={() => setSelectedPhoto(null)}
+              className="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 p-2 rounded-full z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="h-[75vh] flex items-center justify-center bg-white rounded-xl p-4">
+              <img 
+                src={selectedPhoto} 
+                alt="Product Enlarged" 
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

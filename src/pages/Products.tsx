@@ -9,7 +9,7 @@ const products = [
     name: 'Precision Engine Pistons', 
     category: 'Engine Components', 
     shortDescription: 'Precision engineered eutectic aluminum pistons with Ni-Resist ring carrier inserts, oil cooling galleries, and moly skirt coatings.', 
-    image: '/images/piston_hero.jpg' 
+    image: '/images/products/pistons/img_1.jpeg' 
   },
   { 
     id: '2', 
@@ -17,18 +17,34 @@ const products = [
     name: 'Cylinder Liners (Dry & Wet)', 
     category: 'Engine Components', 
     shortDescription: 'Centrifugally cast grey iron cylinder liners with 95%+ pearlitic micro-structure, plateau honing, and high thermal wear resistance.', 
-    image: '/images/in_cylinder_liners.jpeg' 
+    image: '/images/products/cylinder_liners/img_1.jpeg' 
   },
   { 
     id: '3', 
+    slug: 'engine-bearings', 
+    name: 'Engine Bearings & Bushings', 
+    category: 'Engine Components', 
+    shortDescription: 'Bi-metal & tri-metal connecting rod and crankshaft main bearing shells engineered for heavy duty commercial and agricultural engines.', 
+    image: '/images/products/engine_bearings/img_1.jpeg' 
+  },
+  { 
+    id: '4', 
+    slug: 'gaskets', 
+    name: 'Engine Gaskets & High Pressure Seals', 
+    category: 'Engine Components', 
+    shortDescription: 'Multi-layer steel (MLS) and composite cylinder head gaskets and complete overhaul seal kits for commercial diesel engines.', 
+    image: '/images/products/gaskets/img_1.jpeg' 
+  },
+  { 
+    id: '5', 
     slug: 'air-compressor-kits', 
     name: 'Air Brake Compressor Kits', 
     category: 'Braking Systems', 
     shortDescription: 'Complete repair kits including cylinder block, pistons, and piston rings for heavy-duty commercial truck air brake compressors.', 
-    image: '/images/air_compressor_kits.jpeg' 
+    image: '/images/products/air_compressor/compressor_1.jpeg' 
   },
   { 
-    id: '4', 
+    id: '6', 
     slug: 'connecting-rods', 
     name: 'Forged Steel Connecting Rods', 
     category: 'Engine Components', 
@@ -36,15 +52,15 @@ const products = [
     image: '/images/connecting_rods.jpeg' 
   },
   { 
-    id: '5', 
+    id: '7', 
     slug: 'agricultural-diesel-engines', 
-    name: 'Agricultural Diesel Engine Components', 
+    name: 'Agricultural Diesel Engines & Pump Sets', 
     category: 'Agricultural Engines', 
     shortDescription: 'Heavy-duty replacement engine assemblies and spare parts for 1 to 4 cylinder agricultural tractors, water pumps, and field generators.', 
-    image: '/images/agricultural_engines.jpeg' 
+    image: '/images/products/agricultural_engines/engine_1.jpeg' 
   },
   { 
-    id: '6', 
+    id: '8', 
     slug: 'valve-guides', 
     name: 'Precision Valve Guides', 
     category: 'Valve Train', 
@@ -52,36 +68,20 @@ const products = [
     image: '/images/valve_guides.jpeg' 
   },
   { 
-    id: '7', 
-    slug: 'bush-pins', 
-    name: 'Precision Bush Pins', 
-    category: 'Machined Parts', 
-    shortDescription: 'Induction hardened alloy steel & brass bush pins, precision centerless ground to ±0.003mm tolerance for heavy machinery.', 
-    image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800' 
-  },
-  { 
-    id: '8', 
+    id: '9', 
     slug: 'power-gensets', 
     name: 'Power Gensets & Stationary Engines', 
     category: 'Power Solutions', 
     shortDescription: 'Heavy-duty stationary power generation components, agricultural pumpsets, and engine repair assemblies.', 
-    image: '/images/power_gensets_1.jpeg' 
+    image: '/images/products/power_gensets/genset_1.jpeg' 
   },
   { 
-    id: '9', 
+    id: '10', 
     slug: 'castings', 
     name: 'Precision Iron & Aluminum Castings', 
     category: 'Foundry Products', 
     shortDescription: 'Custom shell-moulded grey iron, ductile SG iron, and aluminum gravity die castings produced to exact customer drawings.', 
     image: '/images/our_castings.jpeg' 
-  },
-  { 
-    id: '10', 
-    slug: 'piston-rings', 
-    name: 'Piston Rings & Pins', 
-    category: 'Engine Components', 
-    shortDescription: 'Chromium plated and nitrided piston rings paired with case hardened wrist pins for high-pressure combustion sealing.', 
-    image: 'https://images.unsplash.com/photo-1601737786196-856ec85c18b7?auto=format&fit=crop&q=80&w=800' 
   }
 ];
 
