@@ -130,11 +130,11 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center group py-1">
+            <Link to="/" className="flex items-center group py-0.5">
               <img 
                 src="/images/singhal_logo.jpeg" 
                 alt="Singhal Industrial Corporation" 
-                className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-12 sm:h-16 md:h-20 max-h-20 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
 
