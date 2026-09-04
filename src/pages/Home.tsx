@@ -484,50 +484,6 @@ export function Home() {
 
 
 
-      {/* ISO Certification Section */}
-      <section className="py-16 bg-zinc-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-extrabold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-                Certified Standard
-              </div>
-              <h2 className="text-3xl font-extrabold text-white mb-6">
-                Certified for Excellence: ISO 9001:2015
-              </h2>
-              <p className="text-zinc-300 leading-relaxed text-sm mb-6">
-                At Singhal Industrial Corporation, quality is built into every stage of our operations. Products manufactured in-house as well as those sourced from approved suppliers undergo rigorous quality checks.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Spectrometric Chemical Analysis of Cast Alloys",
-                  "CMM & Surface Roughness Profile Measurement",
-                  "100% Dimensional & Crack Inspection",
-                  "Traceable Batch Code Marking on Every Component"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center text-xs text-zinc-200">
-                    <CheckCircle2 className="w-4 h-4 text-[#D32F2F] mr-3 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex justify-center lg:justify-end">
-              <div className="bg-white text-zinc-900 p-8 rounded-3xl shadow-2xl max-w-md w-full border border-zinc-700 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-red-50 text-[#D32F2F] flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheck className="w-10 h-10" />
-                </div>
-                <div className="font-extrabold text-2xl mb-1 text-zinc-900">ISO 9001:2015</div>
-                <div className="text-xs font-semibold text-zinc-500 mb-6 uppercase tracking-wider">Singhal Industrial Corporation Quality System</div>
-                <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-100 text-xs text-zinc-600">
-                  Certified scope covers manufacturing, machining, sourcing, and export of auto engine components.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-zinc-50">
