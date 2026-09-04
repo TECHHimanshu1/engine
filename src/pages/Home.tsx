@@ -213,49 +213,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* OUR PRODUCTS Section */}
-      <section className="py-20 bg-zinc-50 border-t border-zinc-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
-              Our Core Offerings
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 mb-4 uppercase">
-              OUR PRODUCTS
-            </h2>
-            <p className="text-zinc-600 text-sm">
-              Explore our precision-engineered engine components. Each links to its dedicated specification page.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productsGrid.map((product, i) => (
-              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-200/80 flex flex-col justify-between group">
-                <div className="h-56 overflow-hidden relative bg-zinc-50 flex items-center justify-center p-4">
-                  <img 
-                    src={product.img} 
-                    alt={product.name} 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-                  <h3 className="absolute bottom-4 left-6 text-xl font-black text-white drop-shadow-md">{product.name}</h3>
-                </div>
-
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <p className="text-zinc-600 text-xs leading-relaxed mb-6">{product.desc}</p>
-                  <Link 
-                    to={product.path} 
-                    className="inline-flex items-center text-[#D32F2F] font-bold text-xs uppercase tracking-wider group-hover:text-red-700 transition-colors"
-                  >
-                    View Product Page <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SUITABLE FOR / OEM COMPATIBILITY Section - Non-Grid Organic Scatter Pattern */}
       <section className="py-20 md:py-28 bg-[#F8FAFC] border-t border-zinc-200/80 overflow-hidden relative">
         {/* Decorative background glows */}
@@ -349,6 +306,49 @@ export function Home() {
             </p>
           </div>
 
+        </div>
+      </section>
+
+      {/* OUR PRODUCTS Section */}
+      <section className="py-20 bg-zinc-50 border-t border-zinc-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#D32F2F] text-xs font-extrabold uppercase tracking-widest block mb-2">
+              Our Core Offerings
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 mb-4 uppercase">
+              OUR PRODUCTS
+            </h2>
+            <p className="text-zinc-600 text-sm">
+              Explore our precision-engineered engine components. Each links to its dedicated specification page.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productsGrid.map((product, i) => (
+              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-200/80 flex flex-col justify-between group">
+                <div className="h-56 overflow-hidden relative bg-zinc-50 flex items-center justify-center p-4">
+                  <img 
+                    src={product.img} 
+                    alt={product.name} 
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                  <h3 className="absolute bottom-4 left-6 text-xl font-black text-white drop-shadow-md">{product.name}</h3>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <p className="text-zinc-600 text-xs leading-relaxed mb-6">{product.desc}</p>
+                  <Link 
+                    to={product.path} 
+                    className="inline-flex items-center text-[#D32F2F] font-bold text-xs uppercase tracking-wider group-hover:text-red-700 transition-colors"
+                  >
+                    View Product Page <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
