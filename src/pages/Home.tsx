@@ -256,82 +256,89 @@ export function Home() {
         </div>
       </section>
 
-      {/* SUITABLE FOR / OEM COMPATIBILITY Section */}
-      <section className="py-16 md:py-24 bg-white border-t border-zinc-200/80 overflow-hidden relative">
-        {/* Subtle background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* SUITABLE FOR / OEM COMPATIBILITY Section - Non-Grid Organic Scatter Pattern */}
+      <section className="py-20 md:py-28 bg-[#F8FAFC] border-t border-zinc-200/80 overflow-hidden relative">
+        {/* Decorative background glows */}
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
             >
               <span className="text-[#E53935] text-xs font-extrabold uppercase tracking-widest block mb-2">
                 OEM Replacement Compatibility
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-zinc-900 mb-4 tracking-tight uppercase">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-900 mb-4 tracking-tight uppercase">
                 SUITABLE FOR
               </h2>
-              <div className="w-16 h-1 bg-[#E53935] mx-auto mb-5 rounded-full" />
+              <div className="w-20 h-1 bg-[#E53935] mx-auto mb-6 rounded-full" />
               <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
                 Precision-engineered engine spare parts, cylinder liners, pistons & components suitable for leading global commercial vehicle, tractor, agricultural & industrial engine brands.
               </p>
             </motion.div>
           </div>
 
-          {/* Random / Dynamic Grid of OEM Logos */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5">
+          {/* Organic Non-Grid Floating Logo Scatter Cloud */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14 max-w-6xl mx-auto px-2">
             {[
-              { name: 'Caterpillar (CAT)', img: '/images/suitable_for/logo-9.png', tag: 'Earthmoving & Diesel', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
-              { name: 'Volvo', img: '/images/suitable_for/logo-1.png', tag: 'Trucks & Heavy Duty', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Mercedes-Benz', img: '/images/suitable_for/logo-4.png', tag: 'Trucks & Engines', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Perkins', img: '/images/suitable_for/logo-3.png', tag: 'Diesel Engines', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
+              { name: 'Volvo', img: '/images/suitable_for/logo-1.png', size: 'h-14 md:h-18', shiftY: '-translate-y-3', floatDelay: 0 },
+              { name: 'Caterpillar (CAT)', img: '/images/suitable_for/logo-9.png', size: 'h-16 md:h-22', shiftY: 'translate-y-4', floatDelay: 0.3 },
+              { name: 'Mercedes-Benz', img: '/images/suitable_for/logo-4.png', size: 'h-14 md:h-18', shiftY: '-translate-y-5', floatDelay: 0.6 },
+              { name: 'Toyota', img: '/images/suitable_for/logo-2.png', size: 'h-16 md:h-20', shiftY: 'translate-y-2', floatDelay: 0.2 },
+              { name: 'Perkins', img: '/images/suitable_for/logo-3.png', size: 'h-12 md:h-16', shiftY: '-translate-y-4', floatDelay: 0.5 },
               
-              { name: 'Scania', img: '/images/suitable_for/logo-5.png', tag: 'Heavy Commercial', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Toyota', img: '/images/suitable_for/logo-2.png', tag: 'Automotive & Diesel', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
-              { name: 'Ashok Leyland', img: '/images/suitable_for/logo-6.png', tag: 'Commercial Vehicles', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Iveco', img: '/images/suitable_for/logo-7.png', tag: 'Trucks & Buses', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
+              { name: 'Scania', img: '/images/suitable_for/logo-5.png', size: 'h-14 md:h-18', shiftY: 'translate-y-5', floatDelay: 0.1 },
+              { name: 'Ashok Leyland', img: '/images/suitable_for/logo-6.png', size: 'h-16 md:h-20', shiftY: '-translate-y-2', floatDelay: 0.4 },
+              { name: 'Iveco', img: '/images/suitable_for/logo-7.png', size: 'h-11 md:h-15', shiftY: 'translate-y-3', floatDelay: 0.7 },
+              { name: 'Deutz', img: '/images/suitable_for/logo-10.png', size: 'h-14 md:h-18', shiftY: '-translate-y-6', floatDelay: 0.25 },
+              { name: 'Mack Trucks', img: '/images/suitable_for/logo-8.png', size: 'h-16 md:h-20', shiftY: 'translate-y-4', floatDelay: 0.55 },
 
-              { name: 'Deutz', img: '/images/suitable_for/logo-10.png', tag: 'Industrial Engines', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Mack Trucks', img: '/images/suitable_for/logo-8.png', tag: 'Heavy Duty Trucks', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
-              { name: 'Atlas Copco', img: '/images/suitable_for/logo-11.png', tag: 'Air Compressors', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Lister Petter', img: '/images/suitable_for/logo-12.png', tag: 'Agricultural Diesel', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
-
-              { name: 'Massey Ferguson', img: '/images/suitable_for/logo-14.png', tag: 'Agricultural Tractors', colSpan: 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2' },
-              { name: 'FIAT', img: '/images/suitable_for/logo-13.png', tag: 'Tractors & Commercial', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Zetor', img: '/images/suitable_for/logo-15.png', tag: 'Tractors & Machinery', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'UTB (Universal)', img: '/images/suitable_for/logo-16.png', tag: 'Tractors & Agri', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
-              { name: 'Lombardini', img: '/images/suitable_for/logo-17.png', tag: 'Small Diesel Engines', colSpan: 'col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1' },
+              { name: 'Atlas Copco', img: '/images/suitable_for/logo-11.png', size: 'h-10 md:h-14', shiftY: '-translate-y-3', floatDelay: 0.15 },
+              { name: 'Lister Petter', img: '/images/suitable_for/logo-12.png', size: 'h-12 md:h-16', shiftY: 'translate-y-2', floatDelay: 0.35 },
+              { name: 'Massey Ferguson', img: '/images/suitable_for/logo-14.png', size: 'h-14 md:h-18', shiftY: '-translate-y-4', floatDelay: 0.65 },
+              { name: 'FIAT', img: '/images/suitable_for/logo-13.png', size: 'h-10 md:h-13', shiftY: 'translate-y-3', floatDelay: 0.4 },
+              { name: 'Zetor', img: '/images/suitable_for/logo-15.png', size: 'h-12 md:h-16', shiftY: '-translate-y-2', floatDelay: 0.8 },
+              { name: 'UTB (Universal)', img: '/images/suitable_for/logo-16.png', size: 'h-14 md:h-18', shiftY: 'translate-y-5', floatDelay: 0.2 },
+              { name: 'Lombardini', img: '/images/suitable_for/logo-17.png', size: 'h-10 md:h-14', shiftY: '-translate-y-3', floatDelay: 0.5 }
             ].map((logo, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (idx % 6) * 0.05 }}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className={`bg-white rounded-2xl p-4 md:p-6 border border-zinc-200/90 shadow-sm hover:shadow-xl hover:border-red-300 transition-all duration-300 flex flex-col items-center justify-center relative group min-h-[120px] md:min-h-[140px] ${logo.colSpan}`}
+                transition={{ duration: 0.6, delay: idx * 0.04 }}
+                className={`relative group flex flex-col items-center justify-center p-2 ${logo.shiftY}`}
               >
-                <div className="w-full h-16 md:h-20 flex items-center justify-center overflow-hidden">
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                    delay: logo.floatDelay
+                  }}
+                  whileHover={{ scale: 1.15, y: -8 }}
+                  className="flex items-center justify-center cursor-pointer transition-transform duration-300"
+                >
                   <img 
                     src={logo.img} 
-                    alt={`Engine replacement parts suitable for ${logo.name}`} 
-                    className="max-w-full max-h-full object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                    alt={`Engine spare parts suitable for ${logo.name}`} 
+                    className={`${logo.size} max-w-[180px] md:max-w-[220px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:drop-shadow-lg transition-all duration-300`}
                   />
-                </div>
-                
-                {/* Hover Badge showing Brand & Application */}
-                <div className="mt-2 text-center">
-                  <span className="text-[11px] md:text-xs font-extrabold text-zinc-700 group-hover:text-[#E53935] transition-colors block">
+                </motion.div>
+
+                {/* Subtle Hover Tooltip */}
+                <div className="absolute -bottom-7 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 transform translate-y-1 group-hover:translate-y-0">
+                  <span className="bg-zinc-900 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md whitespace-nowrap">
                     {logo.name}
-                  </span>
-                  <span className="text-[10px] text-zinc-400 font-medium hidden md:block">
-                    {logo.tag}
                   </span>
                 </div>
               </motion.div>
@@ -339,8 +346,8 @@ export function Home() {
           </div>
 
           {/* Disclaimer Note */}
-          <div className="mt-12 text-center max-w-3xl mx-auto">
-            <p className="text-[11px] text-zinc-400 leading-relaxed italic bg-zinc-50 p-4 rounded-xl border border-zinc-200/60">
+          <div className="mt-16 text-center max-w-3xl mx-auto">
+            <p className="text-[11px] text-zinc-400 leading-relaxed italic bg-white/70 backdrop-blur-sm p-4 rounded-2xl border border-zinc-200/80 shadow-sm">
               * Note: All manufacturer names, numbers, symbols and descriptions used herein are for reference purposes only. The parts supplied are high-quality aftermarket engine replacement parts manufactured by Singhal Industrial Corporation (KOMODO Engine Parts).
             </p>
           </div>
