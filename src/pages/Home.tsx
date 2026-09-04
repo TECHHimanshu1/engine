@@ -272,9 +272,6 @@ export function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-[#E53935] text-xs font-extrabold uppercase tracking-widest block mb-2">
-                OEM Replacement Compatibility
-              </span>
               <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-900 mb-4 tracking-tight uppercase">
                 SUITABLE FOR
               </h2>
@@ -331,7 +328,7 @@ export function Home() {
                   <img 
                     src={logo.img} 
                     alt={`Engine spare parts suitable for ${logo.name}`} 
-                    className={`${logo.size} max-w-[180px] md:max-w-[220px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:drop-shadow-lg transition-all duration-300`}
+                    className={`${logo.size} max-w-[180px] md:max-w-[220px] object-contain opacity-100 group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300`}
                   />
                 </motion.div>
 
