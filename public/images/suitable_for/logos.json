@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "filename": "logo-1.png",
+    "src": "/images/suitable_for/logo-1.png",
+    "width": 920,
+    "height": 872,
+    "aspectRatio": 1.06
+  },
+  {
+    "id": 2,
+    "filename": "logo-2.png",
+    "src": "/images/suitable_for/logo-2.png",
+    "width": 836,
+    "height": 664,
+    "aspectRatio": 1.26
+  },
+  {
+    "id": 3,
+    "filename": "logo-3.png",
+    "src": "/images/suitable_for/logo-3.png",
+    "width": 1046,
+    "height": 210,
+    "aspectRatio": 4.98
+  },
+  {
+    "id": 4,
+    "filename": "logo-4.png",
+    "src": "/images/suitable_for/logo-4.png",
+    "width": 1304,
+    "height": 764,
+    "aspectRatio": 1.71
+  },
+  {
+    "id": 5,
+    "filename": "logo-5.png",
+    "src": "/images/suitable_for/logo-5.png",
+    "width": 1200,
+    "height": 624,
+    "aspectRatio": 1.92
+  },
+  {
+    "id": 6,
+    "filename": "logo-6.png",
+    "src": "/images/suitable_for/logo-6.png",
+    "width": 630,
+    "height": 630,
+    "aspectRatio": 1.0
+  },
+  {
+    "id": 7,
+    "filename": "logo-7.png",
+    "src": "/images/suitable_for/logo-7.png",
+    "width": 1152,
+    "height": 278,
+    "aspectRatio": 4.14
+  },
+  {
+    "id": 8,
+    "filename": "logo-8.png",
+    "src": "/images/suitable_for/logo-8.png",
+    "width": 1148,
+    "height": 788,
+    "aspectRatio": 1.46
+  },
+  {
+    "id": 9,
+    "filename": "logo-9.png",
+    "src": "/images/suitable_for/logo-9.png",
+    "width": 1280,
+    "height": 712,
+    "aspectRatio": 1.8
+  },
+  {
+    "id": 10,
+    "filename": "logo-10.png",
+    "src": "/images/suitable_for/logo-10.png",
+    "width": 949,
+    "height": 947,
+    "aspectRatio": 1.0
+  },
+  {
+    "id": 11,
+    "filename": "logo-11.png",
+    "src": "/images/suitable_for/logo-11.png",
+    "width": 1280,
+    "height": 610,
+    "aspectRatio": 2.1
+  },
+  {
+    "id": 12,
+    "filename": "logo-12.png",
+    "src": "/images/suitable_for/logo-12.png",
+    "width": 432,
+    "height": 360,
+    "aspectRatio": 1.2
+  },
+  {
+    "id": 13,
+    "filename": "logo-13.png",
+    "src": "/images/suitable_for/logo-13.png",
+    "width": 820,
+    "height": 224,
+    "aspectRatio": 3.66
+  },
+  {
+    "id": 14,
+    "filename": "logo-14.png",
+    "src": "/images/suitable_for/logo-14.png",
+    "width": 400,
+    "height": 248,
+    "aspectRatio": 1.61
+  },
+  {
+    "id": 15,
+    "filename": "logo-15.png",
+    "src": "/images/suitable_for/logo-15.png",
+    "width": 1200,
+    "height": 348,
+    "aspectRatio": 3.45
+  },
+  {
+    "id": 16,
+    "filename": "logo-16.png",
+    "src": "/images/suitable_for/logo-16.png",
+    "width": 649,
+    "height": 619,
+    "aspectRatio": 1.05
+  },
+  {
+    "id": 17,
+    "filename": "logo-17.png",
+    "src": "/images/suitable_for/logo-17.png",
+    "width": 1530,
+    "height": 213,
+    "aspectRatio": 7.18
+  }
+]
