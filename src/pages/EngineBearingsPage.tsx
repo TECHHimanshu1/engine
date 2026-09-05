@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const bearingPhotos = [
   { url: '/images/products/engine_bearings/img_1.jpeg', title: 'Main Engine Bearing Shell Set' },
@@ -16,6 +17,13 @@ export function EngineBearingsPage() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Engine Bearings, Bushings & Thrust Washers Manufacturer"
+        description="Bimetal and trimetal main bearings, connecting rod bearing shells, bushings & thrust washers manufactured in India by Singhal Industrial Corporation."
+        canonicalPath="/products/engine-bearings"
+        image="https://indiasparepart.com/images/engine_bearings_1.jpeg"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

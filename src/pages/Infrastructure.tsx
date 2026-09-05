@@ -1,5 +1,7 @@
 import { CheckCircle2, Minus, Plus } from 'lucide-react';
 import { useState } from 'react';
+import { SEO } from '../components/SEO';
+
 
 const meltingItems = [
   "Inductotherm Melting Furnaces: More than 100 tons per month",
@@ -61,6 +63,12 @@ export function Infrastructure() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Manufacturing Infrastructure, Foundry & CNC Machining"
+        description="Explore Singhal Industrial Corporation's manufacturing facility in Agra, India: Inductotherm melting furnaces, CNC turning, VMC milling, spectro analysis & honing."
+        canonicalPath="/infrastructure"
+      />
+
       {/* Hero Header */}
       <section className="bg-[#1C1F26] text-white py-16 md:py-20 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 via-zinc-900 to-black z-0 opacity-80" />

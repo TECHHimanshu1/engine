@@ -3,6 +3,7 @@ import { ArrowRight, Package, Eye, Target, ChevronLeft, ChevronRight, Plus, Minu
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
 import { useState } from 'react';
+import { SEO } from '../components/SEO';
 
 const productsGrid = [
   { 
@@ -68,6 +69,12 @@ export function Home() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Auto & Agricultural Engine Spare Parts Manufacturer India"
+        description="Singhal Industrial Corporation (KOMODO Engine Parts) - Premier ISO 9001:2015 manufacturer & exporter of Cylinder Liners, Pistons, Gaskets, Air Compressor Kits & Engine Components in Agra, India since 1966. Exporting to 45+ countries worldwide."
+        canonicalPath="/"
+      />
+
       {/* Hero Section - Full Width Edge-to-Edge */}
       <section className="w-full relative overflow-hidden min-h-[550px] md:min-h-[620px] flex items-center bg-[#EEF1F5] border-b border-zinc-100">
         {/* Full width background banner image */}

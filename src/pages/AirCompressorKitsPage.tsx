@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const compressorPhotos = [
   { url: '/images/products/air_compressor/compressor_1.jpeg', title: 'Industrial Air Compressor Cylinder & Piston Repair Kit' },
@@ -12,6 +13,13 @@ export function AirCompressorKitsPage() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Air Brake Compressor Repair Kits & Blocks Manufacturer"
+        description="Air brake compressor repair overhaul kits, cylinder blocks, pistons & ring assemblies for heavy-duty commercial trucks manufactured in Agra, India by Singhal Industrial Corporation."
+        canonicalPath="/products/air-compressor-kits"
+        image="https://indiasparepart.com/images/air_compressor_kits.jpeg"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, Clock, AlertCircle } from 'lucide-react';
 import { companyConfig } from '../config';
+import { SEO } from '../components/SEO';
 
 export function Quote() {
   const [submitted, setSubmitted] = useState(false);
@@ -18,6 +19,7 @@ export function Quote() {
     quantity: '300',
     message: ''
   });
+
 
   const handleRecaptchaClick = () => {
     if (recaptchaVerified) return;
@@ -59,6 +61,11 @@ export function Quote() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Request Quote & Contact Us"
+        description="Contact Singhal Industrial Corporation (KOMODO Engine Parts) for wholesale pricing, custom CAD drawings, catalog requests & export orders."
+        canonicalPath="/quote"
+      />
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

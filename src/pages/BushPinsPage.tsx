@@ -1,10 +1,17 @@
 import { ShieldCheck, CheckCircle2, ArrowRight, Cog, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
+import { SEO } from '../components/SEO';
 
 export function BushPinsPage() {
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Precision Bush Pins & Gudgeon Pins Manufacturer"
+        description="High precision induction hardened bush pins, gudgeon pins & king pins for heavy engines & machinery manufactured by Singhal Industrial Corporation."
+        canonicalPath="/products/bush-pins"
+      />
+
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

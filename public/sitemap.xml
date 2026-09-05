@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://indiasparepart.com/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/komodo_logo.jpeg</image:loc>
+      <image:title>Singhal Industrial Corporation - KOMODO Engine Parts</image:title>
+    </image:image>
+  </url>
+
+  <!-- Products Main Catalog -->
+  <url>
+    <loc>https://indiasparepart.com/products</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product Pages -->
+  <url>
+    <loc>https://indiasparepart.com/products/cylinder-liners</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/in_cylinder_liners.jpeg</image:loc>
+      <image:title>Centrifugally Cast Cylinder Liners Manufacturer</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/pistons</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/piston_hero.jpg</image:loc>
+      <image:title>Eutectic Aluminum Alloy Pistons Manufacturer</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/gaskets</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/gaskets_kits_1.jpeg</image:loc>
+      <image:title>Engine Gasket Sets and Cylinder Head Gaskets</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/air-compressor-kits</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/air_compressor_kits.jpeg</image:loc>
+      <image:title>Air Brake Compressor Overhaul Kits Manufacturer</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/crankshafts</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/crankshafts_1.jpeg</image:loc>
+      <image:title>Drop Forged Micro-Alloy Steel Crankshafts</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/valves</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/valve_guides.jpeg</image:loc>
+      <image:title>Engine Valves and Valve Guides Manufacturer</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/engine-bearings</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/engine_bearings_1.jpeg</image:loc>
+      <image:title>Bimetal Engine Bearings and Bushings</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/agricultural-diesel-engines</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/agricultural_engines.jpeg</image:loc>
+      <image:title>Agricultural Diesel Engine Spare Parts Exporter</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/power-gensets</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://indiasparepart.com/images/power_gensets_1.jpeg</image:loc>
+      <image:title>Power Genset Engine Components and Assemblies</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/products/bush-pins</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Company Pages -->
+  <url>
+    <loc>https://indiasparepart.com/about</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/infrastructure</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/custom-manufacturing</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/quality</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/quote</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/news</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Policy Pages -->
+  <url>
+    <loc>https://indiasparepart.com/privacy-policy</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://indiasparepart.com/terms</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

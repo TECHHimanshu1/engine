@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const pistonPhotos = [
   { url: '/images/products/pistons/img_1.jpeg', title: 'Heavy Duty Commercial Diesel Engine Piston' },
@@ -31,8 +32,33 @@ const pistonHighlights = [
 export function PistonsPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Precision Engine Pistons",
+    "image": "https://indiasparepart.com/images/piston_hero.jpg",
+    "description": "Durable eutectic silicon-aluminum alloy pistons with Ni-Resist ring groove carrier inserts for automotive, truck & tractor engines.",
+    "brand": {
+      "@type": "Brand",
+      "name": "KOMODO Engine Parts"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Singhal Industrial Corporation",
+      "url": "https://indiasparepart.com"
+    }
+  };
+
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Engine Pistons & Piston Assemblies Manufacturer India"
+        description="High-performance eutectic silicon-aluminum alloy engine pistons with Ni-Resist inserts manufactured in Agra, India by Singhal Industrial Corporation (KOMODO)."
+        canonicalPath="/products/pistons"
+        image="https://indiasparepart.com/images/piston_hero.jpg"
+        schema={productSchema}
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

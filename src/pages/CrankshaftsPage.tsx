@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const crankshaftPhotos = [
   { url: '/images/products/crankshafts/img_1.jpeg', title: 'Forged Steel Single Cylinder Crankshaft' },
@@ -13,6 +14,13 @@ export function CrankshaftsPage() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Forged Steel Crankshafts Manufacturer India"
+        description="Drop-forged micro-alloy steel crankshafts & forged engine components induction hardened and precision ground in Agra, India by Singhal Industrial Corporation."
+        canonicalPath="/products/crankshafts"
+        image="https://indiasparepart.com/images/crankshafts_1.jpeg"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

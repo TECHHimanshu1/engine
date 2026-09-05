@@ -1,6 +1,8 @@
 import { ArrowRight, Search, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { SEO } from '../components/SEO';
+
 
 const products = [
   { 
@@ -103,6 +105,11 @@ export function Products() {
 
   return (
     <div className="w-full pt-20 pb-24 bg-white min-h-screen">
+      <SEO 
+        title="Engine Spare Parts Catalog & OEM Components"
+        description="Explore Singhal Industrial Corporation's complete catalog of auto engine spare parts: Cylinder Liners, Eutectic Alloy Pistons, Gaskets, Air Compressor Repair Kits, Crankshafts, and Valves."
+        canonicalPath="/products"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

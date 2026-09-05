@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const gensetPhotos = [
   { url: '/images/products/power_gensets/genset_1.jpeg', title: 'INDOLAND Commercial Power Generator Set' },
@@ -12,6 +13,13 @@ export function PowerGensetsPage() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Diesel Power Generators & Genset Assemblies Manufacturer"
+        description="Stationary diesel generator sets, power genset assemblies & replacement spare parts manufactured by Singhal Industrial Corporation (INDOLAND)."
+        canonicalPath="/products/power-gensets"
+        image="https://indiasparepart.com/images/power_gensets_1.jpeg"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

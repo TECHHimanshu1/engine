@@ -1,10 +1,17 @@
 import { Award, CheckCircle2, ArrowRight, ShieldCheck, Building2, Target, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
+import { SEO } from '../components/SEO';
 
 export function About() {
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="About Us - 60+ Years of Manufacturing Excellence"
+        description="Learn about Singhal Industrial Corporation (KOMODO Engine Parts). Established in 1966 in Agra, India, we are a leading ISO 9001:2015 certified manufacturer & exporter of engine spare parts, cylinder liners, and pistons."
+        canonicalPath="/about"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

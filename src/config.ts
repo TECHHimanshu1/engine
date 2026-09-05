@@ -2,6 +2,8 @@ export const companyConfig = {
   name: "Singhal Industrial Corporation",
   shortName: "SINGHAL",
   brandName: "Singhal Industrial Corporation",
+  domain: "indiasparepart.com",
+  siteUrl: "https://indiasparepart.com",
   tagline: "Your trusted partner for high quality auto and agricultural spare parts.",
   subtitle: "Manufacturer of Cylinder Liners, Pistons & Engine Valves. We are one of the leading engine parts manufacturers & exporters, serving automotive OEMs and aftermarket customers around the world with decades of excellence in customer service.",
   email: "singhal.agra123@gmail.com",
@@ -25,3 +27,4 @@ export const companyConfig = {
     secretKey: "6LfyzaQtAAAAAP-WcjD9nckGIRZ0Px_DhAoxlYcF"
   }
 };
+

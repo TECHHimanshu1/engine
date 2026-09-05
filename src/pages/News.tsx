@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Calendar, Clock, MapPin, X, Images, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
+import { SEO } from '../components/SEO';
+
 
 interface EventItem {
   id: string;
@@ -161,6 +163,11 @@ export function News() {
 
   return (
     <div className="w-full max-w-full overflow-x-hidden bg-white">
+      <SEO 
+        title="Industry News, Automechanika Events & Engineering Articles"
+        description="Latest trade fair exhibitions, Automechanika Dubai booth galleries & engine spare parts technical reboring guides from Singhal Industrial Corporation."
+        canonicalPath="/news"
+      />
       {/* Top Header */}
       <section className="py-12 bg-white text-center border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

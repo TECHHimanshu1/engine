@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const enginePhotos = [
   { url: '/images/products/agricultural_engines/engine_1.jpeg', title: 'INDOLAND Single Cylinder Heavy Duty Diesel Engine' },
@@ -13,6 +14,13 @@ export function AgriculturalEnginesPage() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Agricultural Diesel Engines & Water Pump Spare Parts Manufacturer"
+        description="Heavy-duty single-cylinder agricultural diesel engines, irrigation pump sets & replacement spare parts exported worldwide by Singhal Industrial Corporation."
+        canonicalPath="/products/agricultural-diesel-engines"
+        image="https://indiasparepart.com/images/agricultural_engines.jpeg"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

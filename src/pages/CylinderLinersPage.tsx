@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const linerPhotos = [
   { url: '/images/products/cylinder_liners/img_1.jpeg', title: 'Dry Type Engine Cylinder Liner' },
@@ -29,8 +30,39 @@ const linerFeatures = [
 export function CylinderLinersPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Cylinder Liners (Dry, Wet & Air-Cooled)",
+    "image": "https://indiasparepart.com/images/in_cylinder_liners.jpeg",
+    "description": "Centrifugally cast grey iron cylinder liners & sleeves manufactured to OE & custom specifications for trucks, tractors & diesel engines.",
+    "brand": {
+      "@type": "Brand",
+      "name": "KOMODO Engine Parts"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Singhal Industrial Corporation",
+      "url": "https://indiasparepart.com"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "offerCount": "1000+",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Cylinder Liners & Sleeves Manufacturer India"
+        description="Centrifugally cast dry, wet & air-cooled cylinder liners manufactured in Agra, India by Singhal Industrial Corporation (KOMODO). Built to OE & custom specifications for truck & tractor engines."
+        canonicalPath="/products/cylinder-liners"
+        image="https://indiasparepart.com/images/in_cylinder_liners.jpeg"
+        schema={productSchema}
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

@@ -1,6 +1,7 @@
 import { CheckCircle2, ArrowRight, Cog, Layers, ShieldCheck, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { companyConfig } from '../config';
+import { SEO } from '../components/SEO';
 
 const processSteps = [
   { step: "01", title: "CAD Drawing / Sample Review", desc: "Our engineering team reviews client technical CAD models, physical samples, or OEM reference numbers." },
@@ -14,6 +15,12 @@ const processSteps = [
 export function CustomManufacturing() {
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Custom OEM Engine Parts Manufacturing from CAD Drawings & Samples"
+        description="Singhal Industrial Corporation manufactures custom engine components, pistons, cylinder liners & castings based on technical CAD drawings or physical samples."
+        canonicalPath="/custom-manufacturing"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />

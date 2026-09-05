@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Award, ZoomIn, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const valvePhotos = [
   { url: '/images/products/valves/img_1.jpeg', title: 'Bi-Metallic Engine Intake & Exhaust Valve Set' },
@@ -13,6 +14,13 @@ export function ValvesPage() {
 
   return (
     <div className="w-full bg-white">
+      <SEO 
+        title="Engine Valves & Valve Guides Manufacturer India"
+        description="Bi-metallic, stellite faced engine intake & exhaust valves, valve guides & seats manufactured in Agra, India by Singhal Industrial Corporation."
+        canonicalPath="/products/valves"
+        image="https://indiasparepart.com/images/valve_guides.jpeg"
+      />
+
       {/* Hero Banner */}
       <section className="bg-zinc-900 text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/80 via-zinc-900 to-zinc-950 z-0" />
