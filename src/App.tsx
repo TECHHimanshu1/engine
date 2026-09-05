@@ -20,14 +20,12 @@ import { CrankshaftsPage } from './pages/CrankshaftsPage';
 import { ProductDetail } from './pages/ProductDetail';
 import { Quote } from './pages/Quote';
 import { Quality } from './pages/Quality';
-import { AdminDashboard } from './pages/AdminDashboard';
 import { About } from './pages/About';
 import { Infrastructure } from './pages/Infrastructure';
 import { CustomManufacturing } from './pages/CustomManufacturing';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { Terms } from './pages/Terms';
 import { News } from './pages/News';
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -56,10 +54,6 @@ const router = createBrowserRouter([
       { path: 'news', element: <News /> },
     ],
   },
-  {
-    path: '/admin',
-    element: <AdminDashboard />
-  }
 ]);
 
 export default function App() {
